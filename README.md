@@ -1,2 +1,1 @@
-# limbo0312.github.io
-just my raw text blog
+just my private blog with HPSTR Jekyll theme
