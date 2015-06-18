@@ -44,17 +44,19 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 ❤ run_a_work:
 
-* [悟寂App](http://www.egs-studio.com/wujiApp/) 对佛法的小思考和总结。
-* [GitColor](http://www.egs-studio.com/GitColor/) 因一时兴起想可视化某个github-er技能图表。
-* [ApiBox](http://www.apibox.cc/) apibox.cc一直感慨凌乱的api文档和不认真码农。
-* [入境心流](http://www.raw-feel.com/) raw-feel.com间隙冥想是个最当下的正紧事。
-* [月下楼古文库](http://www.yuexialou.com/) yuexialou.com『努力搬砖建设中』...
+
+
+* <a href="http://www.egs-studio.com/wujiApp/" target="_blank">悟寂App</a> 对佛法的小思考和总结。
+* <a href="http://www.egs-studio.com/GitColor/" target="_blank">GitColor</a> 因一时兴起想可视化某个github-er技能图表。
+* <a href="http://www.apibox.cc/" target="_blank">ApiBox</a>  一直无语凌乱的api文档和随便马虎的码农。
+* <a href="http://www.yuexialou.com/raw-feel.html" target="_blank">入境心流</a>  raw-feel.com间隙冥想是个最当下的正紧事。
+* <a href="http://www.yuexialou.com/" target="_blank">月下楼古文库</a> yuexialou.com『努力搬砖建设中』...
 
 
 
 ❤ my_poetry_list:
 
-* [《鸣鸣雨》20150508](http://www.yuexialou.com/mingmingguo.html)
+* <a href="http://www.yuexialou.com/mingmingguo.html" target="_blank">《鸣鸣雨》20150508</a>  
 
 
 
@@ -66,7 +68,7 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 * 内源，中基，外器
 
-* 忘愁，慰亲，习业，为善，布施;布施，持戒，忍辱，精进，禅定，般若;入定，生静力，精进善行，得自由之身...;入千古，净戾气恶业，善护念，植佛种，得自由识。
+* 自省、克己、慎独、宽人;忘愁，慰亲，习业，为善，布施;布施，持戒，忍辱，精进，禅定，般若;入定，生静力，精进善行，得自由之身...;入千古，净戾气恶业，善护念，植佛种，得自由识。『儒道释』
 
  
 
