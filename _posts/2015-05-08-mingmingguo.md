@@ -19,7 +19,11 @@ share: false
 	
 	降伏万物兮寂寂心， 月下前楼兮念念过。
 
+ <hr>
+#####**测试发布在『月下楼』**
+<a href="http://www.yuexialou.com/mingmingguo.html" target="_blank">www.yuexialou.com/mingmingguo.html</a>
 
-####**测试发布在『月下楼』**
-<http://www.yuexialou.com/mingmingguo.html>
  
+ <hr>
+
+ <iframe width="100%" height="1000" src="http://www.yuexialou.com/mingmingguo.html" frameborder="0"> </iframe>
