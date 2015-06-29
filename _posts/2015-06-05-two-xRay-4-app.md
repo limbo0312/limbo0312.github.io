@@ -15,21 +15,20 @@ share: false
 
 ##### x-Ray on view-hierarchy
 
-**demo-pic**：![111](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FiOS-hierarchy-viewer.jpg)
+**demo-pic**：![111](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FHierarchyViewer.jpg)
 
 **工具哲学**：『自由检视，层级视图树』。通过浏览器，整体性查看App的view层级树，方便调试UI。
 
-**地址**：<https://github.com/glock45/iOS-Hierarchy-Viewer>
+
 
 
 
 ##### x-Ray in obj-heap
 
-**demo-pic**：![222](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2Fflex-superpower.jpg)
+**demo-pic**：![222](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2Fweixin-heap-digg.jpg)
 
 **工具哲学**：『自由校验，内存堆对象实例』。  通过内嵌的dashboard-mini，整体性，细究堆对象(链)中的实时数据变动。
 
-**地址**：<https://github.com/Flipboard/FLEX>
 
 
 
