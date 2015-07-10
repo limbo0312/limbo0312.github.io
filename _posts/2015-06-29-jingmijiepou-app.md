@@ -31,11 +31,7 @@ if done above so.....
 
 ####C、理论上的危险防范
 
-1. tweak重写基础的cocoa实现，记录下完整callLog，直接深度拷贝出一个完整的App的源文件实现。
-
-----
-
-ps：C_1 只是个恶劣的bugX实现思路，虽有极其恐怖的特性。其成本可就不止几百万美元的事了，呵呵
+1. tweak重写基础的cocoa实现，记录下完整callSigLog，直接深度拷贝出一个完整的App的源文件实现。
 
 
 ps： 附图为精密解剖可以达到的效果
@@ -50,6 +46,3 @@ ps： 附图为精密解剖可以达到的效果
 
 支付宝App viewHierarchy
 ![444](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2Fjm-zhifubao-view-layer.jpeg)
-
-App Store
-![555](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2Fjm-appStore-view-layer.jpeg)
