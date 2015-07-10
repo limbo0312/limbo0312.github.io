@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  《鸣鸣过》
+title:  《鸣鸣雨》
 description: ""
 tags: [诗词]
 
@@ -9,7 +9,7 @@ share: false
 ---
 
 
-#### 《鸣鸣过》
+#### 《鸣鸣雨》
 
 	梅雨复复兮年回回， 恐无念欲兮吾老去。
 	
