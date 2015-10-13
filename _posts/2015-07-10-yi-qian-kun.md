@@ -15,7 +15,7 @@ share: false
 
 
 
-<a href="http://www.yuexialou.com:8888" target="_blank">http://www.yuexialou.com:8888</a>
+<a href="http://www.yuexialou.com" target="_blank">http://www.yuexialou.com</a>
 
  <iframe width="100%" height="1000" src="http://www.yuexialou.com" frameborder="0"> </iframe>
  
