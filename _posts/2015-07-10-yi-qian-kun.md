@@ -14,8 +14,7 @@ share: false
 从古典文字里面去体会，有趣的自然现象，就像聆听一首让人保持心情激动的轻协奏曲。总能让人轻松地，处在愉快之中。
 
 
-
+『月下楼古文库』
 <a href="http://www.yuexialou.com" target="_blank">http://www.yuexialou.com</a>
-
- <iframe width="100%" height="1000" src="http://www.yuexialou.com" frameborder="0"> </iframe>
+ 
  
