@@ -52,10 +52,11 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 
 
-❤ my_poetry_list:
+❤ build_a_text:
 
+* <a href="http://www.ruoxu.me/meng-jian-huan-jing/" target="_blank">《梦建幻境》from悟寂App</a>
 * <a href="http://www.yuexialou.com/ruoxu-mmg/" target="_blank">《鸣鸣雨》20150508</a>  
-
+* <a href="http://www.ruoxu.me/fa-jue-qing-jian-sheng-huo/" target="_blank">《发掘古典清简的生活》20151101</a>  
 
 
 ❤ run_book_getting:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  梦建一个幻境如何?
-description: " 浪漫、美好、感染力"
+description: "佛国梦境可是如此浪漫、美好、富有感化力"
 tags: [修道往生、佛楼]
 
 comments: false
@@ -100,7 +100,8 @@ ok，enjoy your journey ，从慢慢寻缘的“悟寂”开始吧。。。
 ===
 ===
 
-附: 悟寂App 打磨中...
+附: 悟寂App 上线 
+[http://www.egs-studio.com/wujiApp/](http://www.egs-studio.com/wujiApp/)
 
 ![wujiapp](../images/wujiApp.gif)
 
