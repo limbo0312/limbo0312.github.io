@@ -45,10 +45,10 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 * <a href="http://www.egs-studio.com/wujiApp/" target="_blank">悟寂App</a> 对佛法的小思考和总结。
 * <a href="http://www.egs-studio.com/GitColor/" target="_blank">GitColor</a> 因一时兴起想可视化某个github-er技能图表。
-* <a href="http://www.apibox.cc/" target="_blank">ApiBox</a>  一直无语凌乱的api文档和随便马虎的码农。
+* <a href="http://www.egs-studio.com/ApiBox/" target="_blank">ApiBox</a>  一直无语凌乱的api文档和随便马虎的码农。
 * <a href="http://www.yuexialou.com/raw-feel/" target="_blank">入境心流</a>  raw-feel.com间隙冥想是个最当下的正紧事。
 * <a href="http://www.yuexialou.com/" target="_blank">月下楼古文库</a> yuexialou.com『努力搬砖建设中』...
-* <a href="http://www.yuexialou.com:32771" target="_blank">深泉文集</a> deep-text.com『努力搬砖建设中』...
+* <a href="http://www.deep-paper.com" target="_blank">深泉文集</a> deep-text.com『努力搬砖建设中』...
 
 
 ❤ build_a_text:
@@ -70,7 +70,7 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 ❤ raw-map-in-soul:
 
-* blog无极的波动与业愿：大胆假设神明在科学理解范畴的存在方式
+* <a href="http://www.ruoxu.me/wu-ji-de-bo-dong-yu-ye-yuan/" target="_blank">无极的波动与业愿：大胆假设神明在科学理解范畴的存在方式</a>  
 
 
 
