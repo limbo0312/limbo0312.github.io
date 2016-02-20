@@ -53,10 +53,10 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 ❤ build_a_text:
 
-* <a href="http://www.ruoxu.me/meng-jian-huan-jing/" target="_blank">《梦建幻境》from悟寂App</a>
+* <a href="http://www.ruoxu.me/meng-jian-huan-jing" target="_blank">《梦建幻境》from悟寂App</a>
 * <a href="http://www.yuexialou.com/ruoxu-mmg/" target="_blank">《鸣鸣雨》20150508</a>  
-* <a href="http://www.ruoxu.me/fa-jue-qing-jian-sheng-huo/" target="_blank">《发掘古典清简的生活》20151101</a>  
-* <a href="http://www.ruoxu.me/yue-du-you-jin-gu-de-wen-zi/" target="_blank">《阅读有筋骨的文字》20160103</a>  
+* <a href="http://www.ruoxu.me/fa-jue-qing-jian-sheng-huo" target="_blank">《发掘古典清简的生活》20151101</a>  
+* <a href="http://www.ruoxu.me/yue-du-you-jin-gu-de-wen-zi" target="_blank">《阅读有筋骨的文字》20160103</a>  
 
 ❤ run_book_getting:
 
@@ -70,7 +70,7 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 ❤ raw-map-in-soul:
 
-* <a href="http://www.ruoxu.me/wu-ji-de-bo-dong-yu-ye-yuan/" target="_blank">无极的波动与业愿：大胆假设神明在科学理解范畴的存在方式</a>  
+* <a href="http://www.ruoxu.me/wu-ji-de-bo-dong-yu-ye-yuan" target="_blank">无极的波动与业愿：大胆假设神明在科学理解范畴的存在方式</a>  
 
 
 
