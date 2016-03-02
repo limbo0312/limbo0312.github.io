@@ -56,7 +56,8 @@ mallocBlock常见情况和需要转成mallocBlock情况：stackBlock时，以下
 
 以下是几种场景的检验。
 
-/*************************************************************************/
+---
+
 ####   试验一：场景A，静态方法传参block （去除图中@weak标识符）
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FblockBlog%2F%E5%9B%BE1%E5%9C%BA%E6%99%AFA%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%BC%A0%E5%8F%82block.jpg)
 
@@ -70,7 +71,8 @@ mallocBlock常见情况和需要转成mallocBlock情况：stackBlock时，以下
 
 这里合适的处理策略，应该让block_callback 强引用self，避免block_callback回调时，self成了野指针或nil值。
 
-/*************************************************************************/
+---
+
 ####   试验二：场景B，典型的三元retain cycle （去除图中__weak标识符）
 
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FblockBlog%2F%E5%9B%BE2%E5%9C%BA%E6%99%AFB%EF%BC%8C%E4%B8%89%E5%85%83retain%20cycle.jpg)
@@ -81,7 +83,8 @@ mallocBlock常见情况和需要转成mallocBlock情况：stackBlock时，以下
 
 这是典型的三元引用环场景。应该使用 __weak修饰符后的   weakSelf，将vc_tapBlock对self的引用设置为弱引用。
 
-/*************************************************************************/
+---
+
 ####  试验三：场景C，还是典型的三元retain cycle  （去除图中__weak标识符）
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FblockBlog%2F%E5%9B%BE3%EF%BC%8C%E5%9C%BA%E6%99%AFC-%E4%BA%8C%E5%85%83%E5%BC%95%E7%94%A8%E7%8E%AF.jpg)
 
@@ -92,7 +95,8 @@ mallocBlock常见情况和需要转成mallocBlock情况：stackBlock时，以下
 
 同上，试验二。
 
-/*************************************************************************/
+---
+
 ####  试验四：场景D，GCD函数传参block
 
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FblockBlog%2F%E5%9B%BE4%EF%BC%8CGCD%E4%BC%A0%E5%8F%82blockPara.jpg)
@@ -105,7 +109,8 @@ mallocBlock常见情况和需要转成mallocBlock情况：stackBlock时，以下
 self不存在持有dispatch_async的block参数的可能，因此需要block_gcd_para强引用self，当block回调时，保证self还未释放。这个用法正确，相反若使用weakSelf则是不对的。
 
 
-/*************************************************************************/
+---
+
 ####  试验五：cocoa中基础obj使用usingBlock
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FblockBlog%2F%E5%9B%BE5%EF%BC%8CusingBlock.jpg)
 
@@ -116,7 +121,8 @@ self不存在持有dispatch_async的block参数的可能，因此需要block_gcd
 由于self对arrObj的强引用是初始引用，无法weak操作，所以只能(必须)在最后一步将block_usingBlock对self的强引用设置成weakSelf；
 
 
-/*************************************************************************/
+---
+
 ####  试验六：业务多重嵌套，block和GCD深度强引用
 
 ...
@@ -142,13 +148,14 @@ self不存在持有dispatch_async的block参数的可能，因此需要block_gcd
 
 **参考资料 :**
 
-http://clang.llvm.org/docs/AutomaticReferenceCounting.html
-《objective-c高级编程 iOS和Mac OX多线程和内存管理》
-http://tanqisen.github.io/blog/2013/04/19/gcd-block-cycle-retain/
+1. http://clang.llvm.org/docs/AutomaticReferenceCounting.html
+2.《objective-c高级编程 iOS和Mac OX多线程和内存管理》
+3. http://tanqisen.github.io/blog/2013/04/19/gcd-block-cycle-retain/
 
 **工具使用：**
 
-对象地址检测工具：LLDB 的facebook增强版 chisel，Chisel is a collection of LLDB commands to assist in the debugging of iOS apps.https://github.com/facebook/chisel
+* 对象地址检测工具：LLDB 的facebook增强版 chisel，Chisel is a collection of LLDB commands to assist in the debugging of iOS apps.https://github.com/facebook/chisel
 
 **概念：**
-retain cycle:  retain cycle，即『强引用环』，表现为两个或多个obj(blk)相互强引用导致相互无法释放，最后成了内存中的孤岛，是内存泄露的一种典型情况。实质的逻辑，就类似于线程死锁，数据互持。
+
+**retain cycle: **retain cycle，即『强引用环』，表现为两个或多个obj(blk)相互强引用导致相互无法释放，最后成了内存中的孤岛，是内存泄露的一种典型情况。实质的逻辑，就类似于线程死锁，数据互持。
