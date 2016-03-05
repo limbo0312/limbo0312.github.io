@@ -7,10 +7,13 @@ tags: [诗词]
 comments: false
 share: false
 ---
+[印象笔记格式版](https://www.evernote.com/l/AG5VNoZAikZB9JURWgasfkp5GJAbnSknTdk)
+<https://www.evernote.com/l/AG5VNoZAikZB9JURWgasfkp5GJAbnSknTdk>
 
 上周和两位同事讨论到block使用场景中哪种会发生retain cycle。一位是认为场景A会发生retain cycle，一位是认为场景A可能会发生retain cycle，最好采用全部weakSelf方式来编码，确保无遗漏不使之产生retai cycle。(场景A见下图)
 
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2FblockBlog%2F%E5%9B%BE1%E5%9C%BA%E6%99%AFA%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%BC%A0%E5%8F%82block.jpg)
+
 
 
 
