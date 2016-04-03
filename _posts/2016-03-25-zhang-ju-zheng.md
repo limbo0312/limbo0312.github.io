@@ -7,8 +7,7 @@ tags: [诗词]
 
 comments: false
 share: false
----
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="http://music.163.com/outchain/player?type=2&id=27571860&auto=1&height=32"></iframe>
+--- 
 
 #### 大人的丹青灵气，万古辐射不息。
 
