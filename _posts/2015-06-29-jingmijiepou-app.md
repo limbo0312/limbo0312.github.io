@@ -7,7 +7,7 @@ tags: [逆向工程]
 ---
 
 
-####A、精密解剖App
+#### A、精密解剖App
 
 1. linux机器理解，破解iOS和cydia，openSSL安装
 2. tweak技巧，MobileSubstrate运行时补丁,补丁dylib实现
@@ -20,7 +20,7 @@ if done above so.....
 
 
 
-####B、攻防简要策略
+#### B、攻防简要策略
 
 1. 遵循常规加密策略。对称加密(DES、3DES)和非对称加密(RSA、hppts)和各类散列算法(md5、sh1、sh2)。
 2. 工程中"类名、方法名"尽量避免暴露关键信息。
@@ -29,7 +29,7 @@ if done above so.....
 
 ----
 
-####C、理论上的危险防范
+#### C、理论上的危险防范
 
 1. tweak重写基础的cocoa实现，记录下完整callSigLog，直接深度拷贝出一个完整的App的源文件实现。
 

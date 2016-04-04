@@ -8,9 +8,9 @@ comments: false
 share: false
 ---
 
-##发掘古典清简的生活
+## 发掘古典清简的生活
 
-####古典清简的生活
+#### 古典清简的生活
 
 天行不息，日升月落，万物轮转莫不在追利避害。人类生存自古寻求幸福，而快乐自在的生活体验，近处可以只是『**古典清简的生活态度**』，远处或许是权利、地位、财富。
 
@@ -18,7 +18,7 @@ share: false
 
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2Ffajue-qingjian-001.jpg)
 
-####各派的闲适意蕴
+#### 各派的闲适意蕴
 
 儒法追求，克己修身，十年苦读，力挤朝堂治国平天下，为万世开太平取身后名。
 
@@ -41,7 +41,7 @@ share: false
 ![](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/ruoxu-blog%2Ffajue-qingjian-002.jpg)
 
 
-####发掘清简幸福观
+#### 发掘清简幸福观
 
 网上流传过一个很广的【古代人生四十乐事】总结:
 
