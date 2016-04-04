@@ -21,7 +21,7 @@ share: false
 
  <hr>
 #####**测试发布在『月下楼』**
-<a href="http://www.yuexialou.com/mingmingguo.html" target="_blank">www.yuexialou.com/mingmingguo.html</a>
+<a href="http://www.yuexialou.com/ruoxu-mmg/" target="_blank">www.yuexialou.com/ruoxu-mmg/</a>
 
  
  <hr>
