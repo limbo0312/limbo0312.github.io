@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /about/
-title: "about me"
+title: "will & wish"
 tags: []
 image:
   feature: abstract-1.jpg 
@@ -53,7 +53,7 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 ❤ build_a_text:
 
-* <a href="http://www.ruoxu.me/meng-jian-huan-jing" target="_blank">《梦建幻境》from悟寂App</a>
+* <a href="http://www.ruoxu.me/meng-jian-huan-jing" target="_blank">《梦建幻境》from悟寂App20140607</a>
 * <a href="http://www.yuexialou.com/ruoxu-mmg/" target="_blank">《鸣鸣雨》20150508</a>  
 * <a href="http://www.ruoxu.me/fa-jue-qing-jian-sheng-huo" target="_blank">《发掘古典清简的生活》20151101</a>  
 * <a href="http://www.ruoxu.me/yue-du-you-jin-gu-de-wen-zi" target="_blank">《阅读有筋骨的文字》20160103</a>  
@@ -67,7 +67,7 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 * 内源，中基，外器『凡事之本，必先治身』
 
-* 自省、克己、慎独、宽人;忘愁，慰亲，习业，为善，布施;布施，持戒，忍辱，精进，禅定，般若;入定，生静力，精进善行，得自由之身...;入千古，净戾气恶业，善护念，植佛种，得自由识。『儒道释』
+* 『儒道释』自省、克己、慎独、宽人;忘愁，慰亲，习业，为善，布施;布施，持戒，忍辱，精进，禅定，般若;入定，生静力，精进善行，得自由之身...;入千古，净戾气恶业，善护念，植佛种，得自由识。
 
 ❤ raw-map-in-soul:
 
