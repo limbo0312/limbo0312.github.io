@@ -71,7 +71,7 @@ blog or not blog，it is a **engine_by_feel**！it should have a **Accurate answ
 
 ❤ raw-map-in-soul:
 
-* <a href="http://www.ruoxu.me/wu-ji-de-bo-dong-yu-ye-yuan" target="_blank">无极的波动与业愿：假设神明在科学理解范畴上存在方式</a>  
+*  ~~无极的波动与业愿：假设神明在科学理解范畴上存在方式~~
 
 
 
