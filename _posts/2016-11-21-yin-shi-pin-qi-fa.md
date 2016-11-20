@@ -26,18 +26,18 @@ share: false
 **音视频的简单原理，就是一段序列播放的图片，再同步播放相应的序列音频采样片。**如同 图pic-0到pic-3中所揭示的，里面就包含三个关键元素。
 
 * 1、**YUV图片**：从H264、HEAV等编码的二进制数据中，解码出来的序列图片叫YUV图片，本质上跟常见的jpg、png一样。因为视频中的序列图片实在太多了，考虑到效率和历史原因等，视频中解码出来的图片帧为YUV。显卡的主要工作内容就是处理这些图形数据。
-* 2、**PCM音频**：从mp3、aac等编码的二进制数据中，解码出来的序列音频采样点叫PCM音频数据，可以理解每一片PCM音频波形就是一个单位的声音。了解PCM格式的信息可以见PCM百科http://baike.baidu.com/view/283815.htm。
+* 2、**PCM音频**：从mp3、aac等编码的二进制数据中，解码出来的序列音频采样点叫PCM音频数据，可以理解每一片PCM音频波形就是一个单位的声音。了解PCM格式的信息可以见[PCM百科](http://baike.baidu.com/view/283815.htm)。
 * 3、**音画同步**：将序列图片帧连续渲染到计算机图层，同时根据同步参数DTS、PTS来同步播放音频帧，这就是视频的播放过程了。请坚信，那些你未来接触到的奇怪音视频术语都是围绕这个简单过程的。
 
 ![](http://ww2.sinaimg.cn/large/65e4f1e6gw1f9z27xava7j20rr0aujtd.jpg)
 
 图. pic-1
 
-![](/var/folders/8_/73mmg_yx3rlgwbhg12v824nm0000gn/T/com.evernote.Evernote/WebKitDnD.m3FteC/pic-1.png)
+![](http://ww2.sinaimg.cn/large/65e4f1e6gw1f9z2ycj9dcj20ex08bdgm.jpg)
 
 图. pic-2
 
-![](/var/folders/8_/73mmg_yx3rlgwbhg12v824nm0000gn/T/com.evernote.Evernote/WebKitDnD.8i7mu3/pic-2.gif)
+![](http://ww4.sinaimg.cn/large/65e4f1e6gw1f9z2yti5vxg20fa0b43yl.gif)
 
 图. pic-3
 
@@ -51,7 +51,7 @@ share: false
 * 2、**编解码方式(视频)**：视频编解码的过程是指对数字视频进行压缩或解压缩的一个过程。常见的视频编解码方式有，H.26X(H.264,H.265等)，MPEG等。这里**需要留意到，不同的视频封装格式，其实里面使用的编解码方式很多是可能一样的**，封装格式是不同厂家的包装。这就好比，多个雪糕厂家生产一个口味的雪糕，外面的包装都是不一样的。
 * 3、**编解码方式(视频)**：常用的音频编解码方式有 AAC、MP3、WMA等。
 
-![](/var/folders/8_/73mmg_yx3rlgwbhg12v824nm0000gn/T/com.evernote.Evernote/WebKitDnD.qUi4C2/4EF4F283-032B-400A-B803-4D62D829C000.png)
+![](http://ww1.sinaimg.cn/large/65e4f1e6gw1f9z2z5ip31j20j90gcn0a.jpg)
 
 图. pic-4
 
@@ -75,12 +75,15 @@ share: false
           [《IDR、CRA、BLA、RASL、RADL、Gop》](http://blog.csdn.net/u010289908/article/details/45741753)
 
 
-![](/var/folders/8_/73mmg_yx3rlgwbhg12v824nm0000gn/T/com.evernote.Evernote/WebKitDnD.cLcA13/09883F20-A5F9-43DD-9A36-8BC27CDB6375.png)
-
+	![](http://ww3.sinaimg.cn/large/65e4f1e6gw1f9z2ze1ruzj20b406idgd.jpg)
+	
 	图. pic-5
 
 * 3、**帧内预测和帧间预测**：因为视频的图像序列很有连续性，所以为了最大可能提高编码压缩效率，就有了『帧内预测和帧间预测』这种技术思路。简单来说帧内预测就是压缩单帧的大小，帧间预测就是根据A帧来预测B帧的变化，从而压缩了B帧。详细资料再多可自己参考，[《帧内预测和帧间预测的比较》](http://www.voidcn.com/blog/lzx995583945/article/p-3963685.html)
 
+	[](iii)
+	
+	图. pic-6
 * 4、**流媒体协议**：除了本地视频的播放，我们经常用到的就是视频的在线播放(点播、直播)。需要在线播放就需要使用到流媒体协议的支持，常见的流媒体协议有RTMP、HLS、Http-flv、RTSP等。[《流媒体协议综述》](http://blog.csdn.net/wishfly/article/details/51919441)
 
 ###  D、音频解码：实现“AAC->PCM”
@@ -98,7 +101,9 @@ ijjPlayer播放流程跟ffplay使用ffmpeg播放流程一样，区别就是ijkPl
 其实ijkPlayer架构很精简，可以从这些系列资料开始，然后阅读它的代码。
           [《ijkplayer系列(二) —— ijkplayer初始化流程》](http://www.qhung.cn/2016/06/24/ijkplayer-1-init/)
 
-图. pic-6
+![](http://ww4.sinaimg.cn/large/65e4f1e6gw1f9z30e6y7bj20k50bhtbv.jpg)
+
+图. pic-7
 
 ###  F、直播化特性，来改造ijkPlayer播放器
 
