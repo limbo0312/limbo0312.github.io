@@ -39,7 +39,7 @@ share: false
 
 ![](http://ww4.sinaimg.cn/large/65e4f1e6gw1f9z2yti5vxg20fa0b43yl.gif)
 
-图. pic-3
+图. pic-3（动画能实现，基于两点基础，a、人眼和人脑的视觉缓存效应，b、计算机带来的图画运算速度）
 
 ------
 
@@ -74,22 +74,26 @@ share: false
           [《H.264码流结构解析》](http://wenku.baidu.com/view/ab19d6c79ec3d5bbfd0a7418.html)
           [《IDR、CRA、BLA、RASL、RADL、Gop》](http://blog.csdn.net/u010289908/article/details/45741753)
 
-
-	![](http://ww3.sinaimg.cn/large/65e4f1e6gw1f9z2ze1ruzj20b406idgd.jpg)
+    ![](http://ww3.sinaimg.cn/large/65e4f1e6gw1f9z2ze1ruzj20b406idgd.jpg)
 	
-	图. pic-5
+	图. pic-5(码流格式，即码流内数据组织方式)
 
 * 3、**帧内预测和帧间预测**：因为视频的图像序列很有连续性，所以为了最大可能提高编码压缩效率，就有了『帧内预测和帧间预测』这种技术思路。简单来说帧内预测就是压缩单帧的大小，帧间预测就是根据A帧来预测B帧的变化，从而压缩了B帧。详细资料再多可自己参考，[《帧内预测和帧间预测的比较》](http://www.voidcn.com/blog/lzx995583945/article/p-3963685.html)
 
-	[](iii)
+    ![](http://ww2.sinaimg.cn/large/65e4f1e6gw1f9zialuuarj20xc0lfn2h.jpg)
 	
-	图. pic-6
+	图. pic-6(直观看出哪类帧柱形图比较高，帧预测关键标记在在动画『变动』区域)
+	
 * 4、**流媒体协议**：除了本地视频的播放，我们经常用到的就是视频的在线播放(点播、直播)。需要在线播放就需要使用到流媒体协议的支持，常见的流媒体协议有RTMP、HLS、Http-flv、RTSP等。[《流媒体协议综述》](http://blog.csdn.net/wishfly/article/details/51919441)
 
 ###  D、音频解码：实现“AAC->PCM”
 
 音频帧和视频帧处理的工艺都是类似的，差异之处就是音频采用的编码方式为AAC、MP3等，处理出来的**基础单元为PCM(视频的基础单元YUV)**。
 需了解详细的同学，可以从百度百科词条[『音频编码』](http://baike.baidu.com/link?url=tqnRVQkg0MYSXd3yJxg3eFBVCEsM46WXpprc16LLRHal_GBPYhGosyFvGxjOCuHGg8v-kMKADrzpoCS9947fkmBQZCGby0S6kOEQA9zYkN32oq13_xZpYKK5ZsTvLJJ3)开始。
+
+![](http://ww1.sinaimg.cn/large/65e4f1e6gw1f9zibw53a8j20xc0kuqa1.jpg)
+
+图. pic-7(上手过Adobe Audition之后就会更直观明白音频文件的大致构成了)
 
 ###  E、移动播放器绕不开的—-->ijkPlayer架构简述
 
@@ -103,7 +107,7 @@ ijjPlayer播放流程跟ffplay使用ffmpeg播放流程一样，区别就是ijkPl
 
 ![](http://ww4.sinaimg.cn/large/65e4f1e6gw1f9z30e6y7bj20k50bhtbv.jpg)
 
-图. pic-7
+图. pic-8
 
 ###  F、直播化特性，来改造ijkPlayer播放器
 
@@ -111,7 +115,7 @@ ijjPlayer播放流程跟ffplay使用ffmpeg播放流程一样，区别就是ijkPl
 
 * 1、**直播秒开**。一方面需要服务器做Gop缓存(为了客户端能最快得到第一帧完整图画)，一方面需要客户端预置格式信息，避免avformat_find_stream_info等这类耗时函数，还有优先解码出第一帧图像进行渲染。
 * 2、**直播低延迟**。服务器和客户端同时优化多级缓存中的默认时长。
-* 3、**直播紧追(追踪)**。将网络累计造成缓冲过大快速播放掉，保证客户端播放进度最大程度接近视频发生源的时间。
+* 3、**直播紧追(追踪)**。金山云称之为直播追踪，实际上『直播紧追』更能代表这个技术的目的。实现的过程是，将网络累计等因素造成的过大缓冲快速播放掉，紧跟直播源时间戳，保证客户端播放进度最大程度接近视频真实发生的时间。
 
 **参考：**
 
