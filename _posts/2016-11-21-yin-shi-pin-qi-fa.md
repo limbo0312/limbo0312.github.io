@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  音视频入门的简单启发
-description: "计算机技术领域中，『音视频技术』应该说算是较复杂的小门类。较复杂的东西有个简单的入门指引，或者有前辈带路是很重要的。"
+title:  入门启发：音视频的简单理解
+description: "计算机技术领域中，『音视频技术』应该说算是较复杂的小门类。较复杂的东西有个简单的入门指引，或者有前辈带路是很重要的。会起到很大程度的事半功倍作用。"
 tags: [音视频]
 
 comments: false
@@ -123,5 +123,5 @@ ijjPlayer播放流程跟ffplay使用ffmpeg播放流程一样，区别就是ijkPl
 * b、（推荐！）[《FFMPEG详解》](http://chunlin.li/tech/doku.php/tech:multimedia:ffmpeg)
 * c、[雷霄骅， 视音频编解码技术](http://blog.csdn.net/leixiaohua1020/article/details/18893769)
 * d、[雷霄骅，《基于 FFmpeg + SDL 的视频播放器的制作》课程的视频](http://blog.csdn.net/leixiaohua1020/article/details/47068015)
-* e、[《ijkplayer视频播放器源码分析》](http://www.jianshu.com/p/7d9b86919682)
-* f、等...
+* e、[《ijkplayer视频播放器源码分析》](http://www.jianshu.com/p/7d9b86919682)。等...
+* f、[原文在这里😄](http://www.ruoxu.me//yin-shi-pin-qi-fa)
