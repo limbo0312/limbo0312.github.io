@@ -8,7 +8,7 @@ comments: false
 share: false
 ---
 
-![nuonuo-tangyuan](http://ww2.sinaimg.cn/large/006y8lVagw1fbixo6urt4j30go0m8t9l.jpg)
+
 
 {% raw %}  
 
@@ -58,3 +58,4 @@ share: false
 * b、[《沉毅渊重，筑心入地---春日夜读《张居正》有感》](http://www.ruoxu.me//zhang-ju-zheng)
 * c、[《饮气嗅芳兮，对夜月以清光---入夏读《戚继光》感》](http://www.ruoxu.me//qi-ji-guang)
 
+![nuonuo-tangyuan](http://ww2.sinaimg.cn/large/006y8lVagw1fbixo6urt4j30go0m8t9l.jpg)
