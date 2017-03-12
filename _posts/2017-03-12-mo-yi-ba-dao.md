@@ -23,5 +23,9 @@ share: false
 
 功夫在诗外。小得在勤奋在磨砺，大成靠顺道靠天时。
 
+磨一把刀。杰出的心性之刀。
+
+博采众长，开放求是。交易方法论为根基。
+
 
 ![budda](https://ww2.sinaimg.cn/large/006tNc79gy1fdkdveaubbj31hc0xcaji.jpg)
