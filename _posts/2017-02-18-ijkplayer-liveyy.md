@@ -9,7 +9,6 @@ share: false
 ---
 
 
-
 ### 引子： 
 
 半年前搞的HJY云导播项目，因为有个多流直播且流组合切换的特殊需求，从 vlc 摸索折腾到Vitamio sdk,七牛直播 sdk，金山云 sdk 等等，到回归 ffmpeg和 ffplay还有基于 ffplay 的 ijkplayer，经历了一段蛮揪心的视频播放技术探索。回过头来，都有点生疏了细节，不过主干的思想和直播化改造ijkplayer的过程还是值得做个回溯的。
