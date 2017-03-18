@@ -16,6 +16,6 @@ share: false
 * 4，要点List总结
 
 比如之前和同事探讨 block 与 retain cycle ，还有 GCD复习时都是用这个思路，使用了这个方式。
-* a、[ block场景试验：匿名函数block与retain cycle](https://www.evernote.com/l/AG5VNoZAikZB9JURWgasfkp5GJAbnSknTdk)
+* a、[block场景试验：匿名函数block与retain cycle](https://www.evernote.com/l/AG5VNoZAikZB9JURWgasfkp5GJAbnSknTdk)
 * b、[多线程复习：GCD 要点回顾](https://www.evernote.com/l/AG6sMxcdwe5EAq3kTNBJPAb7jN2gPtWsAvg)
  
