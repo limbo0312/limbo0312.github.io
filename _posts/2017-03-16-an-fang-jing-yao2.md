@@ -26,7 +26,7 @@ share: false
 * Android更为开放 开源，虽然系统级别 bug较多但是社区反馈更快。iOS 整体在苹果的闭合链条内，好处是不会有那么多恶意攻击，但是安全性进化较慢。由此，Android 安全进化更快，整体bug较多，但是 进化速度较快，可避免太长远的影响。iOS虽然问题少，但是进化速度不够，导致如果有潜在隐患更可怕。
 * ios 虽然看上去安全，但是一出问题 就是大事故。比如Keychain-Dumper 早已经很成熟对付 Keychain。Android 毛病不少，但是很多都是无伤大雅。
 
-[more...](https://www.evernote.com/l/AG5skVMkholBHb9XHft5BaF7b2b7YgyeOKo)
+[完整在...](https://www.evernote.com/l/AG5skVMkholBHb9XHft5BaF7b2b7YgyeOKo)
 ------------------
 
 原文 on evernote:
