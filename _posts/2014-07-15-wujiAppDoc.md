@@ -9,10 +9,10 @@ share: false
 ---
 
 
-###悟寂App设计简要
+### 悟寂App设计简要
 ============
 
-####main feature
+#### main feature
 
 * 悟寂：以擦拭镜面的方式，品悟一段佛经经义的现代版本。保持字数简短，图片氛围随机。
 
@@ -26,7 +26,7 @@ share: false
 
 * 持咒：咒语，在这里可以简单地理解，“你需要某位佛菩萨帮忙”，“你需要体会某位佛菩萨的微妙本心”，“你需要修行咒语中所蕴含的功德”。
 
-####app tip： 意触虚空
+#### app tip： 意触虚空
 ===
 coreZen: 构建快乐的价值观
 
@@ -42,7 +42,7 @@ coreZen: 构建快乐的价值观
 
 6.  以coreZen 为核心依据的善意技巧即好。
 
-###app tip：使用简述
+### app tip：使用简述
  ====
  
 1. 悟寂tab，免费版本每日只行8步，专业版本每日只行16步。大多情况免费版本已经够了。
@@ -59,6 +59,8 @@ coreZen: 构建快乐的价值观
 
 7.  见谅，悟寂词库更新较缓慢，如有独到的解悟佛经的转换句，可以发送到邮箱limbo0312@icloud.com。
 
-####链接
+#### 相关链接
 
-www.egs-studio.com/wujiApp  已上线
+![www.egs-studio.com/wujiApp](www.egs-studio.com/wujiApp)  App已上线
+
+![《梦建一个幻境如何?》](http://www.ruoxu.me/meng-jian-huan-jing)   做个App的『意义』就在于此。
