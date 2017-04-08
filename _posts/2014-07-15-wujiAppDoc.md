@@ -61,6 +61,6 @@ coreZen: 构建快乐的价值观
 
 #### 相关链接
 
-![www.egs-studio.com/wujiApp](www.egs-studio.com/wujiApp)  App已上线
+[www.egs-studio.com/wujiApp](www.egs-studio.com/wujiApp)  App已上线
 
-![《梦建一个幻境如何?》](http://www.ruoxu.me/meng-jian-huan-jing)   做个App的『意义』就在于此。
+[《梦建一个幻境如何?》](http://www.ruoxu.me/meng-jian-huan-jing)   做个App的『意义』就在于此。
