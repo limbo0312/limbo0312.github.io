@@ -2,7 +2,7 @@
 layout: post
 title:  寻访高能量的人和物
 description: "闭门落日扫尘心，	闲暇乘音览物理。	空雨抱月缈临渊，	感怀天地运息息。"
-tags: [高级建筑 信念建筑]
+tags: [信念建筑]
 
 comments: false
 share: false
