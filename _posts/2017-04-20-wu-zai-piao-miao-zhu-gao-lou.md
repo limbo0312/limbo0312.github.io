@@ -1,6 +1,6 @@
 ---
 layout: post
-title:   勿在飘渺筑高楼：交易
+title:   勿在飘渺筑高楼：tradeHistory
 description: "交易让我思考很多问题..."
 tags: [信念建筑]
 
