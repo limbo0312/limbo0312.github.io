@@ -25,7 +25,7 @@ share: false
  	正确认识并承认，区块链不只是一阵新技术热潮，而是一种社会变革前的全球性思潮（新思想呼唤新规则的大潮）；我们再从三道演化路径来审视，事物演化进化中，是如何推生出现在的区块链和比特币；这三道演化路径，都是回归一个初衷，一个公平公正社会生产关系的初衷，进一步说，甚至是马克思等等社会思想家寻求的理想社会形态；既然这股新思潮会推动社会形态的进化，那么我们最后再来畅想一下，未来的社会形态应该有哪些想象力呢？
 
 
-![mahua](https://ws1.sinaimg.cn/large/006tNbRwgy1fp9v6ok4vqj31kw0rtqg3.jpg)
+![mahua](http://b-egs-studio-images.oss-cn-shenzhen.aliyuncs.com/blog-snippet/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AE%A4%E8%AF%86%E6%AD%A5%E9%AA%A4.png)
 
 
 
