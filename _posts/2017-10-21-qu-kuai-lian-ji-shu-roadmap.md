@@ -2,7 +2,7 @@
 layout: post
 title:   区块链=>技术进入路径
 description: "区块链是一种极具革命性的去中心实现技术。让我们能够憧憬点对点的公平平等的社会生产关系。对此，技术人员很有必要认真，再认真对待。"
-tags: [信念建筑]
+tags: [区块链]
 
 comments: false
 share: false

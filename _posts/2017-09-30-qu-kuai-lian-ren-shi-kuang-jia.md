@@ -2,7 +2,7 @@
 layout: post
 title:   区块链=>认识步骤&认识框架
 description: "区块链是一种极具革命性的去中心实现技术。让我们能够憧憬点对点的公平平等的社会生产关系。"
-tags: [信念建筑]
+tags: [区块链]
 
 comments: false
 share: false

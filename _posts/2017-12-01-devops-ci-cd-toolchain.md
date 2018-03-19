@@ -2,7 +2,7 @@
 layout: post
 title:   DevOps在CI/CD上的工具链
 description: "DevOps是未来IT工业中越来越标准化的途径，因为一体化的CI/CD流程线，意味这更高效的开发方式，更低成本更省力的运维方式。"
-tags: [信念建筑]
+tags: [DevOps]
 
 comments: false
 share: false
