@@ -39,3 +39,12 @@ IT技术人员总是在不断解决新问题新挑战，又慢慢把老问题经
 
 ![
 ](https://ws2.sinaimg.cn/large/006tNbRwgy1fpwdhj88dej30xc0kudjn.jpg)
+
+
+####  从runtime特性理解一门编程语言
+
+* obj-c runtime 看obj-c 语言；
+* 从jvm 看java；
+
+runtime的特性决定了编程语言的特性。
+
