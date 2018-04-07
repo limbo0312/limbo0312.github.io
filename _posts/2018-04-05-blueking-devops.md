@@ -44,7 +44,7 @@ share: false
 
 -----
 
-###### keypoitA：官网文档精要 
+#### keypoitA：官网文档精要 
 
 [url 蓝鲸官网文档](https://bk.tencent.com/document/)
 
@@ -61,7 +61,7 @@ share: false
 
 ---
 
-###### keypointB： infoQ和GOPS 相关演讲
+#### keypointB： infoQ和GOPS 相关演讲
 
 由前至后排序：
 
@@ -78,13 +78,13 @@ share: false
 
 ---
 
-###### EndPoint：个人对于DevOps的理解，主要就三条
+#### EndPoint：个人对于DevOps的理解，主要就三条
 
 * 1、DevOps未来一定会成为**更高生产力IT设施**的标配。
 * 2、DevOps 实践的趋向成熟模式一定会向着** 统一化运维操作系统**方向发展。
 * 3、蓝鲸在DevOps演化路径上走在了前面，从集成平台的开放生态也可以看到，这就是一种通过创新方式来解决现有问题，解放生产力的实践路径。
 
-###### ps：蓝鲸架构导引图
+#### ps：蓝鲸架构导引图
 
 最后，再绘制一个[蓝鲸架构-导引图](https://mqh4kt.axshare.com)。也是自己了解蓝鲸这个devops工具的一个【一图一架构】和【一图一总结】。
 
