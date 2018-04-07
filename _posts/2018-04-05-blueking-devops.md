@@ -86,7 +86,7 @@ share: false
 
 #### ps：蓝鲸架构导引图
 
-最后，再绘制一个[蓝鲸架构-导引图](https://mqh4kt.axshare.com)。也是自己了解蓝鲸这个devops工具的一个【一图一架构】和【一图一总结】。
+最后，再绘制一个[蓝鲸架构-蓝鲸导引栈](https://mqh4kt.axshare.com)。也是自己了解蓝鲸这个devops工具的【一图一总结】。
 
 
 ---
