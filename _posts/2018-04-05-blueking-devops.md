@@ -1,6 +1,6 @@
 ---
 layout: post
-title:   【蓝鲸智云】人生苦短，我用蓝鲸
+title:    人生苦短，我用蓝鲸
 description: "相信体会过C++也拥抱过python的同学，一定深有体会那句玩笑梗：人生苦短，我用python。"
 tags: [技术]
 
@@ -19,7 +19,8 @@ share: false
 
 我们更关注技术带来的生产效率和生产能力的提升，本质是也是关心更高效生产支撑的背后，是我们人类在追求更幸福美好的生活。
 
-所以明智的技术选型，无所谓语言好坏，始终围绕效益原则。分析哪种场景，采用哪种技术的生产效率更好，我们就用这个技术。
+所以明智的技术选型，无所谓语言好坏，
+**始终围绕效益原则**。分析哪种场景，采用哪种技术的生产效率更好，我们就用这个技术。
 
 ####  B、人生苦短，我用“蓝鲸”
 
@@ -70,11 +71,7 @@ share: false
 2. [《蓝鲸—出自技术运营团队的企业操作系统》2016-10 ](http://www.infoq.com/cn/presentations/enterprise-operating-system-from-technical-operation-team) +[ PPT ](http://www.docin.com/p-1759804142.html)：DevOps是未来IT基础设施更高效生产的演化方向。随着DevOps形态越来越成熟，肯定会演化为一种省事省力的可视化系统，甚至是操作系统。而蓝鲸就正在演化为这么一个“企业统一运维的操作系统”，塑造一种运维新形态，推动“运维操作系统”这个新概念。
 
 3. [《海量游戏运维的云化演进》 2014-9](http://www.infoq.com/cn/presentations/massive-game-operation-cloud-evolution?utm_source=infoq&utm_campaign=user_page&utm_medium=link
-)+[PPT](http://res.infoqstatic.com/downloads/pdfdownloads/presentations-ch%2FASshenzhen-20140719-dangshouhui.pdf?expire=1523089854&digest=91c5a610888562e3e766de089f581011)：这份演讲介绍了，腾讯游戏运维部门的技术演化路线，直到云化演进为目前的蓝鲸。这对深入了解运维历史的同学是个好丰富的视角。
-
-4. 更多[蓝鲸演讲PPT内容](https://bk.tencent.com/document/bkres/000112.html)，和[infoQ DevOps演讲内容](http://www.infoq.com/cn/operation/presentations/)
-
-...
+)+[PPT](http://res.infoqstatic.com/downloads/pdfdownloads/presentations-ch%2FASshenzhen-20140719-dangshouhui.pdf?expire=1523089854&digest=91c5a610888562e3e766de089f581011)：这份演讲介绍了，腾讯游戏运维部门的技术演化路线，直到云化演进为目前的蓝鲸。这对深入了解运维历史的同学是个好丰富的视角。 
 
 ---
 
@@ -83,11 +80,7 @@ share: false
 * 1、DevOps未来一定会成为**更高生产力IT设施**的标配。
 * 2、DevOps 实践的趋向成熟模式一定会向着** 统一化运维操作系统**方向发展。
 * 3、蓝鲸在DevOps演化路径上走在了前面，从集成平台的开放生态也可以看到，这就是一种通过创新方式来解决现有问题，解放生产力的实践路径。
-
-#### ps：蓝鲸架构导引图
-
-最后，再绘制一个[蓝鲸架构-蓝鲸导引栈](https://mqh4kt.axshare.com)。也是自己了解蓝鲸这个devops工具的【一图一总结】。
-
+ 
 
 ---
 
