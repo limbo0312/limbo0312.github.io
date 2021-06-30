@@ -23,7 +23,7 @@ share: false
 
 * 念守超然态，顺意气舒展
 
-* <a href="http://www.ruoxu.me/aboutTeenAge/" target="_blank">TeenAgeVer Archive</a> 
+* <a href="http://www.nnlab.top" target="_blank">TeenAgeVer Archive</a> 
 
 
 
