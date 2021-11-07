@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>乾隆大藏经-佛经校对</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/formValidator.js.html"></script>
+<script type="text/javascript" src="js/formValidatorRegex.js.html"></script>
+<script src="js/FileSaver.js"></SCRIPT>
+<script language="javascript">
+	
+ 	//读取取经文校对文件****.htm;
+ 	var picx = 0;
+ 	var picy = 0;
+	fjname="0001-21"; picx="346"; picy="359"; fjml="005"; fjurl="0001-j204"; 
+	//alert(picx+"-----"+picx);
+	fjdate="2021/6/19 10:44:23"; 
+	//alert(fjurlhtm+fjurl);
+	
+	fj="|<div class=jwk><span>大般若波罗蜜多经卷第二百四</span><span></span><span>初分难信解品第三十四之二十三</span><span>复次善现色清净故受清净受清净故色清</span><span>净何以故是色清净与受清净无二无二分</span></div>|<div class=jwk><span>无别无断故受清净故想清净想清净故受</span><span>清净何以故是受清净与想清净无二无二</span><span>分无别无断故想清净故行清净行清净故</span><span>想清净何以故是想清净与行清净无二无</span><span>二分无别无断故行清净故识清净识清净</span></div>|<div class=jwk><span>故行清净何以故是行清净与识清净无二</span><span>无二分无别无断故识清净故眼处清净眼</span><span>处清净故识清净何以故是识清净与眼处</span><span>清净无二无二分无别无断故眼处清净故</span><span>耳处清净耳处清净故眼处清净何以故是</span></div>|<div class=jwk><span>眼处清净与耳处清净无二无二分无别无</span><span>断故耳处清净故鼻处清净鼻处清净故耳</span><span>处清净何以故是耳处清净与鼻处清净无</span><span>二无二分无别无断故鼻处清净故舌处清</span><span>净舌处清净故鼻处清净何以故是鼻处清</span></div>|<div class=jwk><span>净与舌处清净无二无二分无别无断故舌</span><span>处清净故身处清净身处清净故舌处清净</span><span>何以故是舌处清净与身处清净无二无二</span><span>分无别无断故身处清净故意处清净意处</span><span>清净故身处清净何以故是身处清净与意</span></div>|<div class=jwk><span>处清净无二无二分无别无断故意处清净</span><span>故色处清净色处清净故意处清净何以故</span><span>是意处清净与色处清净无二无二分无别</span><span>无断故色处清净故声处清净声处清净故</span><span>色处清净何以故是色处清净与声处清净</span></div>|<div class=jwk><span>无二无二分无别无断故声处清净故香处</span><span>清净香处清净故声处清净何以故是声处</span><span>清净与香处清净无二无二分无别无断故</span><span>香处清净故味处清净味处清净故香处清</span><span>净何以故是香处清净与味处清净无二无</span></div>|<div class=jwk><span>二分无别无断故味处清净故触处清净触</span><span>处清净故味处清净何以故是味处清净与</span><span>触处清净无二无二分无别无断故触处清</span><span>净故法处清净法处清净故触处清净何以</span><span>故是触处清净与法处清净无二无二分无</span></div>|<div class=jwk><span>别无断故法处清净故眼界清净眼界清净</span><span>故法处清净何以故是法处清净与眼界清</span><span>净无二无二分无别无断故眼界清净故色</span><span>界清净色界清净故眼界清净何以故是眼</span><span>界清净与色界清净无二无二分无别无断</span></div>|<div class=jwk><span>故色界清净故眼识界清净眼识界清净故</span><span>色界清净何以故是色界清净与眼识界清</span><span>净无二无二分无别无断故眼识界清净故</span><span>眼触清净眼触清净故眼识界清净何以故</span><span>是眼识界清净与眼触清净无二无二分无</span></div>|<div class=jwk><span>别无断故眼触清净故眼触为缘所生诸受</span><span>清净眼触为缘所生诸受清净故眼触清净</span><span>何以故是眼触清净与眼触为缘所生诸受</span><span>清净无二无二分无别无断故眼触为缘所</span><span>生诸受清净故耳界清净耳界清净故眼触</span></div>|<div class=jwk><span>为缘所生诸受清净何以故是眼触为缘所</span><span>生诸受清净与耳界清净无二无二分无别</span><span>无断故耳界清净故声界清净声界清净故</span><span>耳界清净何以故是耳界清净与声界清净</span><span>无二无二分无别无断故声界清净故耳识</span></div>|<div class=jwk><span>界清净耳识界清净故声界清净何以故是</span><span>声界清净与耳识界清净无二无二分无别</span><span>无断故耳识界清净故耳触清净耳触清净</span><span>故耳识界清净何以故是耳识界清净与耳</span><span>触清净无二无二分无别无断故耳触清净</span></div>|<div class=jwk><span>故耳触为缘所生诸受清净耳触为缘所生</span><span>诸受清净故耳触清净何以故是耳触清净</span><span>与耳触为缘所生诸受清净无二无二分无</span><span>别无断故耳触为缘所生诸受清净故鼻界</span><span>清净鼻界清净故耳触为缘所生诸受清净</span></div>|<div class=jwk><span>何以故是耳触为缘所生诸受清净与鼻界</span><span>清净无二无二分无别无断故鼻界清净故</span><span>香界清净香界清净故鼻界清净何以故是</span><span>鼻界清净与香界清净无二无二分无别无</span><span>断故香界清净故鼻识界清净鼻识界清净</span></div>|<div class=jwk><span>故香界清净何以故是香界清净与鼻识界</span><span>清净无二无二分无别无断故鼻识界清净</span><span>故鼻触清净鼻触清净故鼻识界清净何以</span><span>故是鼻识界清净与鼻触清净无二无二分</span><span>无别无断故鼻触清净故鼻触为缘所生诸</span></div>|<div class=jwk><span>受清净鼻触为缘所生诸受清净故鼻触清</span><span>净何以故是鼻触清净与鼻触为缘所生诸</span><span>受清净无二无二分无别无断故鼻触为缘</span><span>所生诸受清净故舌界清净舌界清净故鼻</span><span>触为缘所生诸受清净何以故是鼻触为缘</span></div>|<div class=jwk><span>所生诸受清净与舌界清净无二无二分无</span><span>别无断故舌界清净故味界清净味界清净</span><span>故舌界清净何以故是舌界清净与味界清</span><span>净无二无二分无别无断故味界清净故舌</span><span>识界清净舌识界清净故味界清净何以故</span></div>|<div class=jwk><span>是味界清净与舌识界清净无二无二分无</span><span>别无断故舌识界清净故舌触清净舌触清</span><span>净故舌识界清净何以故是舌识界清净与</span><span>舌触清净无二无二分无别无断故舌触清</span><span>净故舌触为缘所生诸受清净舌触为缘所</span></div>|<div class=jwk><span>生诸受清净故舌触清净何以故是舌触清</span><span>净与舌触为缘所生诸受清净无二无二分</span><span>无别无断故舌触为缘所生诸受清净故身</span><span>界清净身界清净故舌触为缘所生诸受清</span><span>净何以故是舌触为缘所生诸受清净与身</span></div>|<div class=jwk><span>界清净无二无二分无别无断故身界清净</span><span>故触界清净触界清净故身界清净何以故</span><span>是身界清净与触界清净无二无二分无别</span><span>无断故触界清净故身识界清净身识界清</span><span>净故触界清净何以故是触界清净与身识</span></div>|<div class=jwk><span>界清净无二无二分无别无断故身识界清</span><span>净故身触清净身触清净故身识界清净何</span><span>以故是身识界清净与身触清净无二无二</span><span>分无别无断故身触清净故身触为缘所生</span><span>诸受清净身触为缘所生诸受清净故身触</span></div>|<div class=jwk><span>清净何以故是身触清净与身触为缘所生</span><span>诸受清净无二无二分无别无断故身触为</span><span>缘所生诸受清净故意界清净意界清净故</span><span>身触为缘所生诸受清净何以故是身触为</span><span>缘所生诸受清净与意界清净无二无二分</span></div>|<div class=jwk><span>无别无断故意界清净故法界清净法界清</span><span>净故意界清净何以故是意界清净与法界</span><span>清净无二无二分无别无断故法界清净故</span><span>意识界清净意识界清净故法界清净何以</span><span>故是法界清净与意识界清净无二无二分</span></div>|<div class=jwk><span>无别无断故意识界清净故意触清净意触</span><span>清净故意识界清净何以故是意识界清净</span><span>与意触清净无二无二分无别无断故意触</span><span>清净故意触为缘所生诸受清净意触为缘</span><span>所生诸受清净故意触清净何以故是意触</span></div>|<div class=jwk><span>清净与意触为缘所生诸受清净无二无二</span><span>分无别无断故意触为缘所生诸受清净故</span><span>地界清净地界清净故意触为缘所生诸受</span><span>清净何以故是意触为缘所生诸受清净与</span><span>地界清净无二无二分无别无断故地界清</span></div>|<div class=jwk><span>净故水界清净水界清净故地界清净何以</span><span>故是地界清净与水界清净无二无二分无</span><span>别无断故水界清净故火界清净火界清净</span><span>故水界清净何以故是水界清净与火界清</span><span>净无二无二分无别无断故火界清净故风</span></div>|<div class=jwk><span>界清净风界清净故火界清净何以故是火</span><span>界清净与风界清净无二无二分无别无断</span><span>故风界清净故空界清净空界清净故风界</span><span>清净何以故是风界清净与空界清净无二</span><span>无二分无别无断故空界清净故识界清净</span></div>|<div class=jwk><span>识界清净故空界清净何以故是空界清净</span><span>与识界清净无二无二分无别无断故识界</span><span>清净故无明清净无明清净故识界清净何</span><span>以故是识界清净与无明清净无二无二分</span><span>无别无断故无明清净故行清净行清净故</span></div>|<div class=jwk><span>无明清净何以故是无明清净与行清净无</span><span>二无二分无别无断故行清净故识清净识</span><span>清净故行清净何以故是行清净与识清净</span><span>无二无二分无别无断故识清净故名色清</span><span>净名色清净故识清净何以故是识清净与</span></div>|<div class=jwk><span>名色清净无二无二分无别无断故名色清</span><span>净故六处清净六处清净故名色清净何以</span><span>故是名色清净与六处清净无二无二分无</span><span>别无断故六处清净故触清净触清净故六</span><span>处清净何以故是六处清净与触清净无二</span></div>|<div class=jwk><span>无二分无别无断故触清净故受清净受清</span><span>净故触清净何以故是触清净与受清净无</span><span>二无二分无别无断故受清净故爱清净爱</span><span>清净故受清净何以故是受清净与爱清净</span><span>无二无二分无别无断故爱清净故取清净</span></div>|<div class=jwk><span>取清净故爱清净何以故是爱清净与取清</span><span>净无二无二分无别无断故取清净故有清</span><span>净有清净故取清净何以故是取清净与有</span><span>清净无二无二分无别无断故有清净故生</span><span>清净生清净故有清净何以故是有清净与</span></div>|<div class=jwk><span>生清净无二无二分无别无断故生清净故</span><span>老死愁叹苦忧恼清净老死愁叹苦忧恼清</span><span>净故生清净何以故是生清净与老死愁叹</span><span>苦忧恼清净无二无二分无别无断故老死</span><span>愁叹苦忧恼清净故布施波罗蜜多清净布</span></div>|<div class=jwk><span>施波罗蜜多清净故老死愁叹苦忧恼清净</span><span>何以故是老死愁叹苦忧恼清净与布施波</span><span>罗蜜多清净无二无二分无别无断故布施</span><span>波罗蜜多清净故净戒波罗蜜多清净净戒</span><span>波罗蜜多清净故布施波罗蜜多清净何以</span></div>|<div class=jwk><span>故是布施波罗蜜多清净与净戒波罗蜜多</span><span>清净无二无二分无别无断故净戒波罗蜜</span><span>多清净故安忍波罗蜜多清净安忍波罗蜜</span><span>多清净故净戒波罗蜜多清净何以故是净</span><span>戒波罗蜜多清净与安忍波罗蜜多清净无</span></div>|<div class=jwk><span>二无二分无别无断故安忍波罗蜜多清净</span><span>故精进波罗蜜多清净精进波罗蜜多清净</span><span>故安忍波罗蜜多清净何以故是安忍波罗</span><span>蜜多清净与精进波罗蜜多清净无二无二</span><span>分无别无断故精进波罗蜜多清净故静虑</span></div>|<div class=jwk><span>波罗蜜多清净静虑波罗蜜多清净故精进</span><span>波罗蜜多清净何以故是精进波罗蜜多清</span><span>净与静虑波罗蜜多清净无二无二分无别</span><span>无断故静虑波罗蜜多清净故般若波罗蜜</span><span>多清净般若波罗蜜多清净故静虑波罗蜜</span></div>|<div class=jwk><span>多清净何以故是静虑波罗蜜多清净与般</span><span>若波罗蜜多清净无二无二分无别无断故</span><span>般若波罗蜜多清净故内空清净内空清净</span><span>故般若波罗蜜多清净何以故是般若波罗</span><span>蜜多清净与内空清净无二无二分无别无</span></div>|<div class=jwk><span>断故内空清净故外空清净外空清净故内</span><span>空清净何以故是内空清净与外空清净无</span><span>二无二分无别无断故外空清净故内外空</span><span>清净内外空清净故外空清净何以故是外</span><span>空清净与内外空清净无二无二分无别无</span></div>|<div class=jwk><span>断故内外空清净故空空清净空空清净故</span><span>内外空清净何以故是内外空清净与空空</span><span>清净无二无二分无别无断故空空清净故</span><span>大空清净大空清净故空空清净何以故是</span><span>空空清净与大空清净无二无二分无别无</span></div>|<div class=jwk><span>断故大空清净故胜义空清净胜义空清净</span><span>故大空清净何以故是大空清净与胜义空</span><span>清净无二无二分无别无断故胜义空清净</span><span>故有为空清净有为空清净故胜义空清净</span><span>何以故是胜义空清净与有为空清净无二</span></div>|<div class=jwk><span>无二分无别无断故有为空清净故无为空</span><span>清净无为空清净故有为空清净何以故是</span><span>有为空清净与无为空清净无二无二分无</span><span>别无断故无为空清净故毕竟空清净毕竟</span><span>空清净故无为空清净何以故是无为空清</span></div>|<div class=jwk><span>净与毕竟空清净无二无二分无别无断故</span><span>毕竟空清净故无际空清净无际空清净故</span><span>毕竟空清净何以故是毕竟空清净与无际</span><span>空清净无二无二分无别无断故无际空清</span><span>净故散空清净散空清净故无际空清净何</span></div>|<div class=jwk><span>以故是无际空清净与散空清净无二无二</span><span>分无别无断故散空清净故无变异空清净</span><span>无变异空清净故散空清净何以故是散空</span><span>清净与无变异空清净无二无二分无别无</span><span>断故无变异空清净故本性空清净本性空</span></div>|<div class=jwk><span>清净故无变异空清净何以故是无变异空</span><span>清净与本性空清净无二无二分无别无断</span><span>故本性空清净故自相空清净自相空清净</span><span>故本性空清净何以故是本性空清净与自</span><span>相空清净无二无二分无别无断故自相空</span></div>|<div class=jwk><span>清净故共相空清净共相空清净故自相空</span><span>清净何以故是自相空清净与共相空清净</span><span>无二无二分无别无断故共相空清净故一</span><span>切法空清净一切法空清净故共相空清净</span><span>何以故是共相空清净与一切法空清净无</span></div>|<div class=jwk><span>二无二分无别无断故一切法空清净故不</span><span>可得空清净不可得空清净故一切法空清</span><span>净何以故是一切法空清净与不可得空清</span><span>净无二无二分无别无断故不可得空清净</span><span>故无性空清净无性空清净故不可得空清</span></div>|<div class=jwk><span>净何以故是不可得空清净与无性空清净</span><span>无二无二分无别无断故无性空清净故自</span><span>性空清净自性空清净故无性空清净何以</span><span>故是无性空清净与自性空清净无二无二</span><span>分无别无断故自性空清净故无性自性空</span></div>|<div class=jwk><span>清净无性自性空清净故自性空清净何以</span><span>故是自性空清净与无性自性空清净无二</span><span>无二分无别无断故无性自性空清净故真</span><span>如清净真如清净故无性自性空清净何以</span><span>故是无性自性空清净与真如清净无二无</span></div>|<div class=jwk><span>二分无别无断故真如清净故法界清净法</span><span>界清净故真如清净何以故是真如清净与</span><span>法界清净无二无二分无别无断故法界清</span><span>净故法性清净法性清净故法界清净何以</span><span>故是法界清净与法性清净无二无二分无</span></div>|<div class=jwk><span>别无断故法性清净故不虚妄性清净不虚</span><span>妄性清净故法性清净何以故是法性清净</span><span>与不虚妄性清净无二无二分无别无断故</span><span>不虚妄性清净故不变异性清净不变异性</span><span>清净故不虚妄性清净何以故是不虚妄性</span></div>|<div class=jwk><span>清净与不变异性清净无二无二分无别无</span><span>断故不变异性清净故平等性清净平等性</span><span>清净故不变异性清净何以故是不变异性</span><span>清净与平等性清净无二无二分无别无断</span><span>故平等性清净故离生性清净离生性清净</span></div>|<div class=jwk><span>故平等性清净何以故是平等性清净与离</span><span>生性清净无二无二分无别无断故离生性</span><span>清净故法定清净法定清净故离生性清净</span><span>何以故是离生性清净与法定清净无二无</span><span>二分无别无断故法定清净故法住清净法</span></div>|<div class=jwk><span>住清净故法定清净何以故是法定清净与</span><span>法住清净无二无二分无别无断故法住清</span><span>净故实际清净实际清净故法住清净何以</span><span>故是法住清净与实际清净无二无二分无</span><span>别无断故实际清净故虚空界清净虚空界</span></div>|<div class=jwk><span>清净故实际清净何以故是实际清净与虚</span><span>空界清净无二无二分无别无断故虚空界</span><span>清净故不思议界清净不思议界清净故虚</span><span>空界清净何以故是虚空界清净与不思议</span><span>界清净无二无二分无别无断故不思议界</span></div>|<div class=jwk><span>清净故苦圣谛清净苦圣谛清净故不思议</span><span>界清净何以故是不思议界清净与苦圣谛</span><span>清净无二无二分无别无断故苦圣谛清净</span><span>故集圣谛清净集圣谛清净故苦圣谛清净</span><span>何以故是苦圣谛清净与集圣谛清净无二</span></div>|<div class=jwk><span>无二分无别无断故集圣谛清净故灭圣谛</span><span>清净灭圣谛清净故集圣谛清净何以故是</span><span>集圣谛清净与灭圣谛清净无二无二分无</span><span>别无断故灭圣谛清净故道圣谛清净道圣</span><span>谛清净故灭圣谛清净何以故是灭圣谛清</span></div>|<div class=jwk><span>净与道圣谛清净无二无二分无别无断故</span><span>道圣谛清净故四静虑清净四静虑清净故</span><span>道圣谛清净何以故是道圣谛清净与四静</span><span>虑清净无二无二分无别无断故四静虑清</span><span>净故四无量清净四无量清净故四静虑清</span></div>|<div class=jwk><span>净何以故是四静虑清净与四无量清净无</span><span>二无二分无别无断故四无量清净故四无</span><span>色定清净四无色定清净故四无量清净何</span><span>以故是四无量清净与四无色定清净无二</span><span>无二分无别无断故四无色定清净故八解</span></div>|<div class=jwk><span>脱清净八解脱清净故四无色定清净何以</span><span>故是四无色定清净与八解脱清净无二无</span><span>二分无别无断故八解脱清净故八胜处清</span><span>净八胜处清净故八解脱清净何以故是八</span><span>解脱清净与八胜处清净无二无二分无别</span></div>|<div class=jwk><span>无断故八胜处清净故九次第定清净九次</span><span>第定清净故八胜处清净何以故是八胜处</span><span>清净与九次第定清净无二无二分无别无</span><span>断故九次第定清净故十遍处清净十遍处</span><span>清净故九次第定清净何以故是九次第定</span></div>|<div class=jwk><span>清净与十遍处清净无二无二分无别无断</span><span>故十遍处清净故四念住清净四念住清净</span><span>故十遍处清净何以故是十遍处清净与四</span><span>念住清净无二无二分无别无断故四念住</span><span>清净故四正断清净四正断清净故四念住</span></div>|<div class=jwk><span>清净何以故是四念住清净与四正断清净</span><span>无二无二分无别无断故四正断清净故四</span><span>神足清净四神足清净故四正断清净何以</span><span>故是四正断清净与四神足清净无二无二</span><span>分无别无断故四神足清净故五根清净五</span></div>|<div class=jwk><span>根清净故四神足清净何以故是四神足清</span><span>净与五根清净无二无二分无别无断故五</span><span>根清净故五力清净五力清净故五根清净</span><span>何以故是五根清净与五力清净无二无二</span><span>分无别无断故五力清净故七等觉支清净</span></div>|<div class=jwk><span>七等觉支清净故五力清净何以故是五力</span><span>清净与七等觉支清净无二无二分无别无</span><span>断故七等觉支清净故八圣道支清净八圣</span><span>道支清净故七等觉支清净何以故是七等</span><span>觉支清净与八圣道支清净无二无二分无</span></div>|<div class=jwk><span>别无断故八圣道支清净故空解脱门清净</span><span>空解脱门清净故八圣道支清净何以故是</span><span>八圣道支清净与空解脱门清净无二无二</span><span>分无别无断故空解脱门清净故无相解脱</span><span>门清净无相解脱门清净故空解脱门清净</span></div>|<div class=jwk><span>何以故是空解脱门清净与无相解脱门清</span><span>净无二无二分无别无断故无相解脱门清</span><span>净故无愿解脱门清净无愿解脱门清净故</span><span>无相解脱门清净何以故是无相解脱门清</span><span>净与无愿解脱门清净无二无二分无别无</span></div>|<div class=jwk><span>断故无愿解脱门清净故菩萨十地清净菩</span><span>萨十地清净故无愿解脱门清净何以故是</span><span>无愿解脱门清净与菩萨十地清净无二无</span><span>二分无别无断故菩萨十地清净故五眼清</span><span>净五眼清净故菩萨十地清净何以故是菩</span></div>|<div class=jwk><span>萨十地清净与五眼清净无二无二分无别</span><span>无断故五眼清净故六神通清净六神通清</span><span>净故五眼清净何以故是五眼清净与六神</span><span>通清净无二无二分无别无断故六神通清</span><span>净故佛十力清净佛十力清净故六神通清</span></div>|<div class=jwk><span>净何以故是六神通清净与佛十力清净无</span><span>二无二分无别无断故佛十力清净故四无</span><span>所畏清净四无所畏清净故佛十力清净何</span><span>以故是佛十力清净与四无所畏清净无二</span><span>无二分无别无断故四无所畏清净故四无</span></div>|<div class=jwk><span>礙解清净四无礙解清净故四无所畏清净</span><span>何以故是四无所畏清净与四无礙解清净</span><span>无二无二分无别无断故四无礙解清净故</span><span>大慈清净大慈清净故四无礙解清净何以</span><span>故是四无礙解清净与大慈清净无二无二</span></div>|<div class=jwk><span>分无别无断故大慈清净故大悲清净大悲</span><span>清净故大慈清净何以故是大慈清净与大</span><span>悲清净无二无二分无别无断故大悲清净</span><span>故大喜清净大喜清净故大悲清净何以故</span><span>是大悲清净与大喜清净无二无二分无别</span></div>|<div class=jwk><span>无断故大喜清净故大舍清净大舍清净故</span><span>大喜清净何以故是大喜清净与大舍清净</span><span>无二无二分无别无断故大舍清净故十八</span><span>佛不共法清净十八佛不共法清净故大舍</span><span>清净何以故是大舍清净与十八佛不共法</span></div>|<div class=jwk><span>清净无二无二分无别无断故十八佛不共</span><span>法清净故无忘失法清净无忘失法清净故</span><span>十八佛不共法清净何以故是十八佛不共</span><span>法清净与无忘失法清净无二无二分无别</span><span>无断故无忘失法清净故恒住舍性清净恒</span></div>|<div class=jwk><span>住舍性清净故无忘失法清净何以故是无</span><span>忘失法清净与恒住舍性清净无二无二分</span><span>无别无断故恒住舍性清净故一切智清净</span><span>一切智清净故恒住舍性清净何以故是恒</span><span>住舍性清净与一切智清净无二无二分无</span></div>|<div class=jwk><span>别无断故一切智清净故道相智清净道相</span><span>智清净故一切智清净何以故是一切智清</span><span>净与道相智清净无二无二分无别无断故</span><span>道相智清净故一切相智清净一切相智清</span><span>净故道相智清净何以故是道相智清净与</span></div>|<div class=jwk><span>一切相智清净无二无二分无别无断故一</span><span>切相智清净故一切陀罗尼门清净一切陀</span><span>罗尼门清净故一切相智清净何以故是一</span><span>切相智清净与一切陀罗尼门清净无二无</span><span>二分无别无断故一切陀罗尼门清净故一</span></div>|<div class=jwk><span>切三摩地门清净一切三摩地门清净故一</span><span>切陀罗尼门清净何以故是一切陀罗尼门</span><span>清净与一切三摩地门清净无二无二分无</span><span>别无断故一切三摩地门清净故预流果清</span><span>净预流果清净故一切三摩地门清净何以</span></div>|<div class=jwk><span>故是一切三摩地门清净与预流果清净无</span><span>二无二分无别无断故预流果清净故一来</span><span>果清净一来果清净故预流果清净何以故</span><span>是预流果清净与一来果清净无二无二分</span><span>无别无断故一来果清净故不还果清净不</span></div>|<div class=jwk><span>还果清净故一来果清净何以故是一来果</span><span>清净与不还果清净无二无二分无别无断</span><span>故不还果清净故阿罗汉果清净阿罗汉果</span><span>清净故不还果清净何以故是不还果清净</span><span>与阿罗汉果清净无二无二分无别无断故</span></div>|<div class=jwk><span>阿罗汉果清净故独觉菩提清净独觉菩提</span><span>清净故阿罗汉果清净何以故是阿罗汉果</span><span>清净与独觉菩提清净无二无二分无别无</span><span>断故独觉菩提清净故一切菩萨摩诃萨行</span><span>清净一切菩萨摩诃萨行清净故独觉菩提</span></div>|<div class=jwk><span>清净何以故是独觉菩提清净与一切菩萨</span><span>摩诃萨行清净无二无二分无别无断故一</span><span>切菩萨摩诃萨行清净故诸佛无上正等菩</span><span>提清净诸佛无上正等菩提清净故一切菩</span><span>萨摩诃萨行清净何以故是一切菩萨摩诃</span></div>|<div class=jwk><span>萨行清净与诸佛无上正等菩提清净无二</span><span>无二分无别无断故</span></div>|"; 
+	//alert(fj+fj);
+	fjxy="|627@153px|385@152px|134@157px|641@720px|394@720|142@724|637@1560|395@1560|149@1559|637@2125|389@2129px|143@2123|626@2972|385@2975|136@2972|635@3530|391@3531|147@3531px|642@4365|399@4368|156@4366|640@4933px|399@4925px|150@4924px|633@5768px|377@5772|131@5760|635@6332px|390@6334px|146@6331px|645@7172px|403@7175px|158@7171|645@7742|401@7738|145@7721px|625@8568px|381@8572|135@8574px|634@9135|382@9143px|137@9145px|635@9971|389@9970|142@9968|632@10541|389@10541|143@10543|641@11372|398@11372|152@11372|643@11938|399@11938px|151@11933px|638@12793|383@12790|138@12788|627@13351|384@13350|140@13352|627@14191|385@14196|139@14202|650@14758|401@14762px|146@14760px|644@15592|399@15594|154@15596|653@16159|402@16171|155@16166|630@16988|384@16991|140@16995|633@17559|389@17560|144@17557px|648@18402|406@18408px|144@18397px|632@18966|389@18966px|146@18964px|NaN@undefined"; gs="1"; fjedit="True"; dwxy="1"; 	
+	//alert(fjxy);
+	//读取经文定位文件****xy.htm;
+	
+	//alert(dwxy);
+		
+	
+	var leftyy= 0; //手机left偏移量
+	function browserRedirect() {
+		var sUserAgent = navigator.userAgent.toLowerCase();
+		var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+		var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+		var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+		var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+		var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+		var bIsAndroid = sUserAgent.match(/android/i) == "android";
+		var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+		var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+		if (! (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+			leftyy= 0; 
+		} else {
+			leftyy= 15; 
+		}
+	}
+	browserRedirect();
+	//alert(leftyy);
+
+	window.onload =function(){jw();}//用window的onload事件，窗体加载完毕的时候
+
+	//读取佛经校对经文;
+	var strs= new Array(); //定义经文数组 
+	var jwstrs= new Array(); //定义经文数组
+	var lefts= new Array(); //定义left数组
+	var lefts1= new Array(); //定义left数组
+	var tops= new Array(); //定义top数组
+	var dw = "1"; //是否存在定位文件：1-存在；0-不存在
+	var fj_name  = ""; 	
+	var winWidth = 0;
+	var winHeight = 0;
+	function jw() {
+		//获取窗口宽度
+		findDimensions();
+
+		document.getElementById('pre1').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre2').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre3').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre4').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		if( fjedit == "True" ){document.getElementById('savedw').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";}
+		
+		strs=fj.split("|"); //取经文数据
+		ierror=1;
+		if ( dw == 1 ) { //如果存在定位文件
+			xy=fjxy.split("|");
+			//alert((strs.length-1)+"------------"+strs[1]+"----------"+strs[25]);
+			for (i=1;i<strs.length-1 ;i++ ) {
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(i, 3)+PrefixInteger(j, 3);
+					strs[i]=strs[i].replace(/<span>/,"<span id='s"+s+"'>");
+					//if (i=24){alert(ierror+"--1--"+gs+"----"+s+"----"+j);}
+				}
+				//alert(i+"   "+strs[i]);
+				
+				if( strs[i].replace(/[^\u4e00-\u9fa5]/gi,"")!=="" && fj_name=="" ){
+					fj_name=strs[i].substring(0,strs[i].indexOf("</span>")).replace(/[^\u4e00-\u9fa5]/gi,""); 
+					//alert(fj_name);
+				}
+				
+				if( strs[i].indexOf("@") >=0 ){
+					jwstrs[i] =  strs[i].substring(0,strs[i].indexOf('@')) ; //经文写入jwstrs 
+					//alert(i+"   "+jwstrs[i]);
+					document.getElementById('jw'+i).innerHTML =  strs[i].substring(0,strs[i].indexOf('@')) ; //经文写入div 
+					document.getElementById('sm'+i).innerHTML =  "校对说明：<br><br>"+strs[i].substring(strs[i].indexOf('@')+1) ; //说明写入div
+				} else {
+					jwstrs[i] =  strs[i] ; //经文写入jwstrs
+					//alert(i+"   "+jwstrs[i]);
+					document.getElementById('jw'+i).innerHTML =  strs[i]; //经文写入div
+				}
+
+				if( xy[i].substring(0,xy[i].indexOf('@'))=="NaN" ){
+					ierror=i;
+					i=strs.length;
+					//alert(ierror+"   "+i+"   "+xy[i]);
+				} else {
+					lefts[i] =	parseInt(xy[i].substring(0,xy[i].indexOf('@')))+leftyy+(winWidth-993-16)/2-24-8 ;		
+					//设定div的left
+					document.getElementById('jw'+i).style.left =  lefts[i]+ "px"; //设定div的left
+					tops[i] = xy[i].substring(xy[i].indexOf('@')+1);
+					tops[i]=tops[i].replace("px","");
+					document.getElementById('jw'+i).style.top = tops[i]; //设定div的top
+					//alert(i+"   "+xy[i]+"   "+tops[i]);
+				}
+
+				for (j=1;j<6 ;j++ ) {
+					if(ierror==1){
+						s=PrefixInteger(i, 3)+PrefixInteger(j, 3);
+					} else {
+						s=PrefixInteger(ierror, 3)+PrefixInteger(j, 3);
+					}
+					//if (i=24){alert(ierror+"--2--a"+document.getElementById('s'+s)+"a----"+s+"----"+j);}
+					if (document.getElementById('s'+s)!=null){
+						document.getElementById('s'+s).className = 'jwk'+gs;
+					}
+				}
+				//if (i=24){alert(ierror+"----"+gs+"----"+s);}
+				//if( i>3 && strs[i+1].length == 0 ) { i=strs.length-1; }
+				//alert(i+"   "+strs[i]+"   "+xy[i]+"   "+tops[i]);
+			}
+			//alert(i+"   "+xy[i]+"   "+tops[i]);
+		}
+
+		if(( ierror!==1 && ierror<strs.length ) || dw == 0 ){
+			//如果不存在定位文件或缺少定位数据
+			//alert(ierror+"   "+strs.length+"   "+dw+"   "+gs);
+			for (ii=ierror;ii<strs.length-1;ii++ ) {
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(ii, 3)+j;
+					strs[ii]=strs[ii].replace(/<span>/,"<span id='s"+s+"'>");
+				}
+				
+				if( strs[ii].indexOf("@") >=0 ){
+					document.getElementById('jw'+ii).innerHTML =  strs[ii].substring(0,strs[ii].indexOf('@')) ; //经文写入div 
+					document.getElementById('sm'+ii).innerHTML =  "校对说明：<br><br>"+strs[ii].substring(strs[ii].indexOf('@')+1) ; //说明写入div
+				} else {
+					document.getElementById('jw'+ii).innerHTML =  strs[ii]; //经文写入div
+				}
+				//alert(ii+"   "+strs[ii]);
+				lefts[ii] = 850 - (ii-parseInt((ii-1)/3)*3)*235  + (winWidth-993-16)/2-24-8;
+				//alert(ii+"   "+lefts[ii]);
+				document.getElementById('jw'+ii).style.left =  parseInt(lefts[ii])+ "px"; //设定div的left
+				tops[ii] = Math.floor((ii-1)/6)*1403 + 150 + Math.floor(  ( (ii-Math.floor((ii-1)/6)*6)-1)/3   )*570  ; //JPG=993*1403 
+				document.getElementById('jw'+ii).style.top = tops[ii]; //设定div的top
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(ii, 3)+j;
+					document.getElementById('s'+s).className = 'jwk'+gs;
+				}
+				//alert(ii+"   "+strs[ii]);
+			}
+		}
+		
+		document.getElementById('yh').innerHTML =  "　第"+picx+"页上部 ";
+		start_jw = jwstrs[1]+jwstrs[2]+jwstrs[3]+jwstrs[4]+jwstrs[5]+jwstrs[6];
+		//alert(picx+"    "+start_jw);
+		select_jw(1,1,start_jw);
+	};
+	
+	
+	//获取窗口宽度
+	function findDimensions() {//函数：获取尺寸
+		if (window.innerWidth)
+			winWidth = window.innerWidth;
+		else if ((document.body) && (document.body.clientWidth))
+			winWidth = document.body.clientWidth;
+		//获取窗口高度
+		if (window.innerHeight)
+			winHeight = window.innerHeight;
+		else if ((document.body) && (document.body.clientHeight))
+			winHeight = document.body.clientHeight;
+		//通过深入Document内部对body进行检测，获取窗口大小
+		if (document.documentElement  && document.documentElement.clientHeight && document.documentElement.clientWidth)
+		{
+			winHeight = document.documentElement.clientHeight;
+			winWidth = document.documentElement.clientWidth;
+		}
+	}
+	
+	//鼠标移动自动加载佛经图像文件
+    $(function(){
+        $(window).scroll(function(event) {
+          var ah=$(window).scrollTop();
+          var ch=$(window).height()
+          $('.img_box').each(function(){
+            var bh=$(this).offset().top;
+            if(ch+ah-200>bh){
+                var a=$(this).find('img').attr("load_src");
+                 $(this).find('img').attr("src",a);
+            }
+          })
+        });
+    })
+	
+	//鼠标调整经文位置移动时改变div的left、top
+	var jwid = 1;
+	function moveObj(obj) {
+		obj.style.cursor = "move";
+		obj.onmousedown = function(e) {
+			obj.style.position = "absolute";
+			var drag_x  = 0;
+			var drag_y  = 0;
+			var draging = true;
+			var left    = obj.offsetLeft;
+			var top     = obj.offsetTop;
+			if(typeof document.all !== "undefined") {   //IE
+				drag_x = event.clientX;
+				drag_y = event.clientY;
+				document.onmousemove = function(e) {
+					if(draging === false) return false;
+					obj.style.left = left + event.clientX - drag_x + "px";
+					obj.style.top  = top + event.clientY - drag_y + "px";
+				}
+			} else {    //FF,Chrome,Opera,Safari
+				drag_x = e.pageX;
+				drag_y = e.pageY;
+				document.onmousemove = function(e) {
+					if (draging === false) return false;
+					obj.style.left = left + e.pageX - drag_x + "px";
+					obj.style.top  = top + e.pageY - drag_y + "px";
+				}
+			}
+			document.onmouseup = function() {
+				draging = false; 
+				jwid = obj.getAttribute('id').replace("jw","");     //取当前div的id序号jw1
+				lefts[jwid]=parseInt(obj.style.left); 						//改变div的left
+				tops[jwid]=obj.style.top;							//改变div的top
+				//alert(jwid+"   "+lefts[jwid]+" "+tops[jwid]);
+			};
+		}
+	}
+   
+	//屏幕变化时改变div的left、top
+	window.onresize = function(){
+		jw();
+	}
+	
+	//右移经文→
+	function addz() {
+		findDimensions();
+		//alert(winWidth);
+		i=jwid;
+		for (i=jwid;i<strs.length ;i++ ) {
+			lefts[i] =  parseInt(lefts[i]) - 1 ;
+			//alert(jwid+"   "+strs.length+"  "+lefts[i]);
+			document.getElementById('jw'+i).style.left = lefts[i] + "px";
+		}
+	}
+	//←左移经文
+	function addy(){
+		findDimensions();
+		i=jwid
+		for (i=jwid;i<strs.length ;i++ ) {
+			lefts[i] =  parseInt(lefts[i]) + 1 ;
+			//alert(jwid+"   "+strs.length+"  "+lefts[i]);
+			document.getElementById('jw'+i).style.left = lefts[i] + "px";
+		}
+	}
+	//↑上移经文
+	function adds() {
+		for (i=jwid;i<strs.length ;i++ ) {
+			tops[i] =  parseInt(tops[i]) - 1 ;
+			document.getElementById('jw'+i).style.top = tops[i]+ "px";
+		}
+	}
+	//↓下移经文
+	function addx(){
+	//alert(jwid+"   "+strs.length+""+tops[strs.length-1]);
+		for (i=jwid;i<strs.length ;i++ ) {
+			tops[i] =  parseInt(tops[i]) + 1 ;
+			document.getElementById('jw'+i).style.top = tops[i]+ "px";
+		}
+	}
+
+	//滚动屏幕
+	var yh = picx; //定义当前显示页号
+	var sxb="上";  //定义当前显示页上部下部
+	function sc1(){
+		document.getElementById("pre1").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre1").offsetHeight)/9*2;
+		document.getElementById("pre2").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre2").offsetHeight)/9*3;	
+		document.getElementById("pre3").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre3").offsetHeight)/9*4;
+		document.getElementById("pre4").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre4").offsetHeight)/9*5;
+		if( fjedit == "True" ){
+			document.getElementById("savedw").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("savedw").offsetHeight) / 9 * 6;
+		}
+		//select
+		yh=parseInt((parseInt(picx)+document.body.scrollTop/1403+0.5));
+		if ((document.body.scrollTop/1403)%1+0.5>1 || (document.body.scrollTop/1403)%1==0) { sxb="上";} else { sxb="下";}
+		document.getElementById('yh').innerHTML =  "　第"+yh+"页"+sxb+"部 ";
+		
+		currSelect_lh = parseInt(document.getElementById("lh").value); 
+		currSelect_zh = parseInt(document.getElementById("zh").value); 
+		currSelect_jw = jwstrs[(yh-picx)*6+1]+jwstrs[(yh-picx)*6+2]+jwstrs[(yh-picx)*6+3]+jwstrs[(yh-picx)*6+4]+jwstrs[(yh-picx)*6+5]+jwstrs[(yh-picx)*6+6];
+		
+		//alert(currSelect_lh+"    "+currSelect_zh+"    "+currSelect_jw)
+		select_jw(currSelect_lh,currSelect_zh,currSelect_jw);
+	}
+	function scall() {
+		sc1();
+	}
+	window.onscroll = scall;
+
+	//键盘上下左右移动当前经文
+	function keyUp(e) {
+		var currKey = 0,
+			e = e || event;　　　
+		currKey = e.keyCode || e.which || e.charCode;　　　　
+		var keyName = String.fromCharCode(currKey);　
+		findDimensions();　
+		switch(currKey) {
+			case 37: //[方向键左]
+				//alert("按键码: " + currKey + " 字符: " + keyName + "  " + jwid+ "  " + lefts[jwid]+ "  " + (parseInt(lefts[jwid]) + (winWidth-993-16)/2-24-8));
+				lefts[jwid] = parseInt(lefts[jwid]) - 1;
+				document.getElementById('jw' + jwid).style.left = lefts[jwid] + "px";
+				break;
+			case 38: //[方向键上] 
+				tops[jwid] =  parseInt(tops[jwid]) - 1 ;
+				document.getElementById('jw'+jwid).style.top = tops[jwid]+ "px";
+				break;
+			case 39: //[方向键右]
+				lefts[jwid] = parseInt(lefts[jwid]) + 1;
+				document.getElementById('jw' + jwid).style.left = lefts[jwid] + "px";
+				break;
+			case 40: //[方向键下]
+				tops[jwid] =  parseInt(tops[jwid]) + 1 ;
+				document.getElementById('jw'+jwid).style.top = tops[jwid]+ "px";
+				break;
+			default:
+				keyName = "";
+				break;　
+		}
+	}　　
+	document.onkeyup = keyUp;
+	
+	//保存文件
+	function saveCode() {
+		var fjzb = "";
+		
+		for ( i=1;i<strs.length;i++ ) { 
+			lefts1[i]=lefts[i]-(leftyy+(winWidth-993-16)/2-24-8);
+			//if (i==24){			alert(2+"    "+tops[i]);}
+			//if( strs[i] !="" ){
+				fjzb=fjzb+"|"+lefts1[i]+"@"+tops[i];
+			//}
+		}
+		//alert("jds.asp?fjname="+fjname+"&picx="+picx+"&picy="+picy+"&fjml="+fjml+"&fjurl="+fjurl+"&fjzb="+fjzb+"&fjdate="+fjdate+"&fj="+fj);
+		//alert(fjzb);
+
+		if (fj != "") { fjk="bk";} else { fjk="k";}
+		var url,data; 
+		url="jds.asp";//这里是你的服务器文件 
+		data={fjname:fjname,picx:picx,picy:picy,fjml:fjml,fjurl:fjurl,fjzb:fjzb,fjk:fjk,fjdate:fjdate}; 
+		$.post(url,data,function(result){
+			result=result.split("|");
+			if (result[1] == "") { result[1]="0.01";} 
+			if( result[0]=="12"){
+				alert("佛经校对文件和坐标文件已更新！运行时间："+result[1]+"秒");
+				window.history.go(0);
+			}  else if ( result[0]=="1" ){
+				alert("佛经校对文件已更新！运行时间："+result[1]+"秒");
+				window.history.go(0);
+			}  else if ( result[0]=="2" ){
+				alert("佛经坐标文件已保存！运行时间："+result[1]+"秒");
+			} else {
+				alert(result[0]);
+				alert("error！");
+			} 
+			//window.history.go(0);
+		}); 
+	}
+	
+	//补齐0
+	function PrefixInteger(num, length) {
+	 return (Array(length).join('0') + num).slice(-length);
+	}
+	
+	// select 
+	function select(){ 
+		var currSelect_lh = parseInt(document.getElementById("lh").value); 
+		var currSelect_zh = parseInt(document.getElementById("zh").value); 
+		var currSelect_jw = jwstrs[(yh-picx)*6+1]+jwstrs[(yh-picx)*6+2]+jwstrs[(yh-picx)*6+3]+jwstrs[(yh-picx)*6+4]+jwstrs[(yh-picx)*6+5]+jwstrs[(yh-picx)*6+6];
+		//alert(currSelect_jw);
+		select_jw(currSelect_lh,currSelect_zh,currSelect_jw);
+	}
+	
+	var jdjw = "";
+	function select_jw(slh,szh,sjw){ 
+	//alert("1---"+slh+"    "+szh+"    "+sjw)
+		var strjw= new Array();
+		var fjjw = "";
+		var isjw=false;
+		var k=0;
+		jdjw = "";
+		for (i=0;i<sjw.length;i++){
+			divstr=sjw.toLowerCase().substring(i)//取经文计算后段
+			if ( divstr.indexOf("<span")==0 ) { 
+				i=i+19;
+				isjw=true;
+				fjjw = "";
+				k=k+1;
+			}
+			if ( divstr.indexOf("</span>")==0 ) { 
+				isjw=false;
+				strjw[k]=fjjw;
+			}
+			//alert(strjw[k]);
+			if (isjw==true) {
+				fjjw = fjjw.replace("<br>","") + sjw.charAt(i);
+			}
+		}
+		//alert("2---"+strjw[16]);
+		if (sxb=="上") {
+			if( strjw[slh]== undefined ){jdjw = "　";} else {jdjw=strjw[slh].substring(szh-1,szh); }
+			//if(jdjw=="至"){alert(slh+"      "+szh+"      "+sjw+"      "+strjw[slh]);}
+			//alert(yh+"   slh   "+slh+"   szh   "+szh+"  sxb    "+sxb+"      "+jdjw+"      "+strjw[slh]);
+		} else {
+			if( strjw[slh+15]== undefined ){jdjw = "　";} else {jdjw=strjw[slh+15].substring(szh-1,szh); }
+		}
+		//alert(yh+"   slh   "+slh+"   szh   "+szh+"  sxb    "+sxb+"      "+jdjw);
+		document.getElementById('jdjw').innerHTML =  "【"+jdjw+"】";
+	}
+</SCRIPT>
+
+<script type="text/javascript">
+//添加评论到数据库，同时更新显示，注意escape编码后提交
+function addComments(){
+	if($("#comm_user").val()=='请输入昵称' || $("#comm_user").val()==''){
+		alert('注意：请输入校经者本人名称/昵称！');
+		document.getElementById('jdsm').innerHTML =  '注意：校经人不能为空，请输入校经者本人名称/昵称！';
+	}  else if ($("#correct").val()==''){
+		alert(' 注意：应修改为【   】————正确经文不能为空，请输入至少1个汉字！');
+		document.getElementById('jdsm').innerHTML =  '注意：应修改为【   】————正确经文不能为空，请输入至少1个汉字！';
+	}  else {		//alert("comm_user="+escape($("#comm_user").val())+"&fj_name="+escape(fj_name)+"&fjurl="+escape(fjurl)+"&yh="+escape(yh)+"&sxb="+escape(sxb)+"&lh="+escape($("#lh").val())+"&zh="+escape($("#zh").val())+"&jdjw="+escape(jdjw)+"&correct="+escape($("#correct").val()));
+	//alert(fjname);
+		$.ajax({
+			type:"POST",
+			url:"CommentLib-jd.asp?action=addcomments&id=44",
+			data:"comm_user="+escape($("#comm_user").val())+"&fj_name="+escape(fj_name)+"&fjname="+escape(fjname)+"&picx="+escape(picx)+"&picy="+escape(picy)+"&fjurl="+escape(fjurl)+"&fjml="+escape(fjml)+"&yh="+escape(yh)+"&sxb="+escape(sxb)+"&lh="+escape($("#lh").val())+"&zh="+escape($("#zh").val())+"&jdjw="+escape(jdjw)+"&correct="+escape($("#correct").val()),
+			success:function(data){
+				if(unescape(data)=="OK"){
+					if($("#correct").val()=="本卷经文没有错误"){
+						alert('^_^'+$("#comm_user").val()+'：本卷经文没有错误！~~~感恩'+$("#comm_user").val()+'师兄校对佛典！');
+					}else{
+						alert('^_^'+$("#comm_user").val()+'：第'+yh+'页'+sxb+'部，由右向左第'+$("#lh").val()+'列，由上向下第'+$("#zh").val()+'个字【'+jdjw+'】应修改为【'+$("#correct").val()+'】！~~~感恩'+$("#comm_user").val()+'师兄校对佛典！');
+					}
+					//getComments(1);
+					//提交评论后清除表单内容
+					//$("#correct").val("123");
+					//$("#jdsm").val("说明：请输入校经者名称，选择页数、上/下部、由右向左列数、由上向下字数，录入需修改的经文，然后提交修改。");
+					document.getElementById('jdsm').innerHTML =  $("#comm_user").val()+'：第'+yh+'页'+sxb+'部，由右向左第'+$("#lh").val()+'列，由上向下第'+$("#zh").val()+'个字【'+jdjw+'】应修改为【'+$("#correct").val()+'】';
+					document.getElementById("correct").value="";
+				}else{
+					alert(unescape(data));
+				}
+			}
+		});
+	}
+}
+function addCommentsOK(){
+	$("#correct").val("本卷经文没有错误");
+	if(confirm('请再次确认：本卷经文没有错误？')) {
+		addComments();
+	}
+}
+</script>
+
+<style type="text/css">.header{padding:0 0.66667rem;overflow:hidden}
+	.header-site{height:4rem;margin-bottom:0.83333rem;background-color:#FF6601;}
+	.header .area-logo{margin-bottom:1.25rem;overflow:hidden}
+	.header .button{margin-top:1.0rem;font-size:1.2rem;	color: #FFFFFF;}
+	.header .logo-img{margin:0 auto;margin-top:-0.6rem;width:10.91667rem;height:2.5rem;vertical-align: middle;}
+	
+	.jwk{position:absolute;color:red;float:right;font-weight:bold;text-align:left;height:495px;width:240px;border:0px solid #f00;padding:0px;margin:0px;font-family: "宋体"}
+	.jwk1{float:right;width: 46px;height:495px;letter-spacing: 2px;font-size:24px;line-height:28px;border:0px solid #000;padding:0px;margin:0px;}
+	.jwk2{float:right;width: 43px;height:495px;letter-spacing: 2px;font-size:22px;line-height:25px;border:0px solid #000;padding:0px;margin:0px;}
+	.jwxz{font-size:14px;}	
+	.smk{position:absolute;color:#000000;float:right;font-weight:bold;text-align:left;height:495px;width:140px;display: inline;}
+	
+    .img_box{width: 100%;overflow-x:hidden;overflow-y:hidden;left: 0; right: 0;  margin: auto;    /* 有了这个就自动居中了 */}
+
+    a.pre1,a.pre2,a.pre3, a.pre4, a.savedw{position: absolute;display:block;width:60px;height:60px;float:left;margin:15px 0 0 0;cursor:pointer;background-image: url("img/3.png");z-index:10;} 
+    a.pre4 {background-image: url("img/4.png");width:60px;height:60px;}
+	a.pre1 {background-image: url("img/1.png");width:60px;height:60px;} 
+	a.pre2 {background-image: url("img/2.png");width:60px;height:60px;} 
+	a.savedw {background-image: url("img/5.jpg");width:60px;height:60px;} 
+	
+    .bookbox {
+    background-color: #ffffff;
+	border-top: 1px solid #FF6600;
+	padding-top:15px;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: auto;
+    right: auto;
+    line-height: 80px;
+    text-align: center;
+    _POSITION: absolute;/*兼容IE6*/
+    _TOP: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight);/*兼容IE6*/
+    }
+    .bookbox a{color: #FFF;}
+	
+	.form_table{margin:0 auto;	vertical-align: middle; font-size:20px;border-collapse: collapse;}
+	
+	.bookbox label {margin-right:1em;padding-bottom:4px; padding-top:4px;}
+	.bookbox td {border: 1px solid #FF6600;}
+
+	.onShow{
+		background:url("images/onShow.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;	
+	}
+	.onFocus{
+		background:#E9F0FF url("images/onFocus.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+
+	}
+	.onError{
+		background:#FFF2E9 url("images/onError.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+
+	}
+	.onCorrect{
+		background:#E9FFEB url("images/onCorrect.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+	}
+	.onLoad{
+		background:#E9FFEB url("images/onLoad.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+		vertical-align:middle;
+		
+	}
+} 
+</style>
+</head>
+<BODY bgColor=E9E9E9  style="MARGIN: 8px;text-align:center;width:auto">
+<div>
+  <!--头部 begin-->
+  <header class="header header-site">
+    <div class="area-logo">
+      <div class="button"><img src='../images/logo.png' class='logo-img'> 南无本师释迦牟尼佛！注意：红字经文可用鼠标拖动校对，"①②③"为无法显示的组合汉字！<a href="../help.htm"style="font-weight: bold;color: #FFFFFF;">校对说明</a>
+        <!--<input type="submit" value="保存定位代码!" onMouseOver="this.style.borderColor='#75cd02'" onMouseOut="this.style.borderColor='#dcdcdc'" class="btn1 pbtn1"  onClick="saveCwrapperode();" />-->
+      </div>
+    </div>
+  </header>
+  <TABLE cellPadding=0 cellSpacing=0 height=100% width=100%>
+    <TD align=middle vAlign=center bgColor=#FFFFFF width=100%>
+		<script type="text/javascript">
+				document.writeln("<DIV style=\'position:absolute; \'>");
+				for(j = 1;j <=6*(picy-picx+1); j++)	{
+					//页数=Math.floor((j-1)/6)
+					var topx = Math.floor((j-1)/6)*1403 + 150 + Math.floor(  ( (j-Math.floor((j-1)/6)*6)-1)/3   )*570  ; 
+					//JPG=993*1403
+					var lefty = 850 - (j-parseInt((j-1)/3)*3)*235;
+					//var topsm = topx-40+((j-1)%3)*180;
+					document.writeln("<div id=\'jw"+j+"\' class=\'jwk\' style=\'top:"+topx+"px;left:"+lefty+"px;\' onmouseover=\'moveObj(this)\'></div>");
+					document.writeln("<div id=\'sm"+j+"\' class=\'smk\' style=\'top:"+(topx-40)+"px;left:390px;\' onmouseover=\'moveObj(this)\'></div>");
+				}
+				document.writeln("<a id='pre1' class='pre1' style=\'position:absolute; left:1368px;\' href='#' onclick='adds();return false;'  alt=‘↑上移经文’  title=\'↑上移经文\'></a>");
+				document.writeln("<a id='pre2' class='pre2' style=\'position:absolute; left:1368px;\' href='#' onclick='addx();return false;'  alt=‘下移经文↓’  title=\'下移经文↓\'></a>");
+				document.writeln("<a id='pre3' class='pre3' style=\'position:absolute; left:1368px;\' href='#' onclick='addz();return false;'  alt=‘←左移经文’  title=\'←左移经文\'></a>");
+				document.writeln("<a id='pre4' class='pre4' style=\'position:absolute; left:1368px;\' href='#' onclick='addy();return false;'  alt=‘右移经文→’  title=\'右移经文→\'></a>");
+				if( fjedit == "True" ){document.writeln("<a id='savedw' class='savedw' style=\'position:absolute; left:1368px;\' href='#' onclick='saveCode();return false;'  alt=‘保存定位文件’ title=\'保存定位调整信息\'></a>");}
+
+				document.getElementById("pre1").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre1").offsetHeight)/9*2;
+				document.getElementById("pre2").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre2").offsetHeight)/9*3;	
+				document.getElementById("pre3").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre3").offsetHeight)/9*4;
+				document.getElementById("pre4").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre4").offsetHeight)/9*5;
+				if( fjedit == "True" ){document.getElementById("savedw").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("savedw").offsetHeight)/9*6;}
+
+				document.writeln("</div>");
+				for(j= parseInt(picx) ;j <= parseInt(picy); j++) {
+					if(j== parseInt(picx)){
+						document.writeln("<div class='img_box'>");
+						document.writeln("<img src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg' load_src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg'>");
+						document.writeln("</div>");
+					} else {
+						document.writeln("<div class='img_box'>");
+						document.writeln("<img src='dd.gif' load_src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg'>");
+						document.writeln("</div>");
+					}
+				}
+		</script>
+    </td>
+  </TABLE>
+</body>
+</div>
+<div class="bookbox">
+
+    <form method="post" action="" name="commform" id="commform">
+      <table class="form_table">
+		<tr>
+			<td style="width:240px;height:35px;text-align:center;">校经人：<input id="comm_user" type="text" style="width:140px;font-size:20px;" value="请输入昵称" name="comm_user" onFocus="if (this.value == '请输入昵称')  {this.value = '';}" onBlur="if (this.value == '') {this.value = '请输入昵称'}"/></td>
+			<td id="yh" style="width:140px;border-right:0px;border-left:0px;text-align:center;"></td>
+			<td style="width:70px;border-right:0px;border-left:0px;">
+				<select id="lh" name="lh" onchange="select()" style="font-size:20px;text-align:center;">  
+					<option value="1">第01列</option>   //预选设置
+					<option value="2">第02列</option>
+					<option value="3">第03列</option>  
+					<option value="4">第04列</option>  
+					<option value="5">第05列</option>  
+					<option value="6">第06列</option>  
+					<option value="7">第07列</option>  
+					<option value="8">第08列</option>  
+					<option value="9">第09列</option>  
+					<option value="10">第10列</option>  
+					<option value="11">第11列</option>  
+					<option value="12">第12列</option>  
+					<option value="13">第13列</option>  
+					<option value="14">第14列</option>  
+					<option value="15">第15列</option>  
+					<option value="16">第16列</option>  
+					<option value="17">第17列</option>			
+				</select>
+			</td>
+			<td style="width:70px;border-right:0px;border-left:0px;text-align:center;">
+				<select id="zh" name="zh" onchange="select()" style="font-size:20px;">  
+					<option value="1">第01字</option>   //预选设置
+					<option value="2">第02字</option>
+					<option value="3">第03字</option>  
+					<option value="4">第04字</option>  
+					<option value="5">第05字</option>  
+					<option value="6">第06字</option>  
+					<option value="7">第07字</option>  
+					<option value="8">第08字</option>  
+					<option value="9">第09字</option>  
+					<option value="10">第10字</option>  
+					<option value="11">第11字</option>  
+					<option value="12">第12字</option>  
+					<option value="13">第13字</option>  
+					<option value="14">第14字</option>  
+					<option value="15">第15字</option>  
+					<option value="16">第16字</option>  
+					<option value="17">第17字</option>			
+				</select>
+			</td>
+			<td id="jdjw" style="width:60px;border-right:0px;border-left:0px;text-align:center;">【  】</td>
+			<td style="width:240px;border-right:0px;border-left:0px;">应修改为【<input id="correct" name="correct" type="text" maxlength="20" value="" style="width:120px;font-size:20px;">】</td>
+			<td style="width:220px;text-align:center;"><input type="button" value=" 提交修改" onClick="addComments()" style="width:160px;font-size:20px;" /></td>
+			<td style="width:220px;text-align:center;"><input type="button" value=" 本卷无误" onClick="addCommentsOK()" style="width:160px;font-size:20px;" /></td>
+		</tr>
+		<tr>
+			<td id="jdsm" name="jdsm" colspan="7" style="font-size:16px;text-align:center;height:40px;" >说明：请输入校经人名称，核对自动显示的经文页数、上/下部，选择列数（由右向左）、字数（由上向下），录入需修改的经文，然后提交修改。</td>
+			<td id="jdsm" name="jdsm" colspan="7" style="font-size:16px;text-align:center;height:40px;" >本卷经文没有错误，请点击。</td>
+		</tr>
+      </table>
+    </form>
+
+</div>
+</html>

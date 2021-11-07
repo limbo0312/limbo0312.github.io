@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>乾隆大藏经-佛经校对</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/formValidator.js.html"></script>
+<script type="text/javascript" src="js/formValidatorRegex.js.html"></script>
+<script src="js/FileSaver.js"></SCRIPT>
+<script language="javascript">
+	
+ 	//读取取经文校对文件****.htm;
+ 	var picx = 0;
+ 	var picy = 0;
+	fjname="1173"; picx="321"; picy="348"; fjml="084"; fjurl="1173-j2"; 
+	//alert(picx+"-----"+picx);
+	fjdate="2021/6/6 20:07:11"; 
+	//alert(fjurlhtm+fjurl);
+	
+	fj="|<div class=jwk><span>中论卷第二</span><span></span><span></span><span>破三相品第七</span><span>问曰经说有为法有三相生住灭万物以生</span></div>|<div class=jwk><span>法生以住法住以灭法灭是故有诸法答曰</span><span>不尔何以故三相无决定故是三相为是有</span><span>为能作有为相为是无为能作有为相二俱</span><span>不然何以故</span><span>若生是有为<br>　则应有三相<br>　若生是无为</span></div>|<div class=jwk><span>何名有为相</span><span>若生是有为应有三相生住灭是事不然何</span><span>以故共相违故相违者生相应生法住相应</span><span>住法灭相应灭法若法生时不应有住灭相</span><span>违法一时则不然如明闇不俱以是故生不</span></div>|<div class=jwk><span>应是有为法住灭相亦应如是问曰若生非</span><span>有为若是无为有何咎答曰若生是无为云</span><span>何能为有为法作相何以故无为法无性故</span><span>因灭有为名无为是故说不生不灭名无为</span><span>相更无自相是故无法不能为法作相如兔</span></div>|<div class=jwk><span>角龟毛等不能为法作相是故生非无为住</span><span>灭亦如是复次</span><span>三相若聚散<br>　不能有所相<br>　云何于一处</span><span>一时有三相</span><span>是生住灭相若一一能为有为法作相若和</span></div>|<div class=jwk><span>合能与有为法作相二俱不然何以故若谓</span><span>一一者于一处中或有有相或有无相生时</span><span>无住灭住时无生灭灭时无生住若和合者</span><span>共相违法云何一时俱若谓三相更有三相</span><span>者是亦不然何以故</span></div>|<div class=jwk><span>若谓生住灭<br>　更有有为相<br>　是即为无穷</span><span>无即非有为</span><span>若谓生住灭更有有为相生更有生有住有</span><span>灭如是三相复应更有相若尔则无穷若更</span><span>无相是三相则不名有为法亦不能为有为</span></div>|<div class=jwk><span>法作相问曰汝说三相为无穷是事不然生</span><span>住灭虽是有为而非无穷何以故</span><span>生生之所生<br>　生于彼本生<br>　本生之所生</span><span>还生于生生</span><span>法生时通自体七法共生一法二生三住四</span></div>|<div class=jwk><span>灭五生生六住住七灭灭是七法中本生除</span><span>自体能生六法生生能生本生本生能生生</span><span>生是故三相虽是有为而非无穷答曰</span><span>若谓是生生<br>　能生于本生<br>　生生从本生</span><span>何能生本生</span></div>|<div class=jwk><span>若是生生能生本生者是生生则不名从本</span><span>生生何以故是生生从本生生云何能生本</span><span>生复次</span><span>若谓是本生<br>　能生于生生<br>　本生从彼生</span><span>何能生生生</span></div>|<div class=jwk><span>若谓本生能生生生者是本生不名从生生</span><span>生何以故是本生从生生生云何能生生生</span><span>生生法应生本生而今生生不能生本生生</span><span>生未有自体何能生本生是故本生不能生</span><span>生生问曰是生生生时非先非后能生本生</span></div>|<div class=jwk><span>但生生生时能生本生答曰不然何以故</span><span>若生生生时<br>　能生于本生<br>　生生尚未有</span><span>何能生本生</span><span>若谓生生生时能生本生可尔而实未有是</span><span>故生生生时不能生本生复次</span></div>|<div class=jwk><span>若本生生时<br>　能生于生生<br>　本生尚未有</span><span>何能生生生</span><span>若谓是本生生时能生生生可尔而实未有</span><span>是故本生生时不能生生生问曰</span><span>如灯能自照<br>　亦能照于彼<br>　生法亦如是</span></div>|<div class=jwk><span>自生亦生彼</span><span>如灯入于闇室照了诸物亦能自照生亦如</span><span>是能生于彼亦能自生答曰不然何以故</span><span>灯中自无闇<br>　住处亦无闇<br>　破闇乃名照</span><span>无闇则无照</span></div>|<div class=jwk><span>灯体自无闇明所及处亦无闇明闇相违故</span><span>破闇故名照无闇则无照何得言灯自照亦</span><span>照彼问曰是灯非未生有照亦非生已有照</span><span>但灯生时能自照亦照彼答曰</span><span>云何灯生时<br>　而能破于闇<br>　此灯初生时</span></div>|<div class=jwk><span>不能及于闇</span><span>灯生时名半生半未生灯体未成就云何能</span><span>破闇又灯不能及闇如人得贼乃名为破若</span><span>谓灯虽不到闇而能破闇者是亦不然何以</span><span>故</span></div>|<div class=jwk><span>灯若未及闇<br>　而能破闇者<br>　灯在于此间</span><span>则破一切闇</span><span>若灯有力不到闇而能破闇者此处然灯应</span><span>破一切处闇俱不及故复次灯不应自照照</span><span>彼何以故</span></div>|<div class=jwk><span>若灯能自照<br>　亦能照于彼<br>　闇亦应自闇</span><span>亦能闇于彼</span><span>若灯与闇相违故能自照亦照于彼闇与灯</span><span>相违故亦应自蔽蔽彼若闇与灯相违不能</span><span>自蔽蔽彼灯与闇相违亦不应自照亦照彼</span></div>|<div class=jwk><span>是故灯喻非也破生因缘未尽故今当更说</span><span>此生若未生<br>　云何能自生<br>　若生已自生</span><span>生已何用生</span><span>是生自生时为生已生为未生生若未生生</span><span>则是无法无法何能自生若谓生已生则为</span></div>|<div class=jwk><span>已成不须复生如已作不应更作若已生若</span><span>未生是二俱不生故无生汝先说生如灯能</span><span>自生亦生彼是事不然住灭亦如是复次</span><span>生非生已生<br>　亦非未生生<br>　生时亦不生</span><span>去来中已答</span></div>|<div class=jwk><span>生名众缘和合有生已生中无作故无生未</span><span>生中无作故无生生时亦不然离生法生时</span><span>不可得离生时生法不可得云何生时生是</span><span>事去来中已答已生法不生何以故生已复</span><span>生如是展转则为无穷如作已复作复次若</span></div>|<div class=jwk><span>生已更生者以何生法生若是生相未生而</span><span>言生已生者则自违所说何以故生相未生</span><span>而汝谓生若未生谓生者法或可生已而生</span><span>或可未生而生汝先说生已生是则不定复</span><span>次如烧已不应复烧去已不应复去如是等</span></div>|<div class=jwk><span>因缘故生已不应生未生法亦不生何以故</span><span>法若未生则不与生缘和合若不与生缘和</span><span>合则无法生若法未与生缘和合而生者应</span><span>无作法而作无去法而去无染法而染无恚</span><span>法而恚无痴法而痴如是则破世间法是故</span></div>|<div class=jwk><span>未生法不生复次若未生法生者世间未生</span><span>法皆应生一切凡夫未生菩提今应生菩提</span><span>不坏法阿罗汉无有烦恼今应生烦恼兔等</span><span>无角今皆应生但是事不然是故未生法亦</span><span>不生问曰未生法不生者以未有缘无作无</span></div>|<div class=jwk><span>作者无时无方等故不生若有缘有作有作</span><span>者有时有方等和合故未生法生是故若说</span><span>一切未生法皆不生是事不尔答曰若法有</span><span>缘有时有方等和合则生者先有亦不生先</span><span>无亦不生有无亦不生三种先已破是故生</span></div>|<div class=jwk><span>已不生未生亦不生生时亦不生何以故已</span><span>生分不生未生分亦不生如先答复次若离</span><span>生有生时者应生时生但离生无生时是故</span><span>生时亦不生复次若言生时生者则有二生</span><span>过一以生故名生时二以生时中生二皆不</span></div>|<div class=jwk><span>然无有二法云何有二生是故生时亦不生</span><span>复次生法未发则无生时生时无故生何所</span><span>依是故不得言生时生如是推求生已无生</span><span>未生无生生时无生无生生故生不成生不</span><span>成故住灭亦不成生住灭不成故有为法不</span></div>|<div class=jwk><span>成是故偈中说去未去去时中已答问曰我</span><span>不定言生已生未生生生时生但众缘和合</span><span>故有生答曰汝虽有是说此则不然何以故</span><span>若谓生时生<br>　是事已不成<br>　云何众缘合</span><span>尔时而得生</span></div>|<div class=jwk><span>生时生已种种因缘破汝今何以更说众缘</span><span>和合故有生若众缘具足不具足皆与生同</span><span>破复次</span><span>若法众缘生<br>　即是寂灭性<br>　是故生生时</span><span>是二俱寂灭</span></div>|<div class=jwk><span>众缘所生法无自性故寂灭寂灭名为无此</span><span>无彼无相断言语道灭诸戏论众缘名如因</span><span>缕有布因蒲有席若缕自有定相不应从麻</span><span>出若布自有定相不应从缕出而实从缕有</span><span>布从麻有缕是故缕亦无定性布亦无定性</span></div>|<div class=jwk><span>如然可然因缘和合成无有自性可然无故</span><span>然亦无然无故可然亦无一切法亦如是是</span><span>故从众缘生法无自性无自性故空如野马</span><span>无实是故偈中说生与生时二俱寂灭不应</span><span>说生时生汝虽种种因缘欲成生相皆是戏</span></div>|<div class=jwk><span>论非寂灭相问曰定有三世别异未来世法</span><span>得生因缘即生何故言无生答曰</span><span>若有未生法<br>　说言有生者<br>　此法先已有</span><span>更复何用生</span><span>若未来世中有未生法而生是法先已有何</span></div>|<div class=jwk><span>用更生有法不应更生问曰未来虽有非如</span><span>现在相以现在相故说生答曰现在相未来</span><span>中无若无云何言未来生法生若有不名未</span><span>来应名现在现在不应更生二俱无生故不</span><span>生复次汝谓生时生亦能生彼今当更说</span></div>|<div class=jwk><span>若言生时生<br>　是能有所生<br>　何得更有生</span><span>而能生是生</span><span>若生生时能生彼是生谁复能生</span><span>若谓更有生<br>　生生则无穷<br>　离生生有生</span><span>法皆能自生</span></div>|<div class=jwk><span>若生更有生生则无穷若是生更无生而自</span><span>生者一切法亦皆能自生而实不尔复次</span><span>有法不应生<br>　无亦不应生<br>　有无亦不生</span><span>此义先已说</span><span>凡所有生为有法有生为无法有生为有无</span></div>|<div class=jwk><span>法有生是皆不然是事先已说离此三事更</span><span>无有生是故无生复次</span><span>若诸法灭时<br>　是时不应生<br>　法若不灭者</span><span>终无有是事</span><span>若法灭相是法不应生何以故二相相违故</span></div>|<div class=jwk><span>一是灭相知法是灭一是生相知法是生二</span><span>相相违法一时则不然是故灭相法不应生</span><span>问曰若灭相法不应生不灭相法应生答曰</span><span>一切有为法念念灭故无不灭法离有为无</span><span>有决定无为法无为法但有名字是故说不</span></div>|<div class=jwk><span>灭法终无有是事问曰若法无生应有住答</span><span>曰</span><span>不住法不住<br>　住法亦不住<br>　住时亦不住</span><span>无生云何住</span><span>住法亦不住何以故已有住故因去故有住</span></div>|<div class=jwk><span>若住法先有不应更住不住法亦不住无住</span><span>相故住时亦不住离住不住更无住时是故</span><span>住时亦不住如是一切处求住不可得故即</span><span>是无生若无生云何有住复次</span><span>若诸法灭时<br>　是则不应住<br>　法若不灭者</span></div>|<div class=jwk><span>终无有是事</span><span>若法灭相欲灭是法无有住相何以故一法</span><span>中有二相相违故一是灭相二是住相一时</span><span>一处有住灭相是事不然是故不得言灭相</span><span>法有住问曰若法不灭应有住答曰无有不</span></div>|<div class=jwk><span>灭法何以故</span><span>所有一切法<br>　皆是老死相<br>　终不见有法</span><span>离老死有住</span><span>一切法生时无常常随逐无常有二名老及</span><span>死如是一切法常有老死故无住时复次</span></div>|<div class=jwk><span>住不自相住<br>　亦不异相住<br>　如生不自生</span><span>亦不异相生</span><span>若有住法为自相住为他相住二俱不然若</span><span>自相住则为是常一切有为法从众缘生若</span><span>住法自住则不名有为住若自相住法亦应</span></div>|<div class=jwk><span>自相住如眼不能自见住亦如是若异相住</span><span>则住更有住是则无穷复次见异法生异相</span><span>不得不因异法而有异相异相不定故因异</span><span>相而住者是事不然问曰若无住应有灭答</span><span>曰无何以故</span></div>|<div class=jwk><span>法已灭不灭<br>　未灭亦不灭<br>　灭时亦不灭</span><span>无生何有灭</span><span>若法已灭则不灭以先灭故未灭亦不灭离</span><span>灭相故灭时亦不灭离二更无灭时如是推</span><span>求灭法即是无生无生何有灭复次</span></div>|<div class=jwk><span>法若有住者<br>　是则不应灭<br>　法若不住者</span><span>是亦不应灭</span><span>若法定住则无有灭何以故由有住相故若</span><span>住法灭则有二相住相灭相是故不得言住</span><span>中有灭如生死不得一时有若法不住亦无</span></div>|<div class=jwk><span>有灭何以故离住相故若离住相则无法无</span><span>法云何灭复次</span><span>是法于是时<br>　不于是时灭<br>　是法于异时</span><span>不于异时灭</span><span>若法有灭相是法为自相灭为异相灭二俱</span></div>|<div class=jwk><span>不然何以故如乳不于乳时灭随有乳时乳</span><span>相定住故非乳时亦不灭若非乳不得言乳</span><span>灭复次</span><span>如一切诸法<br>　生相不可得<br>　以无生相故</span><span>即亦无灭相</span></div>|<div class=jwk><span>如先推求一切法生相不可得尔时即无灭</span><span>相破生故无生无生云何有灭若汝意犹未</span><span>已今当更说破灭因缘</span><span>若法是有者<br>　是即无有灭<br>　不应于一法</span><span>而有有无相</span></div>|<div class=jwk><span>诸法有时推求灭相不可得何以故云何一</span><span>法中亦有亦无相如光影不同处复次</span><span>若法是无者<br>　是即无有灭<br>　譬如第二头</span><span>无故不可断</span><span>法若无者则无灭相如第二头第三手无故</span></div>|<div class=jwk><span>不可断复次</span><span>法不自相灭<br>　他相亦不灭<br>　如自相不生</span><span>他相亦不生</span><span>如先说生相生不自生亦不从他生若以自</span><span>体生是则不然一切物皆从众缘生如指端</span></div>|<div class=jwk><span>不能自触如是生不能自生从他生亦不然</span><span>何以故生未有故不应从他生是生无生故</span><span>无自体自体无故他亦无是故从他生亦不</span><span>然灭法亦如是不自相灭不他相灭复次</span><span>生住灭不成<br>　故无有有为<br>　有为法无故</span></div>|<div class=jwk><span>何得有无为</span><span>汝先说有生住灭相故有有为以有有为故</span><span>有无为今以理推求三相不可得云何得有</span><span>有为如先说无有无相法有为法无故何得</span><span>有无为无为相名不生不住不灭止有为相</span></div>|<div class=jwk><span>故名无为相无为自无别相因是三相有无</span><span>为相如火为热相地为坚相水为冷相无为</span><span>则不然问曰若是生住灭毕竟无者云何论</span><span>中得说名字答曰</span><span>如幻亦如梦<br>　如乾闼婆城<br>　所说生住灭</span></div>|<div class=jwk><span>其相亦如是</span><span>生住灭相无有决定凡人贪著谓有决定诸</span><span>贤圣怜愍欲止其颠倒还以其所著名字为</span><span>说语言虽同其心则异如是说生住灭相不</span><span>应有难如幻如化所作不应责其所由不应</span></div>|<div class=jwk><span>于中有忧喜想但应眼见而已如梦中所见</span><span>不应求实如乾闼婆城日出时现而无有实</span><span>但假为名字不久则灭生住灭亦如是凡夫</span><span>分别为有智者推求则不可得</span><span>观破作作者品第八</span></div>|<div class=jwk><span>问曰现有作有作者有所用作法三事和合</span><span>故有果报是故应有作者作业答曰上来品</span><span>品中破一切法皆无有余如破三相三相无</span><span>故无有有为有为无故无无为有为无为无</span><span>故一切法尽无作作者若是有为有为中已</span></div>|<div class=jwk><span>破若是无为无为中已破不应复问汝著心</span><span>深故而复更问今当复答</span><span>决定有作者<br>　不作决定业<br>　决定无作者</span><span>不作无定业</span><span>若先定有作者定有作业则不应作若先定</span></div>|<div class=jwk><span>无作者定无作业亦不应作何以故</span><span>决定业无作<br>　是业无作者<br>　定作者无作</span><span>作者亦无业</span><span>若先决定有作业不应更有作者又离作者</span><span>应有作业但是事不然若先定有作者不应</span></div>|<div class=jwk><span>更有作业又离作业应有作者但是事不然</span><span>是故决定作者决定作业不应有作业不决</span><span>定作者不决定作业亦不应有作何以故本</span><span>来无故有作者有作业尚不能作何况无作</span><span>者无作业复次</span></div>|<div class=jwk><span>若定有作者<br>　亦定有作业<br>　作者及作业</span><span>即堕于无因</span><span>若先定有作者定有作业汝谓作者有作即</span><span>为无因离作业有作者离作者有作业则不</span><span>从因缘有问曰若不从因缘有作者有作业</span></div>|<div class=jwk><span>有何咎答曰</span><span>若堕于无因<br>　则无因无果<br>　无作无作者</span><span>无所用作法<br>　若无作等法<br>　则无有罪福</span><span>罪福等无故<br>　罪福报亦无<br>　若无罪福报</span><span>亦无有涅槃<br>　诸可有所作<br>　皆空无有果</span></div>|<div class=jwk><span>若堕于无因一切法则无因无果能生法名</span><span>为因所生法名为果是二即无是二无故无</span><span>作无作者亦无所用作法亦无罪福罪福无</span><span>故亦无罪福果报及大涅槃道是故不得从</span><span>无因生问曰若作者不定而作不定业有何</span></div>|<div class=jwk><span>咎答曰一事无尚不能起作业何况二事都</span><span>无譬如化人以虚空为舍但有言说而无作</span><span>者无作业问曰若无作者无作业不能有所</span><span>作今有作者有作业应有作答曰</span><span>作者定不定<br>　不能作二业<br>　有无相违故</span></div>|<div class=jwk><span>一处则无二</span><span>作者定不定不能作定不定业何以故有无</span><span>相违故一处不应有二有是决定无是不决</span><span>定一人一事云何有有无复次</span><span>有不能作无<br>　无不能作有<br>　若有作作者</span></div>|<div class=jwk><span>其过如先说</span><span>若有作者而无业何能有所作若无作者而</span><span>有业亦不能有所作何以故如先说有中若</span><span>先有业作者复何所作若无业云何可得作</span><span>如是则破罪福等因缘果报是故偈中说有</span></div>|<div class=jwk><span>不能作无无不能作有若有作作者其过如</span><span>先说复次</span><span>作者不作定<br>　亦不作不定<br>　及定不定业</span><span>其过如先说</span><span>定业已破不定业亦破定不定业亦破今欲</span></div>|<div class=jwk><span>一时总破故说是偈是故作者不能作三种</span><span>业今三种作者亦不能作业何以故</span><span>作者定不定<br>　亦定亦不定<br>　不能作于业</span><span>其过如先说</span><span>作者定不定亦定亦不定不能作业何以故</span></div>|<div class=jwk><span>如先三种过因缘此中应广说如是一切处</span><span>求作者作业皆不可得问曰若言无作无作</span><span>者则复堕无因答曰是业从众缘生假名为</span><span>有无有决定如汝所说何以故</span><span>因业有作者<br>　因作者有业<br>　成业义如是</span></div>|<div class=jwk><span>更无有余事</span><span>业先无决定无因人起业中业有作者作者</span><span>亦无决定因有作业名为作者二事和合故</span><span>得成作作者若从和合生则无自性无自性</span><span>故空空则无所生但随凡夫忆想分别故说</span></div>|<div class=jwk><span>有作业有作者第一义中无作业无作者复</span><span>次</span><span>如破作作者<br>　受受者亦尔<br>　及一切诸法</span><span>亦应如是破</span><span>如作作者不得相离不相离故不决定无决</span></div>|<div class=jwk><span>定故无自性受受者亦如是受名五阴身受</span><span>者是人如是离人无五阴离五阴无人但从</span><span>众缘生如受受者余一切法亦应如是破</span><span>破本住品第九</span><span>问曰有人言</span></div>|<div class=jwk><span>眼耳等诸根<br>　苦乐等诸法<br>　谁有如是事</span><span>是则名本住<br>　若无有本住<br>　谁有眼等法</span><span>以是故当知<br>　先已有本住</span><span>眼耳鼻舌身命等诸根名为眼耳等根苦受</span><span>乐受不苦不乐受想思忆念等心心数法名</span></div>|<div class=jwk><span>为苦乐等法有论师言先未有眼等法应有</span><span>本住因是本住眼等诸根得增长若无本住</span><span>身及眼等诸根为因何生而得增长答曰</span><span>若离眼等根<br>　及苦乐等法<br>　先有本住者</span><span>以何而可知</span></div>|<div class=jwk><span>若离眼耳等根苦乐等法先有本住者以何</span><span>可说以何可知如外法瓶衣等以眼等根得</span><span>知内法以苦乐等根得知如经中说可坏是</span><span>色相能受是受相能识是识相汝说离眼耳</span><span>苦乐等先有本住者以何可知说有是法问</span></div>|<div class=jwk><span>曰有论师言出入息视眴寿命思惟苦乐憎</span><span>爱动发等是神相若无有神云何有出入息</span><span>等相是故当知离眼耳等根苦乐等法先有</span><span>本住答曰是神若有应在身内如壁中有柱</span><span>若在身外如人被铠若在身内身则不可破</span></div>|<div class=jwk><span>坏神常在内故是故言神在身内但有言说</span><span>虚妄无实若在身外覆身如铠者身应不可</span><span>见神细密覆故亦应不可破坏而今实见身</span><span>坏是故当知离苦乐等先无余法若谓断臂</span><span>时神缩在内不可断者断头时亦应缩在内</span></div>|<div class=jwk><span>不应死而实有死是故知离苦乐等先有神</span><span>者但有言说虚妄无实复次若言身大则神</span><span>大身小则神小如灯大则明大灯小则明小</span><span>者如是神则随身不应常若随身者身无则</span><span>神亦无如灯灭则明灭若神无常则与眼耳</span></div>|<div class=jwk><span>苦乐等同是故当知离眼耳等先无别神复</span><span>次如风狂病人不得自在不应作而作若有</span><span>神是诸作主者云何言不得自在若风狂病</span><span>不恼神者应离神别有所作如是种种推求</span><span>离眼耳等根苦乐等法先无本住若必谓离</span></div>|<div class=jwk><span>眼耳等根苦乐等法有本住者无有是事何</span><span>以故</span><span>若离眼耳等<br>　而有本住者<br>　亦应离本住</span><span>而有眼耳等</span><span>若本住离眼耳等根苦乐等法先有者今眼</span></div>|<div class=jwk><span>耳等根苦乐等法亦应离本住而有问曰二</span><span>事相离可尔但使有本住答曰</span><span>以法知有人<br>　以人知有法<br>　离法何有人</span><span>离人何有法</span><span>法者眼耳苦乐等人者是本住汝谓以有法</span></div>|<div class=jwk><span>故知有人以有人故知有法今离眼耳等法</span><span>何有人离人何有眼耳等法复次</span><span>一切眼等根<br>　实无有本住<br>　眼耳等诸根</span><span>异相而分别</span><span>若眼耳等诸根苦乐等诸法实无有本住因</span></div>|<div class=jwk><span>眼缘色生眼识以和合因缘知有眼耳等诸</span><span>根不以本住故知是故偈中说一切眼耳等</span><span>根实无有本住眼耳等诸根各自能分别问</span><span>曰</span><span>若眼等诸根<br>　无有本住者<br>　眼等一一根</span></div>|<div class=jwk><span>云何能知尘</span><span>若一切眼耳等诸根苦乐等诸法无本住者</span><span>今一一根云何能知尘眼耳等诸根无思惟</span><span>不应有知而实知尘当知离眼耳等诸根更</span><span>有能知尘者答曰若尔者为一一根中各有</span></div>|<div class=jwk><span>知者为一知者在诸根中二俱有过何以故</span><span>见者即闻者<br>　闻者即受者<br>　如是等诸根</span><span>则应有本住</span><span>若见者即是闻者见闻者即是受者则是一</span><span>神如是眼等诸根应先有本住色声香等无</span></div>|<div class=jwk><span>有定知者或可以眼闻声如人有六向随意</span><span>见闻若闻者见者是一于眼等根随意见闻</span><span>但是事不然</span><span>若见闻各异<br>　受者亦各异<br>　见时亦应闻</span><span>如是则神多</span></div>|<div class=jwk><span>若见者闻者受者各异若见者时亦应闻何</span><span>以故离见者有闻者故如是鼻舌身中神应</span><span>一时行若尔者人一而神多以一切根一时</span><span>知诸尘故而实不尔是故见者闻者受者不</span><span>应俱用复次</span></div>|<div class=jwk><span>眼耳等诸根<br>　苦乐等诸法<br>　所从生诸大</span><span>彼大亦无神</span><span>若人言离眼耳等诸根苦乐等诸法别有本</span><span>住是事已破今于眼耳等所因四大是四大</span><span>中亦无本住问曰若眼耳等诸根苦乐等诸</span></div>|<div class=jwk><span>法无有本住可尔眼耳等诸根苦乐等诸法</span><span>应有答曰</span><span>若眼耳等根<br>　苦乐等诸法<br>　无有本住者</span><span>眼等亦应无</span><span>若眼耳苦乐等诸法无有本住者谁有此眼</span></div>|<div class=jwk><span>耳等何缘而有是故眼耳等亦无复次</span><span>眼等无本住<br>　今后亦复无<br>　以三世无故</span><span>无有无分别</span><span>思惟推求本住于眼等先无今后亦无若三</span><span>世无即是无生寂灭不应有难若无本住云</span></div>|<div class=jwk><span>何有眼耳等如是问答戏论则灭戏论灭故</span><span>诸法则空</span><span>破然可然品第十</span><span>问曰应有受受者如然可然然是受者可然</span><span>是受所谓五阴答曰是事不尔何以故然可</span></div>|<div class=jwk><span>然俱不成故然可然若以一法成若以二法</span><span>成二俱不成问曰且置一异法若言无然可</span><span>然今云何以一异相破如兔角龟毛无故不</span><span>可破世间眼见实有事而后可思惟如有金</span><span>然后可烧可锻若无然可然不应以一异法</span></div>|<div class=jwk><span>思惟若汝许有一异法当知有然可然若许</span><span>有者则为已有答曰随世俗法言说不应有</span><span>过然可然若说一若说异不名为受若离世</span><span>俗言说则无所论若不说然可然云何能有</span><span>所破若无所说则义不可明如有论者欲破</span></div>|<div class=jwk><span>有无必应言有无不以称有无故而受有无</span><span>是以随世间言说无咎若口有言便是受者</span><span>汝言破即为自破然可然亦如是虽有言说</span><span>亦复不受是故以一异法思惟然可然二俱</span><span>不成何以故</span></div>|<div class=jwk><span>若然是可然<br>　作作者则一<br>　若然异可然</span><span>离可然有然</span><span>然是火可然是薪作者是人作是业若然可</span><span>然一则作作者亦应一若作作者一则陶师</span><span>与瓶一作者是陶师作是瓶陶师非瓶瓶非</span></div>|<div class=jwk><span>陶师云何为一是以作作者不一故然可然</span><span>亦不一若谓一不可则应异是亦不然何以</span><span>故若然与可然异应离可然然别有然分别</span><span>是可然是然处处离可然应有然而实不尔</span><span>是故异而不可得复次</span></div>|<div class=jwk><span>如是常应然<br>　不因可然生<br>　则无然火功</span><span>亦名无作火</span><span>若然可然异则然不待可然而常然若常然</span><span>者则自住其体不待因缘人功则空人功者</span><span>将护火令然是功现有是故知火不异可然</span></div>|<div class=jwk><span>复次若然异可然然即无作离可然火何所</span><span>然若尔者火则无作无作火无有是事问曰</span><span>云何火不从因缘生人功亦空答曰</span><span>然不待可然<br>　则不从缘生<br>　火若常然者</span><span>人功则应空</span></div>|<div class=jwk><span>然可然若异则不待可然有然若不待可然</span><span>则无相因法是故不从因缘生复次若然异</span><span>可然则应常然若常然者应离可然别见有</span><span>然更不须人功何以故</span><span>若汝谓然时<br>　名为可然者<br>　尔时但有薪</span></div>|<div class=jwk><span>何物然可然</span><span>若谓先有薪烧时名可然者是事不尔若离</span><span>然别有可然者云何言然时名可然复次</span><span>若异则不至<br>　不至则不烧<br>　不烧则不灭</span><span>不灭则常住</span></div>|<div class=jwk><span>若然异可然则然不应至可然何以故不相</span><span>待成故若然不相待成则自住其体何用可</span><span>然是故不至若不至则不然可然何以故无</span><span>有不至而能烧故若不烧则无灭应常住自</span><span>相是事不尔问曰</span></div>|<div class=jwk><span>然与可然异<br>　而能至可然<br>　如此至彼人</span><span>彼人至此人</span><span>然与可然异而能至可然如男至于女如女</span><span>至于男答曰</span><span>若谓然可然<br>　二俱相离者<br>　如是然则能</span></div>|<div class=jwk><span>至于彼可然</span><span>若离然有可然若离可然有然各自成者如</span><span>是则应然至可然而实不尔何以故离然无</span><span>可然离可然无然故今离男有女离女有男</span><span>是故汝喻非也喻不成故然不至可然问曰</span></div>|<div class=jwk><span>然可然相待而有因可然有然因然有可然</span><span>二法相待成答曰</span><span>若因可然然<br>　因然有可然<br>　先定有何法</span><span>而有然可然</span><span>若因可然而然成亦应因然可然成是中若</span></div>|<div class=jwk><span>先定有可然则因可然而然成若先定有然</span><span>则因然可然成今若因可然而然成者则先</span><span>有可然而后有然不应待然而有可然何以</span><span>故可然在先然在后故若然不然可然是则</span><span>可然不成又可然不在余处离于然故若可</span></div>|<div class=jwk><span>然不成然亦不成若先然后有可然然亦有</span><span>如是过是故然可然二俱不成复次</span><span>若因可然然<br>　则然成复成<br>　是为可然中</span><span>则为无有然</span><span>若欲因可然而成然则然成已复成何以故</span></div>|<div class=jwk><span>然自住于然中若然不自住其体从可然成</span><span>者无有是事是故有是然从可然成今则然</span><span>成复成有如是过复有可然无然过何以故</span><span>可然离然自住其体故是故然可然相因待</span><span>无有是事复次</span></div>|<div class=jwk><span>若法因待成<br>　是法还成待<br>　今则无因待</span><span>亦无所成法</span><span>若法因待成是法还成本因待如是决定则</span><span>无本因二事如因可然而成然还因于然而</span><span>成可然是则二俱无定无定故不可得何以</span></div>|<div class=jwk><span>故</span><span>若法有待成<br>　未成云何待<br>　若成已有待</span><span>成已何用待</span><span>若法因待成是法先未成未成则无无则云</span><span>何有因待若是法先已成已成何用因待是</span></div>|<div class=jwk><span>二俱不相因待是故汝先说然可然相因待</span><span>成无有是事是故</span><span>因可然无然<br>　不因亦无然<br>　因然无可然</span><span>不因无可然</span><span>今因待可然然不成不因待可然然亦不成</span></div>|<div class=jwk><span>可然亦如是因然不因然二俱不成是过先</span><span>已说复次</span><span>然不余处来<br>　然处亦无然<br>　可然亦如是</span><span>余如去来说</span><span>然不于余方来入可然中可然中亦无然㭊</span></div>|<div class=jwk><span>薪求然不可得故可然亦如是不从余处来</span><span>入然中然中亦无可然如然已不然未然不</span><span>然然时不然是义如去来中说是故</span><span>可然即非然<br>　离可然无然<br>　然无有可然</span><span>然中无可然</span></div>|<div class=jwk><span>可然中无然可然不然何以故先已说作作</span><span>者一过故离可然无然有常然等过故然无</span><span>有可然然中无可然可然中无然以有异过</span><span>故三皆不成问曰何故说然可然答曰如因</span><span>可然有然如是因受有受者受名五阴受者</span></div>|<div class=jwk><span>名人然可然不成故受受者亦不成何以故</span><span>以然可然法<br>　说受受者法<br>　及以说瓶衣</span><span>一切等诸法</span><span>如可然非然如是受非受者作作者一过故</span><span>又离受无受者异不可得故以异过故三皆</span></div>|<div class=jwk><span>不成如受受者外瓶衣等一切法皆同上说</span><span>无生毕竟空是故</span><span>若人说有我<br>　诸法各异相<br>　当知如是人</span><span>不得佛法味</span><span>诸法从本已来无生毕竟寂灭相是故品末</span></div>|<div class=jwk><span>说是偈若人说我相如犊子部众说不得言</span><span>色即是我不得言离色是我在第五不可说</span><span>藏中如萨婆多部众说诸法各各相是善是</span><span>不善是无记是有漏无漏有为无为等别异</span><span>如是等人不得诸法寂灭相以佛语作种种</span></div>|<div class=jwk><span>戏论</span><span>破本际品第十一</span><span>问曰无本际经说众生往来生死本际不可</span><span>得是中说有众生有生死以何因缘故而作</span><span>是说答曰</span></div>|<div class=jwk><span>大圣之所说<br>　本际不可得<br>　生死无有始</span><span>亦复无有终</span><span>圣人有三种一者外道五神通二者阿罗汉</span><span>辟支佛三者得神通大菩萨佛于三种中最</span><span>上故言大圣佛所言说无不是实说生死无</span></div>|<div class=jwk><span>始何以故生死初后不可得是故言无始汝</span><span>谓若无初后应有中者是亦不然何以故</span><span>若无有始终<br>　中当云何有<br>　是故于此中</span><span>先后共亦无</span><span>因中后故有初因初中故有后若无初无后</span></div>|<div class=jwk><span>云何有中生死中无初中后是故说先后共</span><span>不可得何以故</span><span>若使先有生<br>　后有老死者<br>　不老死有生</span><span>不生有老死<br>　若先有老死<br>　而后有生者</span><span>是则为无因<br>　不生有老死</span></div>|<div class=jwk><span>生死众生若先生渐有老而后有死者则生</span><span>无老死法应生有老死老死有生又不老死</span><span>而生是亦不然又因生有老死若先老死后</span><span>生老死则无因生在后故又不生何有老死</span><span>若谓生老死先后不可谓一时成者是亦有</span></div>|<div class=jwk><span>过何以故</span><span>生及于老死<br>　不得一时共<br>　生时则有死</span><span>是二俱无因</span><span>若生老死一时则不然何以故生时即有死</span><span>故法应生时有死时无若生时有死是事不</span></div>|<div class=jwk><span>然若一时生则无有相因如牛角一时出则</span><span>不相因是故</span><span>若使初后共<br>　是皆不然者<br>　何故而戏论</span><span>谓有生老死</span><span>思惟生老死三皆有过故即无生毕竟空汝</span></div>|<div class=jwk><span>今何故贪著戏论生老死谓有决定相复次</span><span>诸所有因果<br>　相及可相法<br>　受及受者等</span><span>所有一切法<br>　非但于生死<br>　本际不可得</span><span>如是一切法<br>　本际皆亦无</span><span>一切法者所谓因果相可相受及受者等皆</span></div>|<div class=jwk><span>无本际非但生死无本际以略开示故说生</span><span>死无本际</span><span>破苦品第十二</span><span>有说曰</span><span>自作及他作<br>　共作无因作<br>　如是说诸苦</span></div>|<div class=jwk><span>于果则不然</span><span>有人言苦恼自作或言他作或言亦自作亦</span><span>他作或言无因作于果皆不然于果皆不然</span><span>者众生以众缘致苦厌苦欲求灭不知苦恼</span><span>实因缘有四种谬是故说于果皆不然何以</span></div>|<div class=jwk><span>故</span><span>苦若自作者<br>　则不从缘生<br>　因有此阴故</span><span>而有彼阴生</span><span>若苦自作则不从众缘生自名从自性生是</span><span>事不然何以故因前五阴有后五阴生是故</span></div>|<div class=jwk><span>苦不得自作问曰若言此五阴作彼五阴者</span><span>则是他作答曰是事不然何以故</span><span>若谓此五阴<br>　异彼五阴者<br>　如是则应言</span><span>从他而作苦</span><span>若此五阴与彼五阴异彼五阴与此五阴异</span></div>|<div class=jwk><span>者应从他作如缕与布异者应离缕有布若</span><span>离缕无布者则布不异缕如是彼五阴异此</span><span>五阴者则应离此五阴有彼五阴若离此五</span><span>阴无彼五阴者则此五阴不异彼五阴是故</span><span>不应言苦从他作问曰自作者是人人自作</span></div>|<div class=jwk><span>苦自受苦答曰</span><span>若人自作苦<br>　离苦何有人<br>　而谓于彼人</span><span>而能自作苦</span><span>若谓人自作苦者离五阴苦何处别有人而</span><span>能自作苦应说是人而不可说是故苦非人</span></div>|<div class=jwk><span>自作若谓人不自作苦他人作苦与此人者</span><span>是亦不然何以故</span><span>若苦他人作<br>　而与此人者<br>　若当离于苦</span><span>何有此人受</span><span>若他人作苦与此人者离五阴无有此人受</span></div>|<div class=jwk><span>复次</span><span>苦若彼人作<br>　持与此人者<br>　离苦何有人</span><span>而能授于此</span><span>若谓彼人作苦授与此人者离五阴苦何有</span><span>彼人作苦持与此人若有者应说其相复次</span></div>|<div class=jwk><span>自作若不成<br>　云何彼作苦<br>　若彼人作苦</span><span>即亦名自作</span><span>种种因缘彼自作苦不成而言他作苦是亦</span><span>不然何以故此彼相待故若彼作苦于彼亦</span><span>名自作苦自作苦先已破汝受自作苦不成</span></div>|<div class=jwk><span>故他作亦不成复次</span><span>苦不名自作<br>　法不自作法<br>　彼无有自体</span><span>何有彼作苦</span><span>自作苦不然何以故如刀不能自割如是法</span><span>不能自作法是故不能自作他作亦不然何</span></div>|<div class=jwk><span>以故离苦无彼自性若离苦有彼自性者应</span><span>言彼作苦彼亦即是苦云何苦自作苦问曰</span><span>若自作他作不然应有共作答曰</span><span>若此彼苦成<br>　应有共作苦<br>　此彼尚无作</span><span>何况无因作</span></div>|<div class=jwk><span>自作他作犹尚有过何况无因作无因多过</span><span>如破作作者品中说复次</span><span>非但说于苦<br>　四种义不成<br>　一切外万物</span><span>四义亦不成</span><span>佛法中虽说五受阴为苦有外道人谓苦受</span></div>|<div class=jwk><span>为苦是故说不但说于苦四种义不成外万</span><span>物地水山木等一切法皆不成</span><span>破行品第十三</span><span>问曰</span><span>如佛经所说<br>　虚诳妄取相<br>　诸行妄取故</span></div>|<div class=jwk><span>是名为虚诳</span><span>佛经中说虚诳者即是妄取相第一实者所</span><span>谓涅槃非妄取相以是经说故当知有诸行</span><span>虚诳妄取相答曰</span><span>虚诳妄取者<br>　是中何所取<br>　佛说如是事</span></div>|<div class=jwk><span>欲以示空义</span><span>若妄取相法即是虚诳者是诸行中为何所</span><span>取佛如是说当知说空义问曰云何知一切</span><span>诸行皆是空义答曰一切诸行虚妄相故空</span><span>诸行生灭不住无自性故空诸行名五阴从</span></div>|<div class=jwk><span>行生故是五阴皆虚妄无有定相何以故如</span><span>婴儿时色非匍匐时色匍匐时色非行时色</span><span>行时色非童子时色童子时色非壮年时色</span><span>壮年时色非老年时色如色念念不住故分</span><span>别决定性不可得婴儿色为即是匍匐色乃</span></div>|<div class=jwk><span>至老年色为异二俱有过何以故若婴儿色</span><span>即是匍匐色乃至老年色者如是则是一色</span><span>皆为婴儿无有匍匐乃至老年又如泥团常</span><span>是泥团终不作瓶何以故色常定故若婴儿</span><span>色异匍匐色者则婴儿不作匍匐匍匐不作</span></div>|<div class=jwk><span>婴儿何以故二色异故如是童子少年壮年</span><span>老年色不应相续有失亲属法无父无子若</span><span>尔者唯有婴儿应得父余则匍匐乃至老年</span><span>不应有分是故二俱有过问曰色虽不定婴</span><span>儿色灭已相续更生乃至老年色无有如上</span></div>|<div class=jwk><span>过答曰婴儿色相续生者为灭已相续生为</span><span>不灭相续生若婴儿色灭云何有相续以无</span><span>因故如虽有薪可然火灭故无有相续若婴</span><span>儿色不灭而相续者则婴儿色不灭常住本</span><span>相亦无相续问曰我不说灭不灭故相续生</span></div>|<div class=jwk><span>但说不住相似生故言相续生答曰若尔者</span><span>则有定色而更生如是应有千万种色但是</span><span>事不然如是亦无相续如是一切处求色无</span><span>有定相但以世俗言说故有如芭蕉树求实</span><span>不可得但有皮叶如是智者求色相念念灭</span></div>|<div class=jwk><span>更无实色可得不住色形色相相似次第生</span><span>难可分别如灯焰分别定色不可得从是定</span><span>色更有色生不可得是故色无性故空但以</span><span>世俗言说故有受亦如是智者种种观察次</span><span>第相似故生灭难可别知如水流相续但以</span></div>|<div class=jwk><span>觉故说三受在身是故当知受同色说想因</span><span>名相生若离名相则不生是故佛说分别知</span><span>名字相故名为想非决定先有从众缘生无</span><span>定性无定性故如影随形因形有影无形则</span><span>无影影无决定若定有者离形应有影而实</span></div>|<div class=jwk><span>不尔是故从众缘生无自性故不可得想亦</span><span>如是但因外名相以世俗言说故有识因色</span><span>声香味触等眼耳鼻舌身等生以眼等诸根</span><span>别异故识有别异是识为在色为在眼为在</span><span>中间无有决定但生已识尘识此人识彼人</span></div>|<div class=jwk><span>知此人识为即是知彼人识为异是二难可</span><span>分别如眼识耳识亦难分别以难分别故或</span><span>言一或言异无有决定分别从众缘生故眼</span><span>等分别故空无自性如伎人含一珠出已复</span><span>示人则生疑为是本珠为更有异识亦如是</span></div>|<div class=jwk><span>生已更生为是本识为是异识是故当知识</span><span>不住故无自性虚诳如幻诸行亦如是诸行</span><span>者身口意行有二种净不净何等为不净恼</span><span>众生贪著等名不净不恼众生实语不贪著</span><span>等名净或增或减净行者在人中欲天色天</span></div>|<div class=jwk><span>无色天受果报已则减还作故名增不净行</span><span>者亦如是在地狱畜生饿鬼阿修罗中受果</span><span>报已则减还作故名增是故诸行有增有减</span><span>故不住如人有病随宜将适病则除愈若不</span><span>将适病则还集诸行亦如是有增有减故不</span></div>|<div class=jwk><span>决定但以世谛俗言说故有因世谛故得见</span><span>第一义谛所谓无明缘诸行从诸行有识著</span><span>识著故有名色从名色有六入从六入有触</span><span>从触有受从受有爱从爱有取从取有有从</span><span>有有生从生有老死忧悲苦恼恩爱别苦怨</span></div>|<div class=jwk><span>憎会苦等如是诸苦皆以行为本佛以世谛</span><span>故说若得第一义谛生真智慧者则无明息</span><span>无明息故诸行亦不集诸行不集故见谛所</span><span>断身见疑戒取等断及思惟所断贪恚色染</span><span>无色染调戏无明亦断以是断故一一分灭</span></div>|<div class=jwk><span>所谓无明诸行识名色六入触受爱取有生</span><span>老死忧悲苦恼恩爱别苦怨憎会苦等皆灭</span><span>以是灭故五阴身毕竟灭更无有余唯但有</span><span>空是故佛欲示空义故说诸行虚诳复次诸</span><span>法无性故虚诳虚诳故空如偈说</span></div>|<div class=jwk><span>诸法有异故<br>　知皆是无性<br>　无性法亦无</span><span>一切法空故</span><span>诸法无有性何以故诸法虽生不住自性是</span><span>故无性如婴儿定住自性者终不作匍匐乃</span><span>至老年而婴儿次第相续有异相现匍匐乃</span></div>|<div class=jwk><span>至老年是故说见诸法异相故知无性问曰</span><span>若诸法无性即有无性法有何咎答曰若无</span><span>性云何有法云何有相何以故无有根本故</span><span>但为破性故说无性是无性法若有者不名</span><span>一切法空若一切法空云何有无性法问曰</span></div>|<div class=jwk><span>诸法若无性<br>　云何说婴儿<br>　乃至于老年</span><span>而有种种异</span><span>诸法若无性则无有异相而汝说有异相是</span><span>故有诸法性若无诸法性云何有异相答曰</span><span>若诸法有性<br>　云何而得异<br>　若诸法无性</span></div>|<div class=jwk><span>云何而有异</span><span>若诸法决定有性云何可得异性名决定有</span><span>不可变异如真金不可变又如暗性不变为</span><span>明明性不变为暗复次</span><span>是法则无异<br>　异法亦无异<br>　如壮不作老</span></div>|<div class=jwk><span>老亦不作壮</span><span>若法有异者则应有异相为即是法异为异</span><span>法异是二不然若是法异则老应作老而老</span><span>实不作老若异法异者老与壮异壮应作老</span><span>而壮实不作老二俱有过问曰若是法即异</span></div>|<div class=jwk><span>有何咎如今眼见年少经日月岁数则老答</span><span>曰</span><span>若是法即异<br>　乳应即是酪<br>　离乳有何法</span><span>而能作于酪</span><span>若是法即异者乳应即是酪更不须因缘是</span></div>|<div class=jwk><span>事不然何以故乳与酪有种种异故乳不即</span><span>是酪是故法不即异若谓异法为异者是亦</span><span>不然离乳更有何物为酪如是思惟是法不</span><span>异异法亦不异是故不应偏有所执问曰破</span><span>是破异犹有空在空即是法答曰</span></div>|<div class=jwk><span>若有不空法<br>　则应有空法<br>　实无不空法</span><span>何得有空法</span><span>若有不空法相因故应有空法而上来种种</span><span>因缘破不空法不空法无故则无相待无相</span><span>待故何有空法问曰汝说不空法无故空法</span></div>|<div class=jwk><span>亦无若尔者即是说空但无相待故不应有</span><span>执若有对应有相待若无对则无相待相待</span><span>无故则无相无相故则无执如是即为说空</span><span>答曰</span><span>大圣说空法<br>　为离诸见故<br>　若复见有空</span></div>|<div class=jwk><span>诸佛所不化</span><span>大圣为破六十二诸见及无明爱等诸烦恼</span><span>故说空若人于空复生见者是人不可化譬</span><span>如有病须服药可治若药复为病则不可治</span><span>如火从薪出以水可灭若从水生为用何灭</span></div>|<div class=jwk><span>如空是水能灭诸烦恼火有人罪重贪著心</span><span>深智慧钝故于空生见或谓有空或谓无空</span><span>因有无还起烦恼若以空化此人者则言我</span><span>久知是空若离是空则无涅槃道如经说离</span><span>空无相无作门得解脱者但有言说</span></div>|"; 
+	//alert(fj+fj);
+	fjxy="|635@148|398@143|162@147|642@700|406@696|155@697|594@1546|358@1546|118@1549|602@2102|362@2109|123@2118|628@2975|387@2978|150@2979|625@3527|388@3524|145@3528|617@4368|379@4365|151@4367|616@4930|377@4929|140@4937|637@5759|406@5760|168@5761|635@6321|396@6320|161@6323|604@7165|363@7167|122@7171|607@7723|369@7728|131@7727|630@8576|390@8577|152@8577|623@9120|387@9116|149@9121|607@9960|367@9962|126@9958|600@10518|365@10517|125@10528|644@11368|408@11367|172@11368|632@11942|393@11944|152@11941|616@12778|384@12775|143@12783|616@13337|379@13337|136@13346|629@14187|391@14190|151@14188|627@14733|387@14739|145@14740|618@15586|381@15587|143@15589|623@16149|370@16146|132@16148|631@16992|391@16991|151@16995|634@17547|394@17557|156@17561|617@18390|378@18383|144@18393|613@18947|372@18950|136@18948|621@19802|390@19808|149@19811|624@20359|387@20360|144@20360|622@21201|386@21196|147@21200|620@21757|379@21755|133@21756|619@22597|382@22597|141@22601|632@23161|380@23171|143@23173|619@24006|380@24013|139@24013|623@24569|381@24567|142@24570|615@25403|377@25403|151@25411|624@25956|383@25965|143@25965|620@26800|391@26805|152@26809|620@27361|383@27360|144@27367|624@28208|388@28209|146@28204|620@28763|385@28762|156@28768|619@29605|378@29616|135@29614|627@30170|372@30168|134@30168|616@31016|379@31025|141@31029|618@31576|381@31580|145@31583|627@32420|392@32418|160@32421|619@32984|382@32983|142@32978|639@33825|409@33826|167@33836|633@34387|392@34393|155@34389|601@35233|366@35233|125@35235|611@35791|374@35788|131@35782|624@36622|384@36634|148@36639|628@37177|385@37186|141@37186|615@38031|NaN@undefined"; gs="1"; fjedit="True"; dwxy="1"; 	
+	//alert(fjxy);
+	//读取经文定位文件****xy.htm;
+	
+	//alert(dwxy);
+		
+	
+	var leftyy= 0; //手机left偏移量
+	function browserRedirect() {
+		var sUserAgent = navigator.userAgent.toLowerCase();
+		var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+		var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+		var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+		var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+		var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+		var bIsAndroid = sUserAgent.match(/android/i) == "android";
+		var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+		var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+		if (! (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+			leftyy= 0; 
+		} else {
+			leftyy= 15; 
+		}
+	}
+	browserRedirect();
+	//alert(leftyy);
+
+	window.onload =function(){jw();}//用window的onload事件，窗体加载完毕的时候
+
+	//读取佛经校对经文;
+	var strs= new Array(); //定义经文数组 
+	var jwstrs= new Array(); //定义经文数组
+	var lefts= new Array(); //定义left数组
+	var lefts1= new Array(); //定义left数组
+	var tops= new Array(); //定义top数组
+	var dw = "1"; //是否存在定位文件：1-存在；0-不存在
+	var fj_name  = ""; 	
+	var winWidth = 0;
+	var winHeight = 0;
+	function jw() {
+		//获取窗口宽度
+		findDimensions();
+
+		document.getElementById('pre1').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre2').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre3').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre4').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		if( fjedit == "True" ){document.getElementById('savedw').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";}
+		
+		strs=fj.split("|"); //取经文数据
+		ierror=1;
+		if ( dw == 1 ) { //如果存在定位文件
+			xy=fjxy.split("|");
+			//alert((strs.length-1)+"------------"+strs[1]+"----------"+strs[25]);
+			for (i=1;i<strs.length-1 ;i++ ) {
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(i, 3)+PrefixInteger(j, 3);
+					strs[i]=strs[i].replace(/<span>/,"<span id='s"+s+"'>");
+					//if (i=24){alert(ierror+"--1--"+gs+"----"+s+"----"+j);}
+				}
+				//alert(i+"   "+strs[i]);
+				
+				if( strs[i].replace(/[^\u4e00-\u9fa5]/gi,"")!=="" && fj_name=="" ){
+					fj_name=strs[i].substring(0,strs[i].indexOf("</span>")).replace(/[^\u4e00-\u9fa5]/gi,""); 
+					//alert(fj_name);
+				}
+				
+				if( strs[i].indexOf("@") >=0 ){
+					jwstrs[i] =  strs[i].substring(0,strs[i].indexOf('@')) ; //经文写入jwstrs 
+					//alert(i+"   "+jwstrs[i]);
+					document.getElementById('jw'+i).innerHTML =  strs[i].substring(0,strs[i].indexOf('@')) ; //经文写入div 
+					document.getElementById('sm'+i).innerHTML =  "校对说明：<br><br>"+strs[i].substring(strs[i].indexOf('@')+1) ; //说明写入div
+				} else {
+					jwstrs[i] =  strs[i] ; //经文写入jwstrs
+					//alert(i+"   "+jwstrs[i]);
+					document.getElementById('jw'+i).innerHTML =  strs[i]; //经文写入div
+				}
+
+				if( xy[i].substring(0,xy[i].indexOf('@'))=="NaN" ){
+					ierror=i;
+					i=strs.length;
+					//alert(ierror+"   "+i+"   "+xy[i]);
+				} else {
+					lefts[i] =	parseInt(xy[i].substring(0,xy[i].indexOf('@')))+leftyy+(winWidth-993-16)/2-24-8 ;		
+					//设定div的left
+					document.getElementById('jw'+i).style.left =  lefts[i]+ "px"; //设定div的left
+					tops[i] = xy[i].substring(xy[i].indexOf('@')+1);
+					tops[i]=tops[i].replace("px","");
+					document.getElementById('jw'+i).style.top = tops[i]; //设定div的top
+					//alert(i+"   "+xy[i]+"   "+tops[i]);
+				}
+
+				for (j=1;j<6 ;j++ ) {
+					if(ierror==1){
+						s=PrefixInteger(i, 3)+PrefixInteger(j, 3);
+					} else {
+						s=PrefixInteger(ierror, 3)+PrefixInteger(j, 3);
+					}
+					//if (i=24){alert(ierror+"--2--a"+document.getElementById('s'+s)+"a----"+s+"----"+j);}
+					if (document.getElementById('s'+s)!=null){
+						document.getElementById('s'+s).className = 'jwk'+gs;
+					}
+				}
+				//if (i=24){alert(ierror+"----"+gs+"----"+s);}
+				//if( i>3 && strs[i+1].length == 0 ) { i=strs.length-1; }
+				//alert(i+"   "+strs[i]+"   "+xy[i]+"   "+tops[i]);
+			}
+			//alert(i+"   "+xy[i]+"   "+tops[i]);
+		}
+
+		if(( ierror!==1 && ierror<strs.length ) || dw == 0 ){
+			//如果不存在定位文件或缺少定位数据
+			//alert(ierror+"   "+strs.length+"   "+dw+"   "+gs);
+			for (ii=ierror;ii<strs.length-1;ii++ ) {
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(ii, 3)+j;
+					strs[ii]=strs[ii].replace(/<span>/,"<span id='s"+s+"'>");
+				}
+				
+				if( strs[ii].indexOf("@") >=0 ){
+					document.getElementById('jw'+ii).innerHTML =  strs[ii].substring(0,strs[ii].indexOf('@')) ; //经文写入div 
+					document.getElementById('sm'+ii).innerHTML =  "校对说明：<br><br>"+strs[ii].substring(strs[ii].indexOf('@')+1) ; //说明写入div
+				} else {
+					document.getElementById('jw'+ii).innerHTML =  strs[ii]; //经文写入div
+				}
+				//alert(ii+"   "+strs[ii]);
+				lefts[ii] = 850 - (ii-parseInt((ii-1)/3)*3)*235  + (winWidth-993-16)/2-24-8;
+				//alert(ii+"   "+lefts[ii]);
+				document.getElementById('jw'+ii).style.left =  parseInt(lefts[ii])+ "px"; //设定div的left
+				tops[ii] = Math.floor((ii-1)/6)*1403 + 150 + Math.floor(  ( (ii-Math.floor((ii-1)/6)*6)-1)/3   )*570  ; //JPG=993*1403 
+				document.getElementById('jw'+ii).style.top = tops[ii]; //设定div的top
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(ii, 3)+j;
+					document.getElementById('s'+s).className = 'jwk'+gs;
+				}
+				//alert(ii+"   "+strs[ii]);
+			}
+		}
+		
+		document.getElementById('yh').innerHTML =  "　第"+picx+"页上部 ";
+		start_jw = jwstrs[1]+jwstrs[2]+jwstrs[3]+jwstrs[4]+jwstrs[5]+jwstrs[6];
+		//alert(picx+"    "+start_jw);
+		select_jw(1,1,start_jw);
+	};
+	
+	
+	//获取窗口宽度
+	function findDimensions() {//函数：获取尺寸
+		if (window.innerWidth)
+			winWidth = window.innerWidth;
+		else if ((document.body) && (document.body.clientWidth))
+			winWidth = document.body.clientWidth;
+		//获取窗口高度
+		if (window.innerHeight)
+			winHeight = window.innerHeight;
+		else if ((document.body) && (document.body.clientHeight))
+			winHeight = document.body.clientHeight;
+		//通过深入Document内部对body进行检测，获取窗口大小
+		if (document.documentElement  && document.documentElement.clientHeight && document.documentElement.clientWidth)
+		{
+			winHeight = document.documentElement.clientHeight;
+			winWidth = document.documentElement.clientWidth;
+		}
+	}
+	
+	//鼠标移动自动加载佛经图像文件
+    $(function(){
+        $(window).scroll(function(event) {
+          var ah=$(window).scrollTop();
+          var ch=$(window).height()
+          $('.img_box').each(function(){
+            var bh=$(this).offset().top;
+            if(ch+ah-200>bh){
+                var a=$(this).find('img').attr("load_src");
+                 $(this).find('img').attr("src",a);
+            }
+          })
+        });
+    })
+	
+	//鼠标调整经文位置移动时改变div的left、top
+	var jwid = 1;
+	function moveObj(obj) {
+		obj.style.cursor = "move";
+		obj.onmousedown = function(e) {
+			obj.style.position = "absolute";
+			var drag_x  = 0;
+			var drag_y  = 0;
+			var draging = true;
+			var left    = obj.offsetLeft;
+			var top     = obj.offsetTop;
+			if(typeof document.all !== "undefined") {   //IE
+				drag_x = event.clientX;
+				drag_y = event.clientY;
+				document.onmousemove = function(e) {
+					if(draging === false) return false;
+					obj.style.left = left + event.clientX - drag_x + "px";
+					obj.style.top  = top + event.clientY - drag_y + "px";
+				}
+			} else {    //FF,Chrome,Opera,Safari
+				drag_x = e.pageX;
+				drag_y = e.pageY;
+				document.onmousemove = function(e) {
+					if (draging === false) return false;
+					obj.style.left = left + e.pageX - drag_x + "px";
+					obj.style.top  = top + e.pageY - drag_y + "px";
+				}
+			}
+			document.onmouseup = function() {
+				draging = false; 
+				jwid = obj.getAttribute('id').replace("jw","");     //取当前div的id序号jw1
+				lefts[jwid]=parseInt(obj.style.left); 						//改变div的left
+				tops[jwid]=obj.style.top;							//改变div的top
+				//alert(jwid+"   "+lefts[jwid]+" "+tops[jwid]);
+			};
+		}
+	}
+   
+	//屏幕变化时改变div的left、top
+	window.onresize = function(){
+		jw();
+	}
+	
+	//右移经文→
+	function addz() {
+		findDimensions();
+		//alert(winWidth);
+		i=jwid;
+		for (i=jwid;i<strs.length ;i++ ) {
+			lefts[i] =  parseInt(lefts[i]) - 1 ;
+			//alert(jwid+"   "+strs.length+"  "+lefts[i]);
+			document.getElementById('jw'+i).style.left = lefts[i] + "px";
+		}
+	}
+	//←左移经文
+	function addy(){
+		findDimensions();
+		i=jwid
+		for (i=jwid;i<strs.length ;i++ ) {
+			lefts[i] =  parseInt(lefts[i]) + 1 ;
+			//alert(jwid+"   "+strs.length+"  "+lefts[i]);
+			document.getElementById('jw'+i).style.left = lefts[i] + "px";
+		}
+	}
+	//↑上移经文
+	function adds() {
+		for (i=jwid;i<strs.length ;i++ ) {
+			tops[i] =  parseInt(tops[i]) - 1 ;
+			document.getElementById('jw'+i).style.top = tops[i]+ "px";
+		}
+	}
+	//↓下移经文
+	function addx(){
+	//alert(jwid+"   "+strs.length+""+tops[strs.length-1]);
+		for (i=jwid;i<strs.length ;i++ ) {
+			tops[i] =  parseInt(tops[i]) + 1 ;
+			document.getElementById('jw'+i).style.top = tops[i]+ "px";
+		}
+	}
+
+	//滚动屏幕
+	var yh = picx; //定义当前显示页号
+	var sxb="上";  //定义当前显示页上部下部
+	function sc1(){
+		document.getElementById("pre1").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre1").offsetHeight)/9*2;
+		document.getElementById("pre2").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre2").offsetHeight)/9*3;	
+		document.getElementById("pre3").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre3").offsetHeight)/9*4;
+		document.getElementById("pre4").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre4").offsetHeight)/9*5;
+		if( fjedit == "True" ){
+			document.getElementById("savedw").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("savedw").offsetHeight) / 9 * 6;
+		}
+		//select
+		yh=parseInt((parseInt(picx)+document.body.scrollTop/1403+0.5));
+		if ((document.body.scrollTop/1403)%1+0.5>1 || (document.body.scrollTop/1403)%1==0) { sxb="上";} else { sxb="下";}
+		document.getElementById('yh').innerHTML =  "　第"+yh+"页"+sxb+"部 ";
+		
+		currSelect_lh = parseInt(document.getElementById("lh").value); 
+		currSelect_zh = parseInt(document.getElementById("zh").value); 
+		currSelect_jw = jwstrs[(yh-picx)*6+1]+jwstrs[(yh-picx)*6+2]+jwstrs[(yh-picx)*6+3]+jwstrs[(yh-picx)*6+4]+jwstrs[(yh-picx)*6+5]+jwstrs[(yh-picx)*6+6];
+		
+		//alert(currSelect_lh+"    "+currSelect_zh+"    "+currSelect_jw)
+		select_jw(currSelect_lh,currSelect_zh,currSelect_jw);
+	}
+	function scall() {
+		sc1();
+	}
+	window.onscroll = scall;
+
+	//键盘上下左右移动当前经文
+	function keyUp(e) {
+		var currKey = 0,
+			e = e || event;　　　
+		currKey = e.keyCode || e.which || e.charCode;　　　　
+		var keyName = String.fromCharCode(currKey);　
+		findDimensions();　
+		switch(currKey) {
+			case 37: //[方向键左]
+				//alert("按键码: " + currKey + " 字符: " + keyName + "  " + jwid+ "  " + lefts[jwid]+ "  " + (parseInt(lefts[jwid]) + (winWidth-993-16)/2-24-8));
+				lefts[jwid] = parseInt(lefts[jwid]) - 1;
+				document.getElementById('jw' + jwid).style.left = lefts[jwid] + "px";
+				break;
+			case 38: //[方向键上] 
+				tops[jwid] =  parseInt(tops[jwid]) - 1 ;
+				document.getElementById('jw'+jwid).style.top = tops[jwid]+ "px";
+				break;
+			case 39: //[方向键右]
+				lefts[jwid] = parseInt(lefts[jwid]) + 1;
+				document.getElementById('jw' + jwid).style.left = lefts[jwid] + "px";
+				break;
+			case 40: //[方向键下]
+				tops[jwid] =  parseInt(tops[jwid]) + 1 ;
+				document.getElementById('jw'+jwid).style.top = tops[jwid]+ "px";
+				break;
+			default:
+				keyName = "";
+				break;　
+		}
+	}　　
+	document.onkeyup = keyUp;
+	
+	//保存文件
+	function saveCode() {
+		var fjzb = "";
+		
+		for ( i=1;i<strs.length;i++ ) { 
+			lefts1[i]=lefts[i]-(leftyy+(winWidth-993-16)/2-24-8);
+			//if (i==24){			alert(2+"    "+tops[i]);}
+			//if( strs[i] !="" ){
+				fjzb=fjzb+"|"+lefts1[i]+"@"+tops[i];
+			//}
+		}
+		//alert("jds.asp?fjname="+fjname+"&picx="+picx+"&picy="+picy+"&fjml="+fjml+"&fjurl="+fjurl+"&fjzb="+fjzb+"&fjdate="+fjdate+"&fj="+fj);
+		//alert(fjzb);
+
+		if (fj != "") { fjk="bk";} else { fjk="k";}
+		var url,data; 
+		url="jds.asp";//这里是你的服务器文件 
+		data={fjname:fjname,picx:picx,picy:picy,fjml:fjml,fjurl:fjurl,fjzb:fjzb,fjk:fjk,fjdate:fjdate}; 
+		$.post(url,data,function(result){
+			result=result.split("|");
+			if (result[1] == "") { result[1]="0.01";} 
+			if( result[0]=="12"){
+				alert("佛经校对文件和坐标文件已更新！运行时间："+result[1]+"秒");
+				window.history.go(0);
+			}  else if ( result[0]=="1" ){
+				alert("佛经校对文件已更新！运行时间："+result[1]+"秒");
+				window.history.go(0);
+			}  else if ( result[0]=="2" ){
+				alert("佛经坐标文件已保存！运行时间："+result[1]+"秒");
+			} else {
+				alert(result[0]);
+				alert("error！");
+			} 
+			//window.history.go(0);
+		}); 
+	}
+	
+	//补齐0
+	function PrefixInteger(num, length) {
+	 return (Array(length).join('0') + num).slice(-length);
+	}
+	
+	// select 
+	function select(){ 
+		var currSelect_lh = parseInt(document.getElementById("lh").value); 
+		var currSelect_zh = parseInt(document.getElementById("zh").value); 
+		var currSelect_jw = jwstrs[(yh-picx)*6+1]+jwstrs[(yh-picx)*6+2]+jwstrs[(yh-picx)*6+3]+jwstrs[(yh-picx)*6+4]+jwstrs[(yh-picx)*6+5]+jwstrs[(yh-picx)*6+6];
+		//alert(currSelect_jw);
+		select_jw(currSelect_lh,currSelect_zh,currSelect_jw);
+	}
+	
+	var jdjw = "";
+	function select_jw(slh,szh,sjw){ 
+	//alert("1---"+slh+"    "+szh+"    "+sjw)
+		var strjw= new Array();
+		var fjjw = "";
+		var isjw=false;
+		var k=0;
+		jdjw = "";
+		for (i=0;i<sjw.length;i++){
+			divstr=sjw.toLowerCase().substring(i)//取经文计算后段
+			if ( divstr.indexOf("<span")==0 ) { 
+				i=i+19;
+				isjw=true;
+				fjjw = "";
+				k=k+1;
+			}
+			if ( divstr.indexOf("</span>")==0 ) { 
+				isjw=false;
+				strjw[k]=fjjw;
+			}
+			//alert(strjw[k]);
+			if (isjw==true) {
+				fjjw = fjjw.replace("<br>","") + sjw.charAt(i);
+			}
+		}
+		//alert("2---"+strjw[16]);
+		if (sxb=="上") {
+			if( strjw[slh]== undefined ){jdjw = "　";} else {jdjw=strjw[slh].substring(szh-1,szh); }
+			//if(jdjw=="至"){alert(slh+"      "+szh+"      "+sjw+"      "+strjw[slh]);}
+			//alert(yh+"   slh   "+slh+"   szh   "+szh+"  sxb    "+sxb+"      "+jdjw+"      "+strjw[slh]);
+		} else {
+			if( strjw[slh+15]== undefined ){jdjw = "　";} else {jdjw=strjw[slh+15].substring(szh-1,szh); }
+		}
+		//alert(yh+"   slh   "+slh+"   szh   "+szh+"  sxb    "+sxb+"      "+jdjw);
+		document.getElementById('jdjw').innerHTML =  "【"+jdjw+"】";
+	}
+</SCRIPT>
+
+<script type="text/javascript">
+//添加评论到数据库，同时更新显示，注意escape编码后提交
+function addComments(){
+	if($("#comm_user").val()=='请输入昵称' || $("#comm_user").val()==''){
+		alert('注意：请输入校经者本人名称/昵称！');
+		document.getElementById('jdsm').innerHTML =  '注意：校经人不能为空，请输入校经者本人名称/昵称！';
+	}  else if ($("#correct").val()==''){
+		alert(' 注意：应修改为【   】————正确经文不能为空，请输入至少1个汉字！');
+		document.getElementById('jdsm').innerHTML =  '注意：应修改为【   】————正确经文不能为空，请输入至少1个汉字！';
+	}  else {		//alert("comm_user="+escape($("#comm_user").val())+"&fj_name="+escape(fj_name)+"&fjurl="+escape(fjurl)+"&yh="+escape(yh)+"&sxb="+escape(sxb)+"&lh="+escape($("#lh").val())+"&zh="+escape($("#zh").val())+"&jdjw="+escape(jdjw)+"&correct="+escape($("#correct").val()));
+	//alert(fjname);
+		$.ajax({
+			type:"POST",
+			url:"CommentLib-jd.asp?action=addcomments&id=44",
+			data:"comm_user="+escape($("#comm_user").val())+"&fj_name="+escape(fj_name)+"&fjname="+escape(fjname)+"&picx="+escape(picx)+"&picy="+escape(picy)+"&fjurl="+escape(fjurl)+"&fjml="+escape(fjml)+"&yh="+escape(yh)+"&sxb="+escape(sxb)+"&lh="+escape($("#lh").val())+"&zh="+escape($("#zh").val())+"&jdjw="+escape(jdjw)+"&correct="+escape($("#correct").val()),
+			success:function(data){
+				if(unescape(data)=="OK"){
+					if($("#correct").val()=="本卷经文没有错误"){
+						alert('^_^'+$("#comm_user").val()+'：本卷经文没有错误！~~~感恩'+$("#comm_user").val()+'师兄校对佛典！');
+					}else{
+						alert('^_^'+$("#comm_user").val()+'：第'+yh+'页'+sxb+'部，由右向左第'+$("#lh").val()+'列，由上向下第'+$("#zh").val()+'个字【'+jdjw+'】应修改为【'+$("#correct").val()+'】！~~~感恩'+$("#comm_user").val()+'师兄校对佛典！');
+					}
+					//getComments(1);
+					//提交评论后清除表单内容
+					//$("#correct").val("123");
+					//$("#jdsm").val("说明：请输入校经者名称，选择页数、上/下部、由右向左列数、由上向下字数，录入需修改的经文，然后提交修改。");
+					document.getElementById('jdsm').innerHTML =  $("#comm_user").val()+'：第'+yh+'页'+sxb+'部，由右向左第'+$("#lh").val()+'列，由上向下第'+$("#zh").val()+'个字【'+jdjw+'】应修改为【'+$("#correct").val()+'】';
+					document.getElementById("correct").value="";
+				}else{
+					alert(unescape(data));
+				}
+			}
+		});
+	}
+}
+function addCommentsOK(){
+	$("#correct").val("本卷经文没有错误");
+	if(confirm('请再次确认：本卷经文没有错误？')) {
+		addComments();
+	}
+}
+</script>
+
+<style type="text/css">.header{padding:0 0.66667rem;overflow:hidden}
+	.header-site{height:4rem;margin-bottom:0.83333rem;background-color:#FF6601;}
+	.header .area-logo{margin-bottom:1.25rem;overflow:hidden}
+	.header .button{margin-top:1.0rem;font-size:1.2rem;	color: #FFFFFF;}
+	.header .logo-img{margin:0 auto;margin-top:-0.6rem;width:10.91667rem;height:2.5rem;vertical-align: middle;}
+	
+	.jwk{position:absolute;color:red;float:right;font-weight:bold;text-align:left;height:495px;width:240px;border:0px solid #f00;padding:0px;margin:0px;font-family: "宋体"}
+	.jwk1{float:right;width: 46px;height:495px;letter-spacing: 2px;font-size:24px;line-height:28px;border:0px solid #000;padding:0px;margin:0px;}
+	.jwk2{float:right;width: 43px;height:495px;letter-spacing: 2px;font-size:22px;line-height:25px;border:0px solid #000;padding:0px;margin:0px;}
+	.jwxz{font-size:14px;}	
+	.smk{position:absolute;color:#000000;float:right;font-weight:bold;text-align:left;height:495px;width:140px;display: inline;}
+	
+    .img_box{width: 100%;overflow-x:hidden;overflow-y:hidden;left: 0; right: 0;  margin: auto;    /* 有了这个就自动居中了 */}
+
+    a.pre1,a.pre2,a.pre3, a.pre4, a.savedw{position: absolute;display:block;width:60px;height:60px;float:left;margin:15px 0 0 0;cursor:pointer;background-image: url("img/3.png");z-index:10;} 
+    a.pre4 {background-image: url("img/4.png");width:60px;height:60px;}
+	a.pre1 {background-image: url("img/1.png");width:60px;height:60px;} 
+	a.pre2 {background-image: url("img/2.png");width:60px;height:60px;} 
+	a.savedw {background-image: url("img/5.jpg");width:60px;height:60px;} 
+	
+    .bookbox {
+    background-color: #ffffff;
+	border-top: 1px solid #FF6600;
+	padding-top:15px;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: auto;
+    right: auto;
+    line-height: 80px;
+    text-align: center;
+    _POSITION: absolute;/*兼容IE6*/
+    _TOP: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight);/*兼容IE6*/
+    }
+    .bookbox a{color: #FFF;}
+	
+	.form_table{margin:0 auto;	vertical-align: middle; font-size:20px;border-collapse: collapse;}
+	
+	.bookbox label {margin-right:1em;padding-bottom:4px; padding-top:4px;}
+	.bookbox td {border: 1px solid #FF6600;}
+
+	.onShow{
+		background:url("images/onShow.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;	
+	}
+	.onFocus{
+		background:#E9F0FF url("images/onFocus.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+
+	}
+	.onError{
+		background:#FFF2E9 url("images/onError.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+
+	}
+	.onCorrect{
+		background:#E9FFEB url("images/onCorrect.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+	}
+	.onLoad{
+		background:#E9FFEB url("images/onLoad.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+		vertical-align:middle;
+		
+	}
+} 
+</style>
+</head>
+<BODY bgColor=E9E9E9  style="MARGIN: 8px;text-align:center;width:auto">
+<div>
+  <!--头部 begin-->
+  <header class="header header-site">
+    <div class="area-logo">
+      <div class="button"><img src='../images/logo.png' class='logo-img'> 南无本师释迦牟尼佛！注意：红字经文可用鼠标拖动校对，"①②③"为无法显示的组合汉字！<a href="../help.htm"style="font-weight: bold;color: #FFFFFF;">校对说明</a>
+        <!--<input type="submit" value="保存定位代码!" onMouseOver="this.style.borderColor='#75cd02'" onMouseOut="this.style.borderColor='#dcdcdc'" class="btn1 pbtn1"  onClick="saveCwrapperode();" />-->
+      </div>
+    </div>
+  </header>
+  <TABLE cellPadding=0 cellSpacing=0 height=100% width=100%>
+    <TD align=middle vAlign=center bgColor=#FFFFFF width=100%>
+		<script type="text/javascript">
+				document.writeln("<DIV style=\'position:absolute; \'>");
+				for(j = 1;j <=6*(picy-picx+1); j++)	{
+					//页数=Math.floor((j-1)/6)
+					var topx = Math.floor((j-1)/6)*1403 + 150 + Math.floor(  ( (j-Math.floor((j-1)/6)*6)-1)/3   )*570  ; 
+					//JPG=993*1403
+					var lefty = 850 - (j-parseInt((j-1)/3)*3)*235;
+					//var topsm = topx-40+((j-1)%3)*180;
+					document.writeln("<div id=\'jw"+j+"\' class=\'jwk\' style=\'top:"+topx+"px;left:"+lefty+"px;\' onmouseover=\'moveObj(this)\'></div>");
+					document.writeln("<div id=\'sm"+j+"\' class=\'smk\' style=\'top:"+(topx-40)+"px;left:390px;\' onmouseover=\'moveObj(this)\'></div>");
+				}
+				document.writeln("<a id='pre1' class='pre1' style=\'position:absolute; left:1368px;\' href='#' onclick='adds();return false;'  alt=‘↑上移经文’  title=\'↑上移经文\'></a>");
+				document.writeln("<a id='pre2' class='pre2' style=\'position:absolute; left:1368px;\' href='#' onclick='addx();return false;'  alt=‘下移经文↓’  title=\'下移经文↓\'></a>");
+				document.writeln("<a id='pre3' class='pre3' style=\'position:absolute; left:1368px;\' href='#' onclick='addz();return false;'  alt=‘←左移经文’  title=\'←左移经文\'></a>");
+				document.writeln("<a id='pre4' class='pre4' style=\'position:absolute; left:1368px;\' href='#' onclick='addy();return false;'  alt=‘右移经文→’  title=\'右移经文→\'></a>");
+				if( fjedit == "True" ){document.writeln("<a id='savedw' class='savedw' style=\'position:absolute; left:1368px;\' href='#' onclick='saveCode();return false;'  alt=‘保存定位文件’ title=\'保存定位调整信息\'></a>");}
+
+				document.getElementById("pre1").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre1").offsetHeight)/9*2;
+				document.getElementById("pre2").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre2").offsetHeight)/9*3;	
+				document.getElementById("pre3").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre3").offsetHeight)/9*4;
+				document.getElementById("pre4").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre4").offsetHeight)/9*5;
+				if( fjedit == "True" ){document.getElementById("savedw").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("savedw").offsetHeight)/9*6;}
+
+				document.writeln("</div>");
+				for(j= parseInt(picx) ;j <= parseInt(picy); j++) {
+					if(j== parseInt(picx)){
+						document.writeln("<div class='img_box'>");
+						document.writeln("<img src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg' load_src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg'>");
+						document.writeln("</div>");
+					} else {
+						document.writeln("<div class='img_box'>");
+						document.writeln("<img src='dd.gif' load_src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg'>");
+						document.writeln("</div>");
+					}
+				}
+		</script>
+    </td>
+  </TABLE>
+</body>
+</div>
+<div class="bookbox">
+
+    <form method="post" action="" name="commform" id="commform">
+      <table class="form_table">
+		<tr>
+			<td style="width:240px;height:35px;text-align:center;">校经人：<input id="comm_user" type="text" style="width:140px;font-size:20px;" value="请输入昵称" name="comm_user" onFocus="if (this.value == '请输入昵称')  {this.value = '';}" onBlur="if (this.value == '') {this.value = '请输入昵称'}"/></td>
+			<td id="yh" style="width:140px;border-right:0px;border-left:0px;text-align:center;"></td>
+			<td style="width:70px;border-right:0px;border-left:0px;">
+				<select id="lh" name="lh" onchange="select()" style="font-size:20px;text-align:center;">  
+					<option value="1">第01列</option>   //预选设置
+					<option value="2">第02列</option>
+					<option value="3">第03列</option>  
+					<option value="4">第04列</option>  
+					<option value="5">第05列</option>  
+					<option value="6">第06列</option>  
+					<option value="7">第07列</option>  
+					<option value="8">第08列</option>  
+					<option value="9">第09列</option>  
+					<option value="10">第10列</option>  
+					<option value="11">第11列</option>  
+					<option value="12">第12列</option>  
+					<option value="13">第13列</option>  
+					<option value="14">第14列</option>  
+					<option value="15">第15列</option>  
+					<option value="16">第16列</option>  
+					<option value="17">第17列</option>			
+				</select>
+			</td>
+			<td style="width:70px;border-right:0px;border-left:0px;text-align:center;">
+				<select id="zh" name="zh" onchange="select()" style="font-size:20px;">  
+					<option value="1">第01字</option>   //预选设置
+					<option value="2">第02字</option>
+					<option value="3">第03字</option>  
+					<option value="4">第04字</option>  
+					<option value="5">第05字</option>  
+					<option value="6">第06字</option>  
+					<option value="7">第07字</option>  
+					<option value="8">第08字</option>  
+					<option value="9">第09字</option>  
+					<option value="10">第10字</option>  
+					<option value="11">第11字</option>  
+					<option value="12">第12字</option>  
+					<option value="13">第13字</option>  
+					<option value="14">第14字</option>  
+					<option value="15">第15字</option>  
+					<option value="16">第16字</option>  
+					<option value="17">第17字</option>			
+				</select>
+			</td>
+			<td id="jdjw" style="width:60px;border-right:0px;border-left:0px;text-align:center;">【  】</td>
+			<td style="width:240px;border-right:0px;border-left:0px;">应修改为【<input id="correct" name="correct" type="text" maxlength="20" value="" style="width:120px;font-size:20px;">】</td>
+			<td style="width:220px;text-align:center;"><input type="button" value=" 提交修改" onClick="addComments()" style="width:160px;font-size:20px;" /></td>
+			<td style="width:220px;text-align:center;"><input type="button" value=" 本卷无误" onClick="addCommentsOK()" style="width:160px;font-size:20px;" /></td>
+		</tr>
+		<tr>
+			<td id="jdsm" name="jdsm" colspan="7" style="font-size:16px;text-align:center;height:40px;" >说明：请输入校经人名称，核对自动显示的经文页数、上/下部，选择列数（由右向左）、字数（由上向下），录入需修改的经文，然后提交修改。</td>
+			<td id="jdsm" name="jdsm" colspan="7" style="font-size:16px;text-align:center;height:40px;" >本卷经文没有错误，请点击。</td>
+		</tr>
+      </table>
+    </form>
+
+</div>
+</html>

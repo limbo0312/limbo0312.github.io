@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>乾隆大藏经-佛经校对</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/formValidator.js.html"></script>
+<script type="text/javascript" src="js/formValidatorRegex.js.html"></script>
+<script src="js/FileSaver.js"></SCRIPT>
+<script language="javascript">
+	
+ 	//读取取经文校对文件****.htm;
+ 	var picx = 0;
+ 	var picy = 0;
+	fjname="0020-07"; picx="464"; picy="484"; fjml="018"; fjurl="0020-j70"; 
+	//alert(picx+"-----"+picx);
+	fjdate="2021/6/6 20:07:30"; 
+	//alert(fjurlhtm+fjurl);
+	
+	fj="|<div class=jwk><span>大宝积经卷第七十</span><span>高齐北天竺三藏那连提耶舍译</span><span>菩萨见实会第十六之十</span><span>净居天子赞偈品第二十三之一</span><span>尔时净居诸天子知无量众生得住菩提于</span></div>|<div class=jwk><span>佛法中无有疑虑已称意踊悦各以妙偈赞</span><span>佛功德尔时信施天子以偈赞曰</span><span>所爱妻子施<br>　并舍所重身<br>　乃至王位财</span><span>我礼檀度者</span><span>尔时乐持戒天子以偈赞曰</span></div>|<div class=jwk><span>如来本持戒<br>　一切无所著<br>　获果到彼岸</span><span>我礼戒度者</span><span>尔时乐忍天子以偈赞曰</span><span>佛昔修忍辱<br>　堪受解支节<br>　初无悔恼心</span><span>我礼忍度者</span></div>|<div class=jwk><span>尔时乐精进天子以偈赞曰</span><span>不退勇健首<br>　精进有大力<br>　已得上菩提</span><span>我礼进度者</span><span>尔时乐禅天子以偈赞曰</span><span>佛本修禅定<br>　世间所不知<br>　三际得平等</span></div>|<div class=jwk><span>我礼禅度者</span><span>尔时威德天子以偈赞曰</span><span>大雄于般若<br>　相续而修行<br>　获得无尽慧</span><span>我礼智度者</span><span>尔时界慧天子以偈赞曰</span></div>|<div class=jwk><span>布施及爱语<br>　利益与同事<br>　以此度众生</span><span>我礼大导师</span><span>尔时净慧天子以偈赞曰</span><span>于大慈悲喜<br>　长夜常修习<br>　以是济群生</span><span>归命大船师</span></div>|<div class=jwk><span>尔时净心天子以偈赞曰</span><span>以度无诤行<br>　调心大牟尼<br>　能调未调者</span><span>我礼调御师</span><span>尔时无垢慧天子以偈赞曰</span><span>广心柔软心<br>　心调及诸根<br>　知诸众生心</span></div>|<div class=jwk><span>我礼悉知者</span><span>尔时净意天子以偈赞曰</span><span>具足正念者<br>　安住坚慧中<br>　明达悉了知</span><span>礼觉觉他者</span><span>尔时庄严心天子以偈赞曰</span></div>|<div class=jwk><span>佛久心清净<br>　亦净佛国土<br>　及净群生慧</span><span>我礼净法王</span><span>尔时无胜天子以偈赞曰</span><span>所愿无能坏<br>　降伏魔怨力<br>　满足诸大愿</span><span>悦喻诸天众</span></div>|<div class=jwk><span>尔时速营事天子以偈赞曰</span><span>如来速知法<br>　亦疾净众生<br>　已见难见法</span><span>我礼速事者</span><span>尔时坚精进天子以偈赞曰</span><span>处处悉解脱<br>　离痴无诸漏<br>　已度彼岸住</span></div>|<div class=jwk><span>我礼坚固力</span><span>尔时乐威仪天子以偈赞曰</span><span>离欲无诸过<br>　除闇得漏尽<br>　为世胜福田</span><span>我礼应供者</span><span>尔时善住天子以偈赞曰</span></div>|<div class=jwk><span>世尊住正法<br>　三界所供养<br>　一道安隐行</span><span>是故我敬礼</span><span>尔时无动天子以偈赞曰</span><span>佛如坚固山<br>　不为风所动<br>　毁誉常平等</span><span>是故今敬礼</span></div>|<div class=jwk><span>尔时得平等天子以偈赞曰</span><span>大雄色殊胜<br>　具三十二相<br>　有大深智慧</span><span>我礼端正智</span><span>尔时深慧天子以偈赞曰</span><span>非身大身者<br>　安住真如法<br>　显说于实际</span></div>|<div class=jwk><span>世间无与等</span><span>尔时无等碍慧天子以偈赞曰</span><span>究竟同不二<br>　勇健能伏魔<br>　不疑于深义</span><span>照法到彼岸</span><span>尔时喜意天子以偈赞曰</span></div>|<div class=jwk><span>喜意本勇健<br>　所学皆通利<br>　弃舍此三界</span><span>如蛇脱故皮</span><span>尔时定意天子以偈赞曰</span><span>譬如闇室灯<br>　油尽故明灭<br>　智者如是灭</span><span>由闻佛法故</span></div>|<div class=jwk><span>尔时住舍摩他天子以偈赞曰</span><span>如来普观察<br>　为欲所结缚<br>　佛能断彼罥</span><span>由执智剑故</span><span>尔时多舍摩他天子以偈赞曰</span><span>定心及定行<br>　定威仪境界<br>　佛能灭烦恼</span></div>|<div class=jwk><span>我礼伏怨者</span><span>尔时无畏舍摩他天子以偈赞曰</span><span>学佛舍摩他<br>　菩萨得名称<br>　正定导引故</span><span>成就定心佛</span><span>尔时定食天子以偈赞曰</span></div>|<div class=jwk><span>寂灭一切法<br>　大雄所演说<br>　解彼大智者</span><span>疾成于如来</span><span>尔时常观天子以偈赞曰</span><span>常观诸众生<br>　悉随如来学<br>　获得胜菩提</span><span>满足大智慧</span></div>|<div class=jwk><span>尔时持德天子以偈赞曰</span><span>如来智彼岸<br>　菩萨修学故<br>　成世大威德</span><span>能见无量法</span><span>尔时造光天子以偈赞曰</span><span>彼得不思光<br>　当获无垢乐<br>　照世如来所</span></div>|<div class=jwk><span>得闻智境界</span><span>尔时无垢光天子以偈赞曰</span><span>诸法无分别<br>　以善方便故<br>　修习如是智</span><span>故成妙丈夫</span><span>尔时无所住天子以偈赞曰</span></div>|<div class=jwk><span>无住无触娆<br>　诸法无所觉<br>　不觉于自他</span><span>佛依真实见</span><span>尔时宅慧天子以偈赞曰</span><span>诸法无窟宅<br>　导师如是见<br>　为众生说故</span><span>随顺取法相</span></div>|<div class=jwk><span>尔时无依慧天子以偈赞曰</span><span>诸法无所依<br>　远离于彼此<br>　如来显真实</span><span>如掌庵罗果</span><span>尔时虚空行天子以偈赞曰</span><span>知法如虚空<br>　不生亦不灭<br>　佛见法如是</span></div>|<div class=jwk><span>故能离世间</span><span>尔时无积聚天子以偈赞曰</span><span>无求亦无慢<br>　无觉无不觉<br>　依真无自性</span><span>是佛见世间</span><span>尔时修慧天子以偈赞曰</span></div>|<div class=jwk><span>犹如巧幻师<br>　幻作种种事<br>　非实而见实</span><span>故佛无与等</span><span>尔时喜悟天子以偈赞曰</span><span>譬如镜中像<br>　虽见非真实<br>　佛如是见法</span><span>不迷于世间</span></div>|<div class=jwk><span>尔时除疑天子以偈赞曰</span><span>佛如呼声响<br>　诸法亦复然<br>　说闻俱非实</span><span>是佛见世间</span><span>尔时无碍辩天子以偈赞曰</span><span>安住正法者<br>　辩才深妙说<br>　世尊久证法</span></div>|<div class=jwk><span>故能具足辩</span><span>尔时无障智天子以偈赞曰</span><span>依真无自性<br>　一切法如是<br>　如来如实知</span><span>故能除闇冥</span><span>尔时无忧天子以偈赞曰</span></div>|<div class=jwk><span>无忧亦无恼<br>　无静无娆浊<br>　诸法无垢染</span><span>佛见真实性</span><span>尔时行具足天子以偈赞曰</span><span>无来亦无去<br>　诸法无所有<br>　如来真实见</span><span>如是为世说</span></div>|<div class=jwk><span>尔时胜慧天子以偈赞曰</span><span>无染亦无净<br>　非愚亦非智<br>　诸法无能所</span><span>佛依如实见</span><span>尔时得无碍天子以偈赞曰</span><span>非明亦非闇<br>　非色非非色<br>　非缚非解脱</span></div>|<div class=jwk><span>佛慧如实见</span><span>尔时勇目天子以偈赞曰</span><span>非局亦非遍<br>　非有亦非无<br>　如梦受五欲</span><span>佛见法如实</span><span>尔时不瞬天子以偈赞曰</span></div>|<div class=jwk><span>不生亦不灭<br>　亦不住中间<br>　迷彼无智者</span><span>唯佛见真实</span><span>尔时住空天子以偈赞曰</span><span>非人非众生<br>　非用非世财<br>　随说故有用</span><span>佛能真实见</span></div>|<div class=jwk><span>尔时住无相天子以偈赞曰</span><span>所用一切法<br>　彼皆悉无相<br>　诸法性相离</span><span>导师如是见</span><span>尔时无愿天子以偈赞曰</span><span>因法空无相<br>　以是不起愿<br>　假设有愿求</span></div>|<div class=jwk><span>唯佛如实知</span><span>尔时三昧流注天子以偈赞曰</span><span>已得解脱门<br>　无有解脱者<br>　烦恼本亦无</span><span>佛见真实性</span><span>尔时无毁天子以偈赞曰</span></div>|<div class=jwk><span>舍弃一切恶<br>　集诸功德聚<br>　故佛无毁訾</span><span>亦无毁訾事</span><span>尔时电云天子以偈赞曰</span><span>犹如雷电云<br>　降雨充大地<br>　佛注正法雨</span><span>充足诸群生</span></div>|<div class=jwk><span>尔时不唐愿天子以偈赞曰</span><span>世尊辞无上<br>　能转正法轮<br>　明达深法理</span><span>具足一切智</span><span>尔时具智慧天子以偈赞曰</span><span>无生亦无灭<br>　诸法自性尔<br>　如来善知故</span></div>|<div class=jwk><span>亦复转教他</span><span>尔时师子吼天子以偈赞曰</span><span>如来师子吼<br>　演说空法时<br>　外道皆怖畏</span><span>如兽畏师子</span><span>尔时业无放逸天子以偈赞曰</span></div>|<div class=jwk><span>现前无放逸<br>　佛修成菩提<br>　导师于正法</span><span>无逸到彼岸</span><span>尔时住无放逸天子以偈赞曰</span><span>安住不放逸<br>　增益佛正法<br>　十力及余行</span><span>佛法不思议</span></div>|<div class=jwk><span>尔时无放逸生天子以偈赞曰</span><span>会于无放逸<br>　助道得生长<br>　以此济群生</span><span>佛亦自解脱</span><span>尔时成无放逸天子以偈赞曰</span><span>无逸得成就<br>　诸有依解脱<br>　声闻及菩萨</span></div>|<div class=jwk><span>皆从如是学</span><span>尔时不逸行天子以偈赞曰</span><span>所有诸佛子<br>　常不放逸行<br>　能取一切智</span><span>善观世间故</span><span>尔时无逸护天子以偈赞曰</span></div>|<div class=jwk><span>佛修菩提时<br>　守护不放逸<br>　逮得胜菩提</span><span>大悲庄严故</span><span>尔时住不放逸天子以偈赞曰</span><span>若住不放逸<br>　拣择一相法<br>　佛子大勇健</span><span>当得父遗财</span></div>|<div class=jwk><span>尔时乐不放逸天子以偈赞曰</span><span>勇健乐不逸<br>　能破烦恼山<br>　是等以佛智</span><span>疾灭高慢聚</span><span>尔时坚持不放逸天子以偈赞曰</span><span>守护无放逸<br>　昔求一切智<br>　阿僧祇亿劫</span></div>|<div class=jwk><span>佛心无疲倦</span><span>尔时舍摩他现前天子以偈赞曰</span><span>法寂自性尔<br>　是诸佛境界<br>　智者依彼住</span><span>能趣胜菩提</span><span>尔时依舍摩他天子以偈赞曰</span></div>|<div class=jwk><span>诸佛依舍摩<br>　依而不取著<br>　众生烦恼灭</span><span>如雨淹诸尘</span><span>尔时住舍摩他天子以偈赞曰</span><span>诸佛住舍摩<br>　不动如大山<br>　天魔不能坏</span><span>心寂故归命</span></div>|<div class=jwk><span>尔时舍摩他调伏天子以偈赞曰</span><span>舍摩所调伏<br>　佛子无讥毁<br>　亿魔不能动</span><span>离欲如罗汉</span><span>尔时修舍摩他天子以偈赞曰</span><span>大雄昔修习<br>　舍摩他定时<br>　无有知佛心</span></div>|<div class=jwk><span>依何得禅定</span><span>尔时舍摩他上首天子以偈赞曰</span><span>佛转正法轮<br>　奋得舍摩他<br>　余法悉依彼</span><span>以是获菩提</span><span>尔时留舍摩他天子以偈赞曰</span></div>|<div class=jwk><span>佛说舍摩他<br>　是为心笼网<br>　众生堕迷狱</span><span>佛教降伏心</span><span>尔时舍摩他境界天子以偈赞曰</span><span>诸佛妙境界<br>　是为舍摩他<br>　修此得无碍</span><span>成就大导师</span></div>|<div class=jwk><span>尔时满足舍摩他天子以偈赞曰</span><span>以禅充满心<br>　复更修集慧<br>　故佛得菩提</span><span>复能安众生</span><span>尔时重舍摩他天子以偈赞曰</span><span>不见有余道<br>　唯在佛法中<br>　获得大智慧</span></div>|<div class=jwk><span>成就无上士</span><span>尔时欣毗婆舍那天子以偈赞曰</span><span>佛依毗舍那<br>　能视一切法<br>　菩萨随顺学</span><span>成就自然智</span><span>尔时生毗婆舍那天子以偈赞曰</span></div>|<div class=jwk><span>到智彼岸故<br>　成就大医王<br>　显示四真谛</span><span>皆由毗舍那</span><span>尔时住毗婆舍那天子以偈赞曰</span><span>住毗婆舍那<br>　如实知诸法<br>　勇健证菩提</span><span>能成大导师</span></div>|<div class=jwk><span>尔时修尽毗婆舍那天子以偈赞曰</span><span>大士以智慧<br>　修习胜菩提<br>　不生识境界</span><span>成就大导师</span><span>尔时乐毗婆舍那天子以偈赞曰</span><span>智者依真实<br>　观察如此法<br>　能获无等果</span></div>|<div class=jwk><span>成佛号导师</span><span>尔时勤习毗婆舍那天子以偈赞曰</span><span>勤修智慧故<br>　能立诸苦行<br>　彼成难降伏</span><span>不为邪道坏</span><span>尔时毗婆舍那天子以偈赞曰</span></div>|<div class=jwk><span>所有诸佛子<br>　观察法相故<br>　彼知法相已</span><span>成就调御师</span><span>尔时修毗婆舍那天子以偈赞曰</span><span>如来于长夜<br>　修习胜智慧<br>　能成一切智</span><span>度脱无量众</span></div>|<div class=jwk><span>尔时殊胜行天子以偈赞曰</span><span>佛修一切智<br>　成就大导师<br>　以法济世间</span><span>越渡駃流水</span><span>尔时住毗婆舍那天子以偈赞曰</span><span>住毗婆舍那<br>　观察一切法<br>　出生诸佛法</span></div>|<div class=jwk><span>地生尼拘树</span><span>尔时持毗婆舍那天子以偈赞曰</span><span>世尊诸佛子<br>　摄受胜智慧<br>　得上菩提已</span><span>能度诸众生</span><span>尔时游戏毗婆舍那天子以偈赞曰</span></div>|<div class=jwk><span>游戏于诸法<br>　得佛无所畏<br>　无怯亦无怖</span><span>胜智大牟尼</span><span>尔时随顺毗婆舍那天子以偈赞曰</span><span>大雄于诸法<br>　皆会毗舍那<br>　观察无自性</span><span>是即佛菩提</span></div>|<div class=jwk><span>尔时毗婆舍那坚固天子以偈赞曰</span><span>诸佛智坚固<br>　于法无所畏<br>　观见群生苦</span><span>能起大悲心</span><span>尔时毗婆舍那天子以偈赞曰</span><span>以智趣菩提<br>　有智能善学<br>　彼得胜菩提</span></div>|<div class=jwk><span>度脱诸众生</span><span>尔时修空天子以偈赞曰</span><span>修习于空法<br>　智者悟菩提<br>　能坏诸牢狱</span><span>亦度结缚者</span><span>尔时解空天子以偈赞曰</span></div>|<div class=jwk><span>世尊解空故<br>　不见于身命<br>　无缘无自性</span><span>依是为世说</span><span>尔时空境界天子以偈赞曰</span><span>一切佛境界<br>　诸法性自空<br>　大雄于中学</span><span>愍济众生故</span></div>|<div class=jwk><span>尔时信空天子以偈赞曰</span><span>如来离臭秽<br>　怖畏亦久度<br>　不著于诸法</span><span>如风无所依</span><span>尔时乐空天子以偈赞曰</span><span>修习空法者<br>　能乐佛境界<br>　彼即供养佛</span></div>|<div class=jwk><span>亦成无上供</span><span>尔时空建立天子以偈赞曰</span><span>修习空法故<br>　导师得建立<br>　通达空法已</span><span>成就世间亲</span><span>尔时向空天子以偈赞曰</span></div>|<div class=jwk><span>佛知无一法<br>　不是涅槃者<br>　诸法趣涅槃</span><span>此是佛菩提</span><span>尔时空成就天子以偈赞曰</span><span>已得空寂定<br>　佛子得成就<br>　彼等供养佛</span><span>是修空法者</span></div>|<div class=jwk><span>尔时趣空天子以偈赞曰</span><span>所有归空者<br>　有智非愚痴<br>　无著断烦恼</span><span>离垢得菩提</span><span>尔时满足空天子以偈赞曰</span><span>佛法得满足<br>　成就难降伏<br>　所有修空者</span></div>|<div class=jwk><span>能利益世间</span><span>尔时住空天子以偈赞曰</span><span>安住佛法中<br>　能修空智者<br>　无量诸魔众</span><span>不能动彼等</span><span>尔时乐无相天子以偈赞曰</span></div>|<div class=jwk><span>喜乐于无相<br>　不著有相中<br>　拣择诸法已</span><span>佛能超世间</span><span>尔时无相行天子以偈赞曰</span><span>习行无相时<br>　清净寂灭行<br>　离相众生等</span><span>魔不知彼趣</span></div>|<div class=jwk><span>尔时无相境界天子以偈赞曰</span><span>无相佛境界<br>　如来于中修<br>　无相难证解</span><span>我礼定行者</span><span>尔时渴乐无相天子以偈赞曰</span><span>此等一切众<br>　渴乐无相法<br>　希求父资财</span></div>|<div class=jwk><span>供养天人师</span><span>尔时修无相行天子以偈赞曰</span><span>如来于无相<br>　昼夜常修行<br>　天人及鬼神</span><span>不知佛所趣</span><span>尔时无相解脱天子以偈赞曰</span></div>|<div class=jwk><span>大雄住无相<br>　思量一切法<br>　导师所修学</span><span>是故我敬礼</span><span>尔时无相游戏天子以偈赞曰</span><span>大慈现游戏<br>　常依无相法<br>　成熟众生故</span><span>住于佛智中</span></div>|<div class=jwk><span>尔时无相成就天子以偈赞曰</span><span>善修离相者<br>　能得佛菩提<br>　亦能供养佛</span><span>如子恭敬父</span><span>尔时久乐无相天子以偈赞曰</span><span>彼爱佛正法<br>　即是众生塔<br>　所有弃相者</span></div>|<div class=jwk><span>得住于师处</span><span>尔时无相道天子以偈赞曰</span><span>众生诸所归<br>　依道得济度<br>　无著寂灭行</span><span>如来最无上</span><span>尔时信无相天子以偈赞曰</span></div>|<div class=jwk><span>信解无相者<br>　寂灭离诸怨<br>　我礼一切佛</span><span>自度度他者</span><span>尔时趣无愿天子以偈赞曰</span><span>世尊所有愿<br>　求之不可得<br>　彼等离所作</span><span>是佛出世间</span></div>|<div class=jwk><span>尔时修无愿天子以偈赞曰</span><span>于有不起愿<br>　修行寂灭心<br>　断除渴爱缚</span><span>是佛离世间</span><span>尔时无愿生天子以偈赞曰</span><span>彼得大精进<br>　于有离爱染<br>　是等如来子</span></div>|<div class=jwk><span>悉礼自己父</span><span>尔时从无愿生天子以偈赞曰</span><span>彼等不起愿<br>　于有而坏有<br>　所能断爱者</span><span>佛子离讥毁</span><span>尔时无愿解脱天子以偈赞曰</span></div>|<div class=jwk><span>无愿得解脱<br>　不求离诸缚<br>　放舍不起愿</span><span>佛子持威德</span><span>尔时出无愿天子以偈赞曰</span><span>出离忧旷野<br>　拔断爱染根<br>　彼等礼如来</span><span>得除饥渴者</span></div>|<div class=jwk><span>尔时必定无愿天子以偈赞曰</span><span>善知有苦者<br>　亦知世乐妄<br>　佛是彼等父</span><span>彼为导师子</span><span>尔时向无愿天子以偈赞曰</span><span>于有见苦者<br>　彼人得调伏<br>　我礼善调伏</span></div>|<div class=jwk><span>破有调御师</span><span>尔时超无愿天子以偈赞曰</span><span>超度有旷野<br>　得住安隐处<br>　普礼大导师</span><span>已伏烦恼怨</span><span>尔时被无愿铠天子以偈赞曰</span></div>|<div class=jwk><span>战胜破怨敌<br>　最强难伏者<br>　降诸魔众已</span><span>勇健不求有</span><span>尔时无愿力天子以偈赞曰</span><span>大力于解脱<br>　能断诸魔缚<br>　是诸佛子等</span><span>观魔如网草</span></div>|<div class=jwk><span>尔时观身天子以偈赞曰</span><span>诸有观此身<br>　彼能乐佛法<br>　无身无作者</span><span>是等随顺法</span><span>尔时念身天子以偈赞曰</span><span>所有念此身<br>　秽恶不清净<br>　已知身如实</span></div>|<div class=jwk><span>敬礼大导师</span><span>尔时厌患身天子以偈赞曰</span><span>系念于内身<br>　观见不净相<br>　彼得离身苦</span><span>调伏故敬礼</span><span>尔时舍身天子以偈赞曰</span></div>|<div class=jwk><span>舍此脓血身<br>　如蛇脱故皮<br>　敬礼于非身</span><span>是大如来身</span><span>尔时厌恶身天子以偈赞曰</span><span>厌恶脓血身<br>　不净甚臭秽<br>　舍此不净身</span><span>归敬天人师</span></div>|<div class=jwk><span>尔时患身疲劳天子以偈赞曰</span><span>所患烂坏身<br>　佛子求清净<br>　彼得悉礼佛</span><span>所修正法身</span><span>尔时怖身天子以偈赞曰</span><span>观知此四大<br>　犹如恶毒蛇<br>　彼等超度身</span></div>|<div class=jwk><span>敬礼大导师</span><span>尔时见身过天子以偈赞曰</span><span>现前见身过<br>　是得智慧眼<br>　悉照此三有</span><span>智者依佛慧</span><span>尔时不乐身天子以偈赞曰</span></div>|<div class=jwk><span>所有不乐身<br>　不依法相住<br>　无著于诸结</span><span>彼等礼调御</span><span>尔时于有起怨想天子以偈赞曰</span><span>于有如怨想<br>　修观坏诸有<br>　佛子如是学</span><span>智生悟菩提</span></div>|<div class=jwk><span>尔时坏有天子以偈赞曰</span><span>于有见过已<br>　能知灭无畏<br>　佛子勤求道</span><span>获得父遗财</span><span>尔时弃有天子以偈赞曰</span><span>所修弃诸有<br>　乐住大涅槃<br>　心净离众结</span></div>|<div class=jwk><span>我礼大导师</span><span>尔时断有天子以偈赞曰</span><span>断除有根本<br>　照达三千界<br>　世尊诸子等</span><span>所学悉通利</span><span>尔时度有天子以偈赞曰</span></div>|<div class=jwk><span>已度于有海<br>　济拔孤独者<br>　于此三界中</span><span>彼等不在数</span><span>尔时破有天子以偈赞曰</span><span>佛子修道者<br>　能破于三有<br>　彼是供养佛</span><span>以化众生故</span></div>|<div class=jwk><span>尔时于有解脱天子以偈赞曰</span><span>有流得解脱<br>　究竟住后际<br>　大雄出世间</span><span>敬礼断有者</span><span>尔时灭有天子以偈赞曰</span><span>灭除有根本<br>　度有到彼岸<br>　已断于后际</span></div>|<div class=jwk><span>世间无如佛</span><span>尔时住后际天子以偈赞曰</span><span>如来后际住<br>　寂灭到彼岸<br>　度有一切智</span><span>觉了未悟者</span><span>尔时于有住后际天子以偈赞曰</span></div>|<div class=jwk><span>佛于后际住<br>　说彼三有因<br>　不见有诸结</span><span>后能不生有</span><span>尔时得灭有天子以偈赞曰</span><span>知有空寂已<br>　能解三有因<br>　精进不怯弱</span><span>我礼平等者</span></div>|<div class=jwk><span>尔时度有到彼岸天子以偈赞曰</span><span>度有到彼岸<br>　拔除有根源<br>　救度诸群生</span><span>导师愍一切</span><span>尔时于受无恼天子以偈赞曰</span><span>于受无贡高<br>　无思亦无虑<br>　禅事悉知解</span></div>|<div class=jwk><span>观受如水泡</span><span>尔时解受天子以偈赞曰</span><span>如来知诸受<br>　本来无自性<br>　凡夫所著处</span><span>如梦受欲乐</span><span>尔时观受天子以偈赞曰</span></div>|<div class=jwk><span>有智观诸受<br>　能取于善道<br>　不生未来受</span><span>如是见导师</span><span>尔时离受天子以偈赞曰</span><span>受及所受者<br>　佛见无自性<br>　能即为众说</span><span>难知甚深句</span></div>|<div class=jwk><span>尔时决定知受天子以偈赞曰</span><span>诸受但世谛<br>　第一义中无<br>　如来说真实</span><span>除断世间疑</span><span>尔时善解受天子以偈赞曰</span><span>世尊善知受<br>　犹如空中云<br>　谁迷无智者</span></div>|<div class=jwk><span>独佛能实解</span><span>尔时通达受天子以偈赞曰</span><span>如来达诸受<br>　解受到彼岸<br>　知受无我所</span><span>说法最为上</span><span>尔时度受天子以偈赞曰</span></div>|<div class=jwk><span>世尊已久度<br>　最难三受海<br>　舍离恶污泥</span><span>佛智号无上</span><span>尔时断受天子以偈赞曰</span><span>导师于诸受<br>　了知出世间<br>　超离污染泥</span><span>不著于诸有</span></div>|<div class=jwk><span>尔时思受天子以偈赞曰</span><span>如来念诸受<br>　由受苦世间<br>　众生烦恼缚</span><span>佛知真实性</span><span>尔时解心天子以偈赞曰</span><span>佛心伏烦恼<br>　亦降诸魔怨<br>　依真无所破</span></div>|<div class=jwk><span>故佛号牟尼</span><span>尔时识心天子以偈赞曰</span><span>佛久识心相<br>　犹如巧幻师<br>　幻作种种像</span><span>故佛号应供</span><span>尔时心行天子以偈赞曰</span></div>|<div class=jwk><span>大雄已修行<br>　能断心所缘<br>　亿劫阿僧祇</span><span>心性不可得</span><span>尔时摄心天子以偈赞曰</span><span>躁动难调伏<br>　无体而住窟<br>　佛断速疾心</span><span>故能受胜供</span></div>|<div class=jwk><span>尔时拣择心天子以偈赞曰</span><span>佛已拣择心<br>　众生为心缚<br>　佛能真实知</span><span>如幻师教子</span><span>尔时修心境界天子以偈赞曰</span><span>所行心境界<br>　导师决定见<br>　如梦受五欲</span></div>|<div class=jwk><span>迷彼愚痴者</span><span>尔时心自在天子以偈赞曰</span><span>调伏作业已<br>　心无分别事<br>　如来见心相</span><span>世间所不知</span><span>尔时心勇天子以偈赞曰</span></div>|<div class=jwk><span>所言心勇者<br>　能破魔军众<br>　以心见心者</span><span>观心不疲倦</span><span>尔时建立天子以偈赞曰</span><span>如来观众生<br>　于法建立者<br>　以心能知心</span><span>彼则真佛子</span></div>|<div class=jwk><span>尔时定心天子以偈赞曰</span><span>所有伏心者<br>　彼能行寂灭<br>　是等离诸缚</span><span>不为魔所恼</span><span>尔时柔软心天子以偈赞曰</span><span>勇健柔软心<br>　调伏众生辈<br>　所乐佛法者</span></div>|<div class=jwk><span>不著于诸欲</span><span>尔时净心天子以偈赞曰</span><span>善心乐清净<br>　审思而作业<br>　闻佛正法已</span><span>无疑于深义</span><span>尔时住法天子以偈赞曰</span></div>|<div class=jwk><span>所有向法心<br>　深乐不退没<br>　彼是真佛子</span><span>已到调伏地</span><span>尔时思惟法天子以偈赞曰</span><span>思惟于法界<br>　境界无非一<br>　一切法界净</span><span>诸佛所学处</span></div>|<div class=jwk><span>尔时法界建立天子以偈赞曰</span><span>法界所建立<br>　是大慈悲心<br>　能住一相中</span><span>彼是真佛子</span><span>尔时法界境界天子以偈赞曰</span><span>世尊说法界<br>　是为诸佛土<br>　大士所行处</span></div>|<div class=jwk><span>此智不思议</span><span>尔时法界生天子以偈赞曰</span><span>法界所出生<br>　是智难思议<br>　不疑深佛法</span><span>亦知诸根性</span><span>尔时入法界天子以偈赞曰</span></div>|<div class=jwk><span>入深法界者<br>　解法无与等<br>　是力不思议</span><span>亦得诸妙愿</span><span>尔时法界无畏天子以偈赞曰</span><span>已得无畏法<br>　是住安隐处<br>　所有辩才力</span><span>无能与等者</span></div>|<div class=jwk><span>尔时善解法界天子以偈赞曰</span><span>如来解法界<br>　亦达一切智<br>　示现法界相</span><span>如掌庵罗果</span><span>尔时住法界天子以偈赞曰</span><span>世尊住法界<br>　见法真实性<br>　不依亦不离</span></div>|<div class=jwk><span>不取复不舍</span><span>尔时法界行天子以偈赞曰</span><span>如来行法界<br>　寂静如虚空<br>　境界大牟尼</span><span>敬礼慈悲父</span><span>尔时归法界天子以偈赞曰</span></div>|<div class=jwk><span>随其种种门<br>　世尊说法界<br>　彼彼法门中</span><span>无心亦无色</span><span>尔时法界精进天子以偈赞曰</span><span>世尊说精进<br>　能知于法界<br>　因修精进故</span><span>觉智到彼岸</span></div>|<div class=jwk><span>尔时法界充满天子以偈赞曰</span><span>大慈以正法<br>　充饱诸世间<br>　能知法界者</span><span>彼得住菩提</span><span>尔时彻法界天子以偈赞曰</span><span>世尊彻深法<br>　故能观世间<br>　法界悉知已</span></div>|<div class=jwk><span>我礼天人师</span><span>尔时住智处天子以偈赞曰</span><span>是处人中上<br>　如来智所得<br>　法界及十方</span><span>导师所行处</span><span>尔时住处天子以偈赞曰</span></div>|<div class=jwk><span>法界是住处<br>　众智所行道<br>　诸有一切法</span><span>悉作一相解</span><span>尔时知处天子以偈赞曰</span><span>世尊知法界<br>　已作一相修<br>　众生诸欲性</span><span>佛亦悉了知</span></div>|<div class=jwk><span>尔时出处天子以偈赞曰</span><span>能取一切智<br>　是谓诸佛子<br>　于此法界处</span><span>唯智所能知</span><span>尔时学处天子以偈赞曰</span><span>所习法界者<br>　安住菩提中<br>　得达自然处</span></div>|<div class=jwk><span>疾成于如来</span><span>尔时非处学天子以偈赞曰</span><span>所见非处者<br>　能乐如来教<br>　千亿众魔军</span><span>不能迷惑彼</span><span>尔时知非处天子以偈赞曰</span></div>|<div class=jwk><span>所有知非处<br>　智者得欣喜<br>　我等修菩提</span><span>亿魔不能动</span><span>尔时深密处天子以偈赞曰</span><span>善学深智处<br>　安住正法中<br>　能乘魔波旬</span><span>如车驾调马</span></div>|<div class=jwk><span>尔时善非处天子以偈赞曰</span><span>非处善法界<br>　习学于一相<br>　若魔能恼者</span><span>佛说无是处</span><span>尔时住处天子以偈赞曰</span><span>是处及非处<br>　示现愚痴者<br>　如来自觉已</span></div>|<div class=jwk><span>复为众生说</span><span>尔时善取天子以偈赞曰</span><span>彼因所取事<br>　及昔所作业<br>　彼因修业处</span><span>世尊皆悉知</span><span>尔时巧业天子以偈赞曰</span></div>|<div class=jwk><span>贪欲及恚痴<br>　佛亦知因业<br>　为因为业者</span><span>如来悉知彼</span><span>尔时知当来天子以偈赞曰</span><span>知彼当来世<br>　众生所作业<br>　彼因所作事</span><span>是处佛悉知</span></div>|<div class=jwk><span>尔时思现在天子以偈赞曰</span><span>普及十方界<br>　众生业与因<br>　处及因业事</span><span>导师悉了知</span><span>尔时力境界天子以偈赞曰</span><span>若业若与因<br>　处所及出生<br>　如来无不知</span></div>|<div class=jwk><span>故称天人师</span><span>尔时乐力天子以偈赞曰</span><span>因业及处所<br>　三世果报中<br>　彼有所作事</span><span>如来皆悉知</span><span>尔时力主天子以偈赞曰</span></div>|<div class=jwk><span>因业所作事<br>　报因及因缘<br>　处所性自离</span><span>是佛无有等</span><span>尔时力吉祥天子以偈赞曰</span><span>因业所作事<br>　处因缘世谛<br>　所受用果报</span><span>佛知彼悉空</span></div>|<div class=jwk><span>尔时力悦天子以偈赞曰</span><span>因业所作事<br>　俗谛因缘处<br>　佛自悉知已</span><span>说彼无自性</span><span>尔时力游戏天子以偈赞曰</span><span>因缘所作事<br>　处因缘世谛<br>　不由自他生</span></div>|<div class=jwk><span>佛知从缘起</span><span></span></div>|"; 
+	//alert(fj+fj);
+	fjxy="|621@170|379@171|142@168|623@744|379@738|134@732|616@1567|378@1566|141@1567|618@2130|367@2137|126@2137|620@2969|383@2970|148@2966|625@3536|388@3535|133@3537|607@4376|368@4377|125@4372|609@4934|366@4937|126@4933|627@5784|373@5779|131@5787|626@6349|388@6352|143@6357|621@7181|383@7185|141@7196|611@7755|372@7756|134@7760|613@8587|375@8591|134@8591|624@9150|377@9151|137@9161|620@9991|377@9980|136@9993|621@10549|383@10552|136@10560|629@11386|388@11384|143@11387|623@11960|379@11960|136@11952|619@12803|370@12805|134@12798|623@13357|385@13354|140@13358|617@14182|379@14181|139@14191|623@14745|377@14748|130@14742|619@15591|378@15598|141@15599|625@16150|375@16166|137@16167|623@16999|385@16998|139@16998|618@17568|377@17572|137@17567|622@18403|385@18407|135@18404|618@18965|379@18967|139@18971|620@19803|376@19795|130@19804|609@20367|369@20368|128@20370|626@21204|392@21206|147@21211|622@21774|382@21771|137@21761|626@22603|386@22604|147@22606|626@23163|382@23162|142@23165|629@24003|392@24000|150@24006|619@24564|382@24565|140@24563|620@25400|374@25407|140@25404|617@25962|376@25973|136@25970|627@26812|385@26817|137@26818|616@27377|374@27376|130@27373|623@28235|377@28231|NaN@undefined"; gs="1"; fjedit="True"; dwxy="1"; 	
+	//alert(fjxy);
+	//读取经文定位文件****xy.htm;
+	
+	//alert(dwxy);
+		
+	
+	var leftyy= 0; //手机left偏移量
+	function browserRedirect() {
+		var sUserAgent = navigator.userAgent.toLowerCase();
+		var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+		var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+		var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+		var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+		var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+		var bIsAndroid = sUserAgent.match(/android/i) == "android";
+		var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+		var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+		if (! (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+			leftyy= 0; 
+		} else {
+			leftyy= 15; 
+		}
+	}
+	browserRedirect();
+	//alert(leftyy);
+
+	window.onload =function(){jw();}//用window的onload事件，窗体加载完毕的时候
+
+	//读取佛经校对经文;
+	var strs= new Array(); //定义经文数组 
+	var jwstrs= new Array(); //定义经文数组
+	var lefts= new Array(); //定义left数组
+	var lefts1= new Array(); //定义left数组
+	var tops= new Array(); //定义top数组
+	var dw = "1"; //是否存在定位文件：1-存在；0-不存在
+	var fj_name  = ""; 	
+	var winWidth = 0;
+	var winHeight = 0;
+	function jw() {
+		//获取窗口宽度
+		findDimensions();
+
+		document.getElementById('pre1').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre2').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre3').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		document.getElementById('pre4').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";
+		if( fjedit == "True" ){document.getElementById('savedw').style.left = 1368 + (document.documentElement.clientWidth-1899)/2+ "px";}
+		
+		strs=fj.split("|"); //取经文数据
+		ierror=1;
+		if ( dw == 1 ) { //如果存在定位文件
+			xy=fjxy.split("|");
+			//alert((strs.length-1)+"------------"+strs[1]+"----------"+strs[25]);
+			for (i=1;i<strs.length-1 ;i++ ) {
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(i, 3)+PrefixInteger(j, 3);
+					strs[i]=strs[i].replace(/<span>/,"<span id='s"+s+"'>");
+					//if (i=24){alert(ierror+"--1--"+gs+"----"+s+"----"+j);}
+				}
+				//alert(i+"   "+strs[i]);
+				
+				if( strs[i].replace(/[^\u4e00-\u9fa5]/gi,"")!=="" && fj_name=="" ){
+					fj_name=strs[i].substring(0,strs[i].indexOf("</span>")).replace(/[^\u4e00-\u9fa5]/gi,""); 
+					//alert(fj_name);
+				}
+				
+				if( strs[i].indexOf("@") >=0 ){
+					jwstrs[i] =  strs[i].substring(0,strs[i].indexOf('@')) ; //经文写入jwstrs 
+					//alert(i+"   "+jwstrs[i]);
+					document.getElementById('jw'+i).innerHTML =  strs[i].substring(0,strs[i].indexOf('@')) ; //经文写入div 
+					document.getElementById('sm'+i).innerHTML =  "校对说明：<br><br>"+strs[i].substring(strs[i].indexOf('@')+1) ; //说明写入div
+				} else {
+					jwstrs[i] =  strs[i] ; //经文写入jwstrs
+					//alert(i+"   "+jwstrs[i]);
+					document.getElementById('jw'+i).innerHTML =  strs[i]; //经文写入div
+				}
+
+				if( xy[i].substring(0,xy[i].indexOf('@'))=="NaN" ){
+					ierror=i;
+					i=strs.length;
+					//alert(ierror+"   "+i+"   "+xy[i]);
+				} else {
+					lefts[i] =	parseInt(xy[i].substring(0,xy[i].indexOf('@')))+leftyy+(winWidth-993-16)/2-24-8 ;		
+					//设定div的left
+					document.getElementById('jw'+i).style.left =  lefts[i]+ "px"; //设定div的left
+					tops[i] = xy[i].substring(xy[i].indexOf('@')+1);
+					tops[i]=tops[i].replace("px","");
+					document.getElementById('jw'+i).style.top = tops[i]; //设定div的top
+					//alert(i+"   "+xy[i]+"   "+tops[i]);
+				}
+
+				for (j=1;j<6 ;j++ ) {
+					if(ierror==1){
+						s=PrefixInteger(i, 3)+PrefixInteger(j, 3);
+					} else {
+						s=PrefixInteger(ierror, 3)+PrefixInteger(j, 3);
+					}
+					//if (i=24){alert(ierror+"--2--a"+document.getElementById('s'+s)+"a----"+s+"----"+j);}
+					if (document.getElementById('s'+s)!=null){
+						document.getElementById('s'+s).className = 'jwk'+gs;
+					}
+				}
+				//if (i=24){alert(ierror+"----"+gs+"----"+s);}
+				//if( i>3 && strs[i+1].length == 0 ) { i=strs.length-1; }
+				//alert(i+"   "+strs[i]+"   "+xy[i]+"   "+tops[i]);
+			}
+			//alert(i+"   "+xy[i]+"   "+tops[i]);
+		}
+
+		if(( ierror!==1 && ierror<strs.length ) || dw == 0 ){
+			//如果不存在定位文件或缺少定位数据
+			//alert(ierror+"   "+strs.length+"   "+dw+"   "+gs);
+			for (ii=ierror;ii<strs.length-1;ii++ ) {
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(ii, 3)+j;
+					strs[ii]=strs[ii].replace(/<span>/,"<span id='s"+s+"'>");
+				}
+				
+				if( strs[ii].indexOf("@") >=0 ){
+					document.getElementById('jw'+ii).innerHTML =  strs[ii].substring(0,strs[ii].indexOf('@')) ; //经文写入div 
+					document.getElementById('sm'+ii).innerHTML =  "校对说明：<br><br>"+strs[ii].substring(strs[ii].indexOf('@')+1) ; //说明写入div
+				} else {
+					document.getElementById('jw'+ii).innerHTML =  strs[ii]; //经文写入div
+				}
+				//alert(ii+"   "+strs[ii]);
+				lefts[ii] = 850 - (ii-parseInt((ii-1)/3)*3)*235  + (winWidth-993-16)/2-24-8;
+				//alert(ii+"   "+lefts[ii]);
+				document.getElementById('jw'+ii).style.left =  parseInt(lefts[ii])+ "px"; //设定div的left
+				tops[ii] = Math.floor((ii-1)/6)*1403 + 150 + Math.floor(  ( (ii-Math.floor((ii-1)/6)*6)-1)/3   )*570  ; //JPG=993*1403 
+				document.getElementById('jw'+ii).style.top = tops[ii]; //设定div的top
+				for (j=1;j<6 ;j++ ) {
+					s=PrefixInteger(ii, 3)+j;
+					document.getElementById('s'+s).className = 'jwk'+gs;
+				}
+				//alert(ii+"   "+strs[ii]);
+			}
+		}
+		
+		document.getElementById('yh').innerHTML =  "　第"+picx+"页上部 ";
+		start_jw = jwstrs[1]+jwstrs[2]+jwstrs[3]+jwstrs[4]+jwstrs[5]+jwstrs[6];
+		//alert(picx+"    "+start_jw);
+		select_jw(1,1,start_jw);
+	};
+	
+	
+	//获取窗口宽度
+	function findDimensions() {//函数：获取尺寸
+		if (window.innerWidth)
+			winWidth = window.innerWidth;
+		else if ((document.body) && (document.body.clientWidth))
+			winWidth = document.body.clientWidth;
+		//获取窗口高度
+		if (window.innerHeight)
+			winHeight = window.innerHeight;
+		else if ((document.body) && (document.body.clientHeight))
+			winHeight = document.body.clientHeight;
+		//通过深入Document内部对body进行检测，获取窗口大小
+		if (document.documentElement  && document.documentElement.clientHeight && document.documentElement.clientWidth)
+		{
+			winHeight = document.documentElement.clientHeight;
+			winWidth = document.documentElement.clientWidth;
+		}
+	}
+	
+	//鼠标移动自动加载佛经图像文件
+    $(function(){
+        $(window).scroll(function(event) {
+          var ah=$(window).scrollTop();
+          var ch=$(window).height()
+          $('.img_box').each(function(){
+            var bh=$(this).offset().top;
+            if(ch+ah-200>bh){
+                var a=$(this).find('img').attr("load_src");
+                 $(this).find('img').attr("src",a);
+            }
+          })
+        });
+    })
+	
+	//鼠标调整经文位置移动时改变div的left、top
+	var jwid = 1;
+	function moveObj(obj) {
+		obj.style.cursor = "move";
+		obj.onmousedown = function(e) {
+			obj.style.position = "absolute";
+			var drag_x  = 0;
+			var drag_y  = 0;
+			var draging = true;
+			var left    = obj.offsetLeft;
+			var top     = obj.offsetTop;
+			if(typeof document.all !== "undefined") {   //IE
+				drag_x = event.clientX;
+				drag_y = event.clientY;
+				document.onmousemove = function(e) {
+					if(draging === false) return false;
+					obj.style.left = left + event.clientX - drag_x + "px";
+					obj.style.top  = top + event.clientY - drag_y + "px";
+				}
+			} else {    //FF,Chrome,Opera,Safari
+				drag_x = e.pageX;
+				drag_y = e.pageY;
+				document.onmousemove = function(e) {
+					if (draging === false) return false;
+					obj.style.left = left + e.pageX - drag_x + "px";
+					obj.style.top  = top + e.pageY - drag_y + "px";
+				}
+			}
+			document.onmouseup = function() {
+				draging = false; 
+				jwid = obj.getAttribute('id').replace("jw","");     //取当前div的id序号jw1
+				lefts[jwid]=parseInt(obj.style.left); 						//改变div的left
+				tops[jwid]=obj.style.top;							//改变div的top
+				//alert(jwid+"   "+lefts[jwid]+" "+tops[jwid]);
+			};
+		}
+	}
+   
+	//屏幕变化时改变div的left、top
+	window.onresize = function(){
+		jw();
+	}
+	
+	//右移经文→
+	function addz() {
+		findDimensions();
+		//alert(winWidth);
+		i=jwid;
+		for (i=jwid;i<strs.length ;i++ ) {
+			lefts[i] =  parseInt(lefts[i]) - 1 ;
+			//alert(jwid+"   "+strs.length+"  "+lefts[i]);
+			document.getElementById('jw'+i).style.left = lefts[i] + "px";
+		}
+	}
+	//←左移经文
+	function addy(){
+		findDimensions();
+		i=jwid
+		for (i=jwid;i<strs.length ;i++ ) {
+			lefts[i] =  parseInt(lefts[i]) + 1 ;
+			//alert(jwid+"   "+strs.length+"  "+lefts[i]);
+			document.getElementById('jw'+i).style.left = lefts[i] + "px";
+		}
+	}
+	//↑上移经文
+	function adds() {
+		for (i=jwid;i<strs.length ;i++ ) {
+			tops[i] =  parseInt(tops[i]) - 1 ;
+			document.getElementById('jw'+i).style.top = tops[i]+ "px";
+		}
+	}
+	//↓下移经文
+	function addx(){
+	//alert(jwid+"   "+strs.length+""+tops[strs.length-1]);
+		for (i=jwid;i<strs.length ;i++ ) {
+			tops[i] =  parseInt(tops[i]) + 1 ;
+			document.getElementById('jw'+i).style.top = tops[i]+ "px";
+		}
+	}
+
+	//滚动屏幕
+	var yh = picx; //定义当前显示页号
+	var sxb="上";  //定义当前显示页上部下部
+	function sc1(){
+		document.getElementById("pre1").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre1").offsetHeight)/9*2;
+		document.getElementById("pre2").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre2").offsetHeight)/9*3;	
+		document.getElementById("pre3").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre3").offsetHeight)/9*4;
+		document.getElementById("pre4").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre4").offsetHeight)/9*5;
+		if( fjedit == "True" ){
+			document.getElementById("savedw").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("savedw").offsetHeight) / 9 * 6;
+		}
+		//select
+		yh=parseInt((parseInt(picx)+document.body.scrollTop/1403+0.5));
+		if ((document.body.scrollTop/1403)%1+0.5>1 || (document.body.scrollTop/1403)%1==0) { sxb="上";} else { sxb="下";}
+		document.getElementById('yh').innerHTML =  "　第"+yh+"页"+sxb+"部 ";
+		
+		currSelect_lh = parseInt(document.getElementById("lh").value); 
+		currSelect_zh = parseInt(document.getElementById("zh").value); 
+		currSelect_jw = jwstrs[(yh-picx)*6+1]+jwstrs[(yh-picx)*6+2]+jwstrs[(yh-picx)*6+3]+jwstrs[(yh-picx)*6+4]+jwstrs[(yh-picx)*6+5]+jwstrs[(yh-picx)*6+6];
+		
+		//alert(currSelect_lh+"    "+currSelect_zh+"    "+currSelect_jw)
+		select_jw(currSelect_lh,currSelect_zh,currSelect_jw);
+	}
+	function scall() {
+		sc1();
+	}
+	window.onscroll = scall;
+
+	//键盘上下左右移动当前经文
+	function keyUp(e) {
+		var currKey = 0,
+			e = e || event;　　　
+		currKey = e.keyCode || e.which || e.charCode;　　　　
+		var keyName = String.fromCharCode(currKey);　
+		findDimensions();　
+		switch(currKey) {
+			case 37: //[方向键左]
+				//alert("按键码: " + currKey + " 字符: " + keyName + "  " + jwid+ "  " + lefts[jwid]+ "  " + (parseInt(lefts[jwid]) + (winWidth-993-16)/2-24-8));
+				lefts[jwid] = parseInt(lefts[jwid]) - 1;
+				document.getElementById('jw' + jwid).style.left = lefts[jwid] + "px";
+				break;
+			case 38: //[方向键上] 
+				tops[jwid] =  parseInt(tops[jwid]) - 1 ;
+				document.getElementById('jw'+jwid).style.top = tops[jwid]+ "px";
+				break;
+			case 39: //[方向键右]
+				lefts[jwid] = parseInt(lefts[jwid]) + 1;
+				document.getElementById('jw' + jwid).style.left = lefts[jwid] + "px";
+				break;
+			case 40: //[方向键下]
+				tops[jwid] =  parseInt(tops[jwid]) + 1 ;
+				document.getElementById('jw'+jwid).style.top = tops[jwid]+ "px";
+				break;
+			default:
+				keyName = "";
+				break;　
+		}
+	}　　
+	document.onkeyup = keyUp;
+	
+	//保存文件
+	function saveCode() {
+		var fjzb = "";
+		
+		for ( i=1;i<strs.length;i++ ) { 
+			lefts1[i]=lefts[i]-(leftyy+(winWidth-993-16)/2-24-8);
+			//if (i==24){			alert(2+"    "+tops[i]);}
+			//if( strs[i] !="" ){
+				fjzb=fjzb+"|"+lefts1[i]+"@"+tops[i];
+			//}
+		}
+		//alert("jds.asp?fjname="+fjname+"&picx="+picx+"&picy="+picy+"&fjml="+fjml+"&fjurl="+fjurl+"&fjzb="+fjzb+"&fjdate="+fjdate+"&fj="+fj);
+		//alert(fjzb);
+
+		if (fj != "") { fjk="bk";} else { fjk="k";}
+		var url,data; 
+		url="jds.asp";//这里是你的服务器文件 
+		data={fjname:fjname,picx:picx,picy:picy,fjml:fjml,fjurl:fjurl,fjzb:fjzb,fjk:fjk,fjdate:fjdate}; 
+		$.post(url,data,function(result){
+			result=result.split("|");
+			if (result[1] == "") { result[1]="0.01";} 
+			if( result[0]=="12"){
+				alert("佛经校对文件和坐标文件已更新！运行时间："+result[1]+"秒");
+				window.history.go(0);
+			}  else if ( result[0]=="1" ){
+				alert("佛经校对文件已更新！运行时间："+result[1]+"秒");
+				window.history.go(0);
+			}  else if ( result[0]=="2" ){
+				alert("佛经坐标文件已保存！运行时间："+result[1]+"秒");
+			} else {
+				alert(result[0]);
+				alert("error！");
+			} 
+			//window.history.go(0);
+		}); 
+	}
+	
+	//补齐0
+	function PrefixInteger(num, length) {
+	 return (Array(length).join('0') + num).slice(-length);
+	}
+	
+	// select 
+	function select(){ 
+		var currSelect_lh = parseInt(document.getElementById("lh").value); 
+		var currSelect_zh = parseInt(document.getElementById("zh").value); 
+		var currSelect_jw = jwstrs[(yh-picx)*6+1]+jwstrs[(yh-picx)*6+2]+jwstrs[(yh-picx)*6+3]+jwstrs[(yh-picx)*6+4]+jwstrs[(yh-picx)*6+5]+jwstrs[(yh-picx)*6+6];
+		//alert(currSelect_jw);
+		select_jw(currSelect_lh,currSelect_zh,currSelect_jw);
+	}
+	
+	var jdjw = "";
+	function select_jw(slh,szh,sjw){ 
+	//alert("1---"+slh+"    "+szh+"    "+sjw)
+		var strjw= new Array();
+		var fjjw = "";
+		var isjw=false;
+		var k=0;
+		jdjw = "";
+		for (i=0;i<sjw.length;i++){
+			divstr=sjw.toLowerCase().substring(i)//取经文计算后段
+			if ( divstr.indexOf("<span")==0 ) { 
+				i=i+19;
+				isjw=true;
+				fjjw = "";
+				k=k+1;
+			}
+			if ( divstr.indexOf("</span>")==0 ) { 
+				isjw=false;
+				strjw[k]=fjjw;
+			}
+			//alert(strjw[k]);
+			if (isjw==true) {
+				fjjw = fjjw.replace("<br>","") + sjw.charAt(i);
+			}
+		}
+		//alert("2---"+strjw[16]);
+		if (sxb=="上") {
+			if( strjw[slh]== undefined ){jdjw = "　";} else {jdjw=strjw[slh].substring(szh-1,szh); }
+			//if(jdjw=="至"){alert(slh+"      "+szh+"      "+sjw+"      "+strjw[slh]);}
+			//alert(yh+"   slh   "+slh+"   szh   "+szh+"  sxb    "+sxb+"      "+jdjw+"      "+strjw[slh]);
+		} else {
+			if( strjw[slh+15]== undefined ){jdjw = "　";} else {jdjw=strjw[slh+15].substring(szh-1,szh); }
+		}
+		//alert(yh+"   slh   "+slh+"   szh   "+szh+"  sxb    "+sxb+"      "+jdjw);
+		document.getElementById('jdjw').innerHTML =  "【"+jdjw+"】";
+	}
+</SCRIPT>
+
+<script type="text/javascript">
+//添加评论到数据库，同时更新显示，注意escape编码后提交
+function addComments(){
+	if($("#comm_user").val()=='请输入昵称' || $("#comm_user").val()==''){
+		alert('注意：请输入校经者本人名称/昵称！');
+		document.getElementById('jdsm').innerHTML =  '注意：校经人不能为空，请输入校经者本人名称/昵称！';
+	}  else if ($("#correct").val()==''){
+		alert(' 注意：应修改为【   】————正确经文不能为空，请输入至少1个汉字！');
+		document.getElementById('jdsm').innerHTML =  '注意：应修改为【   】————正确经文不能为空，请输入至少1个汉字！';
+	}  else {		//alert("comm_user="+escape($("#comm_user").val())+"&fj_name="+escape(fj_name)+"&fjurl="+escape(fjurl)+"&yh="+escape(yh)+"&sxb="+escape(sxb)+"&lh="+escape($("#lh").val())+"&zh="+escape($("#zh").val())+"&jdjw="+escape(jdjw)+"&correct="+escape($("#correct").val()));
+	//alert(fjname);
+		$.ajax({
+			type:"POST",
+			url:"CommentLib-jd.asp?action=addcomments&id=44",
+			data:"comm_user="+escape($("#comm_user").val())+"&fj_name="+escape(fj_name)+"&fjname="+escape(fjname)+"&picx="+escape(picx)+"&picy="+escape(picy)+"&fjurl="+escape(fjurl)+"&fjml="+escape(fjml)+"&yh="+escape(yh)+"&sxb="+escape(sxb)+"&lh="+escape($("#lh").val())+"&zh="+escape($("#zh").val())+"&jdjw="+escape(jdjw)+"&correct="+escape($("#correct").val()),
+			success:function(data){
+				if(unescape(data)=="OK"){
+					if($("#correct").val()=="本卷经文没有错误"){
+						alert('^_^'+$("#comm_user").val()+'：本卷经文没有错误！~~~感恩'+$("#comm_user").val()+'师兄校对佛典！');
+					}else{
+						alert('^_^'+$("#comm_user").val()+'：第'+yh+'页'+sxb+'部，由右向左第'+$("#lh").val()+'列，由上向下第'+$("#zh").val()+'个字【'+jdjw+'】应修改为【'+$("#correct").val()+'】！~~~感恩'+$("#comm_user").val()+'师兄校对佛典！');
+					}
+					//getComments(1);
+					//提交评论后清除表单内容
+					//$("#correct").val("123");
+					//$("#jdsm").val("说明：请输入校经者名称，选择页数、上/下部、由右向左列数、由上向下字数，录入需修改的经文，然后提交修改。");
+					document.getElementById('jdsm').innerHTML =  $("#comm_user").val()+'：第'+yh+'页'+sxb+'部，由右向左第'+$("#lh").val()+'列，由上向下第'+$("#zh").val()+'个字【'+jdjw+'】应修改为【'+$("#correct").val()+'】';
+					document.getElementById("correct").value="";
+				}else{
+					alert(unescape(data));
+				}
+			}
+		});
+	}
+}
+function addCommentsOK(){
+	$("#correct").val("本卷经文没有错误");
+	if(confirm('请再次确认：本卷经文没有错误？')) {
+		addComments();
+	}
+}
+</script>
+
+<style type="text/css">.header{padding:0 0.66667rem;overflow:hidden}
+	.header-site{height:4rem;margin-bottom:0.83333rem;background-color:#FF6601;}
+	.header .area-logo{margin-bottom:1.25rem;overflow:hidden}
+	.header .button{margin-top:1.0rem;font-size:1.2rem;	color: #FFFFFF;}
+	.header .logo-img{margin:0 auto;margin-top:-0.6rem;width:10.91667rem;height:2.5rem;vertical-align: middle;}
+	
+	.jwk{position:absolute;color:red;float:right;font-weight:bold;text-align:left;height:495px;width:240px;border:0px solid #f00;padding:0px;margin:0px;font-family: "宋体"}
+	.jwk1{float:right;width: 46px;height:495px;letter-spacing: 2px;font-size:24px;line-height:28px;border:0px solid #000;padding:0px;margin:0px;}
+	.jwk2{float:right;width: 43px;height:495px;letter-spacing: 2px;font-size:22px;line-height:25px;border:0px solid #000;padding:0px;margin:0px;}
+	.jwxz{font-size:14px;}	
+	.smk{position:absolute;color:#000000;float:right;font-weight:bold;text-align:left;height:495px;width:140px;display: inline;}
+	
+    .img_box{width: 100%;overflow-x:hidden;overflow-y:hidden;left: 0; right: 0;  margin: auto;    /* 有了这个就自动居中了 */}
+
+    a.pre1,a.pre2,a.pre3, a.pre4, a.savedw{position: absolute;display:block;width:60px;height:60px;float:left;margin:15px 0 0 0;cursor:pointer;background-image: url("img/3.png");z-index:10;} 
+    a.pre4 {background-image: url("img/4.png");width:60px;height:60px;}
+	a.pre1 {background-image: url("img/1.png");width:60px;height:60px;} 
+	a.pre2 {background-image: url("img/2.png");width:60px;height:60px;} 
+	a.savedw {background-image: url("img/5.jpg");width:60px;height:60px;} 
+	
+    .bookbox {
+    background-color: #ffffff;
+	border-top: 1px solid #FF6600;
+	padding-top:15px;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: auto;
+    right: auto;
+    line-height: 80px;
+    text-align: center;
+    _POSITION: absolute;/*兼容IE6*/
+    _TOP: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight);/*兼容IE6*/
+    }
+    .bookbox a{color: #FFF;}
+	
+	.form_table{margin:0 auto;	vertical-align: middle; font-size:20px;border-collapse: collapse;}
+	
+	.bookbox label {margin-right:1em;padding-bottom:4px; padding-top:4px;}
+	.bookbox td {border: 1px solid #FF6600;}
+
+	.onShow{
+		background:url("images/onShow.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;	
+	}
+	.onFocus{
+		background:#E9F0FF url("images/onFocus.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+
+	}
+	.onError{
+		background:#FFF2E9 url("images/onError.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+
+	}
+	.onCorrect{
+		background:#E9FFEB url("images/onCorrect.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+	}
+	.onLoad{
+		background:#E9FFEB url("images/onLoad.gif.html") no-repeat;
+		padding-left:25px;
+		font-size: 12px;
+		vertical-align:middle;
+		
+	}
+} 
+</style>
+</head>
+<BODY bgColor=E9E9E9  style="MARGIN: 8px;text-align:center;width:auto">
+<div>
+  <!--头部 begin-->
+  <header class="header header-site">
+    <div class="area-logo">
+      <div class="button"><img src='../images/logo.png' class='logo-img'> 南无本师释迦牟尼佛！注意：红字经文可用鼠标拖动校对，"①②③"为无法显示的组合汉字！<a href="../help.htm"style="font-weight: bold;color: #FFFFFF;">校对说明</a>
+        <!--<input type="submit" value="保存定位代码!" onMouseOver="this.style.borderColor='#75cd02'" onMouseOut="this.style.borderColor='#dcdcdc'" class="btn1 pbtn1"  onClick="saveCwrapperode();" />-->
+      </div>
+    </div>
+  </header>
+  <TABLE cellPadding=0 cellSpacing=0 height=100% width=100%>
+    <TD align=middle vAlign=center bgColor=#FFFFFF width=100%>
+		<script type="text/javascript">
+				document.writeln("<DIV style=\'position:absolute; \'>");
+				for(j = 1;j <=6*(picy-picx+1); j++)	{
+					//页数=Math.floor((j-1)/6)
+					var topx = Math.floor((j-1)/6)*1403 + 150 + Math.floor(  ( (j-Math.floor((j-1)/6)*6)-1)/3   )*570  ; 
+					//JPG=993*1403
+					var lefty = 850 - (j-parseInt((j-1)/3)*3)*235;
+					//var topsm = topx-40+((j-1)%3)*180;
+					document.writeln("<div id=\'jw"+j+"\' class=\'jwk\' style=\'top:"+topx+"px;left:"+lefty+"px;\' onmouseover=\'moveObj(this)\'></div>");
+					document.writeln("<div id=\'sm"+j+"\' class=\'smk\' style=\'top:"+(topx-40)+"px;left:390px;\' onmouseover=\'moveObj(this)\'></div>");
+				}
+				document.writeln("<a id='pre1' class='pre1' style=\'position:absolute; left:1368px;\' href='#' onclick='adds();return false;'  alt=‘↑上移经文’  title=\'↑上移经文\'></a>");
+				document.writeln("<a id='pre2' class='pre2' style=\'position:absolute; left:1368px;\' href='#' onclick='addx();return false;'  alt=‘下移经文↓’  title=\'下移经文↓\'></a>");
+				document.writeln("<a id='pre3' class='pre3' style=\'position:absolute; left:1368px;\' href='#' onclick='addz();return false;'  alt=‘←左移经文’  title=\'←左移经文\'></a>");
+				document.writeln("<a id='pre4' class='pre4' style=\'position:absolute; left:1368px;\' href='#' onclick='addy();return false;'  alt=‘右移经文→’  title=\'右移经文→\'></a>");
+				if( fjedit == "True" ){document.writeln("<a id='savedw' class='savedw' style=\'position:absolute; left:1368px;\' href='#' onclick='saveCode();return false;'  alt=‘保存定位文件’ title=\'保存定位调整信息\'></a>");}
+
+				document.getElementById("pre1").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre1").offsetHeight)/9*2;
+				document.getElementById("pre2").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre2").offsetHeight)/9*3;	
+				document.getElementById("pre3").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre3").offsetHeight)/9*4;
+				document.getElementById("pre4").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("pre4").offsetHeight)/9*5;
+				if( fjedit == "True" ){document.getElementById("savedw").style.top=document.body.scrollTop+(document.body.clientHeight-document.getElementById("savedw").offsetHeight)/9*6;}
+
+				document.writeln("</div>");
+				for(j= parseInt(picx) ;j <= parseInt(picy); j++) {
+					if(j== parseInt(picx)){
+						document.writeln("<div class='img_box'>");
+						document.writeln("<img src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg' load_src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg'>");
+						document.writeln("</div>");
+					} else {
+						document.writeln("<div class='img_box'>");
+						document.writeln("<img src='dd.gif' load_src='../pdf/pdf/"+fjml+"/"+PrefixInteger(j, 3)+".jpg'>");
+						document.writeln("</div>");
+					}
+				}
+		</script>
+    </td>
+  </TABLE>
+</body>
+</div>
+<div class="bookbox">
+
+    <form method="post" action="" name="commform" id="commform">
+      <table class="form_table">
+		<tr>
+			<td style="width:240px;height:35px;text-align:center;">校经人：<input id="comm_user" type="text" style="width:140px;font-size:20px;" value="请输入昵称" name="comm_user" onFocus="if (this.value == '请输入昵称')  {this.value = '';}" onBlur="if (this.value == '') {this.value = '请输入昵称'}"/></td>
+			<td id="yh" style="width:140px;border-right:0px;border-left:0px;text-align:center;"></td>
+			<td style="width:70px;border-right:0px;border-left:0px;">
+				<select id="lh" name="lh" onchange="select()" style="font-size:20px;text-align:center;">  
+					<option value="1">第01列</option>   //预选设置
+					<option value="2">第02列</option>
+					<option value="3">第03列</option>  
+					<option value="4">第04列</option>  
+					<option value="5">第05列</option>  
+					<option value="6">第06列</option>  
+					<option value="7">第07列</option>  
+					<option value="8">第08列</option>  
+					<option value="9">第09列</option>  
+					<option value="10">第10列</option>  
+					<option value="11">第11列</option>  
+					<option value="12">第12列</option>  
+					<option value="13">第13列</option>  
+					<option value="14">第14列</option>  
+					<option value="15">第15列</option>  
+					<option value="16">第16列</option>  
+					<option value="17">第17列</option>			
+				</select>
+			</td>
+			<td style="width:70px;border-right:0px;border-left:0px;text-align:center;">
+				<select id="zh" name="zh" onchange="select()" style="font-size:20px;">  
+					<option value="1">第01字</option>   //预选设置
+					<option value="2">第02字</option>
+					<option value="3">第03字</option>  
+					<option value="4">第04字</option>  
+					<option value="5">第05字</option>  
+					<option value="6">第06字</option>  
+					<option value="7">第07字</option>  
+					<option value="8">第08字</option>  
+					<option value="9">第09字</option>  
+					<option value="10">第10字</option>  
+					<option value="11">第11字</option>  
+					<option value="12">第12字</option>  
+					<option value="13">第13字</option>  
+					<option value="14">第14字</option>  
+					<option value="15">第15字</option>  
+					<option value="16">第16字</option>  
+					<option value="17">第17字</option>			
+				</select>
+			</td>
+			<td id="jdjw" style="width:60px;border-right:0px;border-left:0px;text-align:center;">【  】</td>
+			<td style="width:240px;border-right:0px;border-left:0px;">应修改为【<input id="correct" name="correct" type="text" maxlength="20" value="" style="width:120px;font-size:20px;">】</td>
+			<td style="width:220px;text-align:center;"><input type="button" value=" 提交修改" onClick="addComments()" style="width:160px;font-size:20px;" /></td>
+			<td style="width:220px;text-align:center;"><input type="button" value=" 本卷无误" onClick="addCommentsOK()" style="width:160px;font-size:20px;" /></td>
+		</tr>
+		<tr>
+			<td id="jdsm" name="jdsm" colspan="7" style="font-size:16px;text-align:center;height:40px;" >说明：请输入校经人名称，核对自动显示的经文页数、上/下部，选择列数（由右向左）、字数（由上向下），录入需修改的经文，然后提交修改。</td>
+			<td id="jdsm" name="jdsm" colspan="7" style="font-size:16px;text-align:center;height:40px;" >本卷经文没有错误，请点击。</td>
+		</tr>
+      </table>
+    </form>
+
+</div>
+</html>
